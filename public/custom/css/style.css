@@ -1,0 +1,153 @@
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../img/2.png);
+  height: 100vh;
+}
+.input {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+
+  height: 50px;
+  padding: 14.5px 33px;
+
+  border: none;
+  margin-top: 2vw;
+}
+.connect {
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px rgba(88, 110, 253, 1);
+  display: flex;
+  height: 50px;
+  width: 100%;
+  margin-top: 2vw;
+  background-color: #586efd;
+  border: none;
+  color: white;
+  margin-bottom: 28px;
+  justify-content: center;
+  padding: 12px;
+}
+.connect:hover {
+  color: #586efd;
+  background-color: white;
+  border: 1px solid #586efd;
+  -moz-box-shadow: inset 0 0 3px #586efd;
+  -webkit-box-shadow: inset 0 0 3px #586efd;
+  box-shadow: inset 0 0 3px #586efd;
+}
+.connect-fb{
+  border-radius: 8px;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  margin-top: 4vw;
+  color: #586efd;
+  background-color: white;
+  border: 1px solid #586efd;
+  margin-bottom: 28px;
+  justify-content: center;
+  margin-top: 2vw;
+  padding: 12px ;
+  
+  justify-content: center;
+
+}
+.t1{
+    text-align: center
+
+}
+.left-side{
+    width:12rem;
+    float: left;
+
+}
+.right-side{
+    width:32rem;
+    float: right;
+    padding:4rem;
+    display: flex;
+    
+    flex-direction: column;
+
+    height: 100vh;
+}
+.logo {
+    width: 11vw;
+    margin-top: 3vw;
+    display: block;
+    margin: auto;
+    margin-top: 3vw;
+  }
+  .footer{
+    
+    background-color: var(--black-haze);
+    box-shadow: 0px -1px 6px rgba(0, 0, 0, 0.161);
+    height: 90px;
+    width:100%;
+  }
+  :root {
+    --black-haze: rgba(246, 246, 246, 1);
+  }
+  .wave{
+      width:100%;
+      margin: 0;
+      margin-left: 0;
+      margin-right: 0;
+  }
+  .link{
+      display:block;
+      margin-top: 190px;
+      text-align: center;
+  }
+.q1{
+    color: gray;
+}
+@media screen and (max-width:1024px) {
+    .logo{
+        width:40vw;
+        margin-bottom: 10vw;
+        margin-top:10vw;
+       
+    }
+    .left-side{
+    display: none;
+    }
+    .right-side{
+        width: 100%;
+        display: block;
+        margin:0;
+        
+    }
+    .input{
+        margin-bottom:50px;
+        width:100%;
+    }
+    .wave{
+        width:100%;
+        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -4.7rem;
+    }
+    .link{
+        
+        margin-top: 150px;
+    }
+    .connect {
+      width: 100%;
+        padding: 7px ;
+      }
+      .t1{
+        color: white;
+        
+    }
+    .link{
+        color: white;
+    }
+    .q1{
+        color: white;
+    }
+}
