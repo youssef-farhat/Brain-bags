@@ -17,6 +17,12 @@ Route::get('/', function () {
 Route::get('/new', function () {
     return view('connect.html.auth');
 });
+Route::get('/ins', function () {
+    return view('connect.html.inscription');
+});
+Route::get('/con', function () {
+    return view('connect.html.authetude');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
