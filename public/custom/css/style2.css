@@ -4,6 +4,10 @@ font-size: 40px;
 padding-left: 63px;
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
+.foter {
+    position: absolute;
+    bottom: 0px;
+}
 .blockinp{
 
     margin-top: 20px;
@@ -91,7 +95,7 @@ input file{
 
 
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 2440px) {
     img {
         width: 100%;
         height: 65px;
@@ -112,7 +116,7 @@ input file{
     }
   }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 2024px) {
     img {
         width: 1023px;
         height: 74px;
@@ -139,6 +143,10 @@ input file{
         margin-left: -28px;
     }
   }
+  img {
+    width: 100vw;
+}
+
   @media only screen and (max-width: 768px) {
     img {
         width: 768px;
@@ -173,6 +181,7 @@ input file{
     
     @media only screen and (max-width: 425px) {
         img {
+            display: none;
             width:450px;
            /* height: 50px;*/
            

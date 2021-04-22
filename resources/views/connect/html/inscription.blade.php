@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('custom/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{ asset ('custom/css/style2.css')}}" />
+    <link rel="stylesheet" href="{{ asset ('custom/css/bouton.css')}}" />
     <link
       rel="stylesheet"
       href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')}}"
@@ -87,7 +88,7 @@
         ></textarea>
       </div>
       <div>
-        <p>vous avez un compte?<a href="auth.html">Se compte</a></p>
+        <p>vous avez un compte?<a href="con">Se compte</a></p>
         <div class="btne">
         <input type="submit" value="envoyer" class="btn btn-primary">
         <input type="reset" value="Annuler" class="btn btn-danger">

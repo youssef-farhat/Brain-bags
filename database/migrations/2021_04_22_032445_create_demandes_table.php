@@ -14,7 +14,8 @@ class CreateDemandesTable extends Migration
     public function up()
     {
         Schema::create('demandes', function (Blueprint $table) {
-            $table->Increments('stage_id');
+            $table->Increments('id');
+            $table->integer('stage_id');
             $table->bigInteger('etudiant_id')->unsigned();
             $table->integer('entreprise_id')->unsigned();
             $table->timestamps();
