@@ -23,6 +23,11 @@ Route::get('/ins', function () {
 Route::get('/con', function () {
     return view('connect.html.authetude');
 });
+Route::get('/profil',function(){
+    return view('profil.profil');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
