@@ -87,7 +87,7 @@
         ></textarea>
       </div>
       <div>
-        <p>vous avez un compte?<a href="auth.html">Se compte</a></p>
+        <p>vous avez un compte?<a href="{{ url('con') }}">Se compte</a></p>
         <div class="btne">
         <input type="submit" value="envoyer" class="btn btn-primary">
         <input type="reset" value="Annuler" class="btn btn-danger">
