@@ -98,8 +98,7 @@ body {
       margin-right: 0;
   }
   .link{
-      display:block;
-      margin-top: 190px;
+      display:block; 
       text-align: center;
   }
 .q1{
@@ -145,7 +144,7 @@ body {
         
     }
     .link{
-        color: white;
+        color: black;
     }
     .q1{
         color: white;
