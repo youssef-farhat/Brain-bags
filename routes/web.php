@@ -26,6 +26,12 @@ Route::get('/con', function () {
 Route::get('/profil',function(){
     return view('profil.profil');
 });
+
+Route::get('/dem', function(){
+    return view('connect.html.demande');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
