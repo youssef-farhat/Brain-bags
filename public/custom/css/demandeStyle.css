@@ -1,0 +1,165 @@
+.text{
+    font-size: large;
+    font-size: 40px;
+    padding-left: 63px;
+    }
+    .blockinp{
+    
+        margin-top: 20px;
+        margin-bottom: 45px
+        
+    }
+    .blockinp2{
+        margin-top: -70px;
+    }
+    .input {
+        width: 100%;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+      
+        height: 50px;
+        padding: 14.5px 33px;
+      
+        border: none;
+        margin-top: 2vw;
+      }
+      .textera{
+    
+       
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+      
+        
+        padding: 14.5px 33px;
+        margin-left: 23px;
+        margin-top: -25px;
+        border: none;
+        
+      }
+      .col-sm{
+        margin-bottom: 25px;
+      }
+    .mb-3{
+    
+    
+        margin-top: 40px;
+        margin-left: -28px
+        
+    }
+    .in{
+        margin-top: 40px;
+        margin-left: -23px;
+        
+    }
+    .btne{
+        margin-left: 889px;
+        margin-top: -52px;
+    }
+    img{
+        width: 1349px;
+    }
+    
+    
+    @media only screen and (max-width: 1440px) {
+        img {
+            width: 1440px;
+          
+        }
+        
+        .input{
+            margin-bottom:50px;
+            width:100%;
+        }
+        .btne{
+            margin-left: 1128px ;
+            margin-top: -34px ;
+        }
+      }
+    
+    @media only screen and (max-width: 1024px) {
+        img {
+            width: 1023px;
+            height: 62px;
+        }
+        
+        .input{
+            margin-bottom:50px;
+            width:100%;
+        }
+        .btne{
+            margin-left: 693px ;
+        margin-top: -52px ;
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        img {
+            width: 768px;
+            height: 81px;
+           /* height: 50px;*/
+        }
+        .input {
+            margin-bottom: 50px;
+            width: 89%;
+        }
+        .btne{
+            margin-left: 484px;
+        margin-top: -52px ;
+        }
+        @media only screen and (max-width: 425px) {
+            img {
+                width:450px;
+               /* height: 50px;*/
+               
+            }
+            .input{
+                margin-bottom:50px;
+                width:100%;
+            }
+            .btne {
+                margin-left: 230px ;
+                margin-top: -52px ;
+            }
+            .text{
+                font-size: 33px;
+    
+            }
+        }
+        
+        
+        
+        }
+        @media only screen and (max-width: 375px) {
+            img {
+                width: 405px;
+        height: 30px;
+            }
+            .input{
+                width: 112% ;
+            }
+            .btne {
+                margin-left: 186px ;
+                margin-top: -52px ;
+            }
+        }
+      @media only screen and (max-width: 320px) {
+        img {
+            width: 420px;
+           height: 50px;
+        }
+        .input {
+            margin-bottom: 50px;
+            width: 142%;
+        }
+        .btne {
+            margin-left: 84px;
+        margin-top: -10px;
+        }
+        .text{
+            font-size: 27px;
+        }
+    }
+    
+    
+     
