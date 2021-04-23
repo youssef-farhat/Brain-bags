@@ -14,7 +14,8 @@ class CreateAdministrateursTable extends Migration
     public function up()
     {
         Schema::create('administrateurs', function (Blueprint $table) {
-            $table->increments('id_admin')->primary()->unsigned();
+            $table->Increments('id');
+            $table->integer("soutenace_id")->unsigned();
             $table->string('nom');
             $table->string('prenom');
             $table->string('email');
@@ -22,7 +23,8 @@ class CreateAdministrateursTable extends Migration
             $table->string('image');
             $table->string('ville');
             $table->enum('role', ['sous_directeur', 'chef_de_département', 'enseignant']);
-            $table->timestamps();          
+            $table->timestamps();      
+            $table->foreign('soutenace_id')->references('id')->on('soutenances')->onDelete('restrict')->onUpdate('restrict'); 
         });
     }
 

@@ -14,14 +14,15 @@ class CreateSoutenancesTable extends Migration
     public function up()
     {
         Schema::create('soutenances', function (Blueprint $table) {
-            $table->increments('id_prof');
-            $table->increments('id_etud');
+            $table->Increments('id');
+            $table->integer('etudiant_id')->unsigned();
+            $table->integer("prof_id")->unsigned();
+            $table->string('type');
             $table->date('date');
             $table->string('sale');
-            $table->string('type');
             $table->string('image');
-
-
+            $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('prof_id')->references('id')->on('enseignants')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }
