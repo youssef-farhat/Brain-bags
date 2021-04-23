@@ -36,4 +36,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
+=======
+Route::view('/Profile','Profile');
+>>>>>>> a21786b3418421909dcc27aeb0256193ab28f6b5
 

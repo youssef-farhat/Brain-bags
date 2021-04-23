@@ -14,7 +14,7 @@ class CreateEtudiantsTable extends Migration
     public function up()
     {
         Schema::create('etudiants', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('id');
             $table-> string('E_mail',70);
             $table->string('nom_prenom_E',70);
             $table->string('img');
