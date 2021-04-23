@@ -15,7 +15,7 @@ class CreateDemandesTable extends Migration
     {
         Schema::create('demandes', function (Blueprint $table) {
             $table->Increments('stage_id');
-            $table->bigInteger('etudiant_id')->unsigned();
+            $table->Integer('etudiant_id')->unsigned();
             $table->integer('entreprise_id')->unsigned();
             $table->timestamps();
             $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('cascade');
