@@ -1,0 +1,401 @@
+.text{
+    font-size: large;
+    font-size: 40px;
+    padding-left: 63px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: large;
+font-size: 40px;
+padding-left: 63px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.foter {
+    position: absolute;
+    bottom: 0px;
+}
+.blockinp{
+
+    margin-top: 20px;
+    margin-bottom: 45px
+    
+}
+.blockinp2{
+    margin-top: -70px;
+    padding-right: 450px;
+}
+.blockinp3{
+    padding-right: 450px;
+}
+
+
+.input {
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+  
+    height: 50px;
+    padding: 14.5px 33px;
+  
+    border: none;
+    margin-top: 2vw;
+  }
+  .form-control {
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+  
+    height: 50px;
+    padding: 14.5px 33px;
+  
+    border: none;
+    margin-top: 2vw;
+  }
+  .textera{
+
+   
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+  
+    
+    padding: 14.5px 33px;
+    margin-left: 23px;
+    margin-top: -25px;
+    border: none;
+    
+  }
+  .col-sm{
+    margin-bottom: -25px;
+  }
+.mb-3{
+
+
+    margin-top: 40px;
+    margin-left: -28px
+    
+}
+.in{
+    margin-top: 40px;
+    margin-left: -23px;
+    
+}
+#fileim{
+
+    margin-top:26px ;
+}
+.btne{
+    margin-left: 889px;
+    margin-top: -52px;
+}
+img{
+    width: 1349px;
+}
+
+input file{
+
+    margin-bottom:-10px;
+}
+
+
+
+@media only screen and (max-width: 2440px) {
+    img {
+        width: 100%;
+        height: 65px;
+    }
+    .foter {
+        position: absolute;
+        bottom: 0px;
+    }
+    .blockinp{
+    
+        margin-top: 20px;
+        margin-bottom: 45px
+        
+    }
+    .blockinp2{
+        margin-top: -70px;
+        padding-right: 450px;
+    }
+
+    .blockinp3{
+        padding-right: 450px;
+
+  }
+}
+@media only screen and (max-width: 2024px) {
+    img {
+        width: 1023px;
+        height: 74px;
+    }
+    
+    
+    .input {
+        width: 100%;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+      
+        height: 50px;
+        padding: 14.5px 33px;
+      
+        border: none;
+        margin-top: 2vw;
+      }
+      .form-control {
+        width: 100%;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+      
+        height: 50px;
+        padding: 14.5px 33px;
+      
+        border: none;
+        margin-top: 2vw;
+      }
+      .textera{
+    
+       
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+      
+        
+        padding: 14.5px 33px;
+        margin-left: 23px;
+        margin-top: -25px;
+        border: none;
+        
+      }
+      .col-sm{
+        margin-bottom: -25px;
+      }
+    .mb-3{
+    
+    
+        margin-top: 40px;
+        margin-left: -28px
+        
+    }
+    .in{
+        margin-top: 40px;
+        margin-left: -23px;
+        
+    }
+    #fileim{
+
+    
+        margin-top:26px ;
+
+
+        margin-top:20px ;
+    }
+    .blockinp3 {
+        padding-right: 450px;
+        margin-top: -23px;
+    }
+    .mb-3 {
+        margin-top: 29px;
+        margin-left: -28px;
+    }
+  }
+  img {
+    width: 100vw;
+}
+
+  @media only screen and (max-width: 768px) {
+    img {
+        width: 768px;
+        height: 76px;
+       /* height: 50px;*/
+    }
+    .input {
+        margin-bottom: 50px;
+        width: 101%;
+
+    }
+    .btne{
+        margin-left: 889px;
+        margin-top: -52px;
+    }
+    img{
+        width: 1349px;
+    }
+    
+    input file{
+    
+        margin-bottom:-10px;
+    }
+    
+}
+    
+    @media only screen and (max-width: 2440px) {
+        img {
+
+            width: 100%;
+            height: 65px;
+          
+
+            display: none;
+            width:450px;
+           /* height: 50px;*/
+           
+
+        }
+        
+        .input{
+            margin-bottom:50px;
+            width:100%;
+        }
+        .btne{
+            
+            margin-top: -34px ;
+        }
+        p{
+            margin-top: 0;
+            margin-bottom: 2rem;
+        }
+      }
+    
+    @media only screen and (max-width: 2024px) {
+        img {
+            width: 1023px;
+            height: 74px;
+        }
+        
+        .input{
+            margin-bottom:50px;
+            width:100%;
+        }
+        .btne{
+            margin-left: 693px ;
+            margin-top: -52px ;
+        }
+        #fileim{
+    
+            margin-top:20px ;
+        }
+        .blockinp3 {
+            padding-right: 450px;
+            margin-top: -23px;
+        }
+        .mb-3 {
+            margin-top: 29px;
+            margin-left: -28px;
+        }
+      }
+      img {
+        width: 100vw;
+    }
+
+      @media only screen and (max-width: 768px) {
+        img {
+            width: 768px;
+            height: 76px;
+           /* height: 50px;*/
+        }
+        .input {
+            margin-bottom: 50px;
+            width: 101%;
+        }
+        .btne{
+            margin-left: 484px;
+        margin-top: -52px ;
+        }
+        #fileim {
+            margin-top: 16px;
+            padding-left: 11px;
+        }
+        .blockinp2{
+            margin-top: -70px;
+            padding-right: 200px;
+        }
+        .blockinp3{
+            padding-right: 200px;
+            margin-top: -16px;
+        }
+        .mb-3 {
+            margin-top: 29px;
+            margin-left: -28px;
+        }
+    }
+        
+        @media only screen and (max-width: 425px) {
+            img {
+                display: none;
+                width:450px;
+               /* height: 50px;*/
+               
+            }
+            .input{
+                margin-bottom:50px;
+                width:100%;
+            }
+            .btne {
+                margin-left: 140px ;
+                margin-top: -7px ;
+            }
+            .text{
+                font-size: 33px;
+    
+            }
+            #fileim {
+                margin-top: 2px;
+                margin-bottom: 40px;
+                padding-left: 5px;
+            }
+            .blockinp2 {
+                margin-top: -49px;
+                padding-right: 0;
+            }
+            .blockinp3 {
+                padding-right: 0px;
+                margin-top: 0px;
+            }
+        }
+        
+        
+        
+        
+        @media only screen and (max-width: 375px) {
+            img {
+                width: 405px;
+        height: 30px;
+            }
+            .input{
+                width: 109% ;
+            }
+            .btne {
+                margin-left: 100px ;
+                margin-top: -7px ;
+            }
+            #fileim {
+                
+                width: 375px;
+            }
+        }
+      @media only screen and (max-width: 320px) {
+        img {
+            width: 420px;
+           height: 50px;
+        }
+        .input {
+            margin-bottom: 50px;
+            width: 130%;
+        }
+        .btne {
+            margin-left: 80px;
+            margin-top: -7px;
+        }
+        .text{
+            font-size: 27px;
+        }
+        .mb-3 {
+            
+            width: 382px;
+        }
+        
+      }
+      

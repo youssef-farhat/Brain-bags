@@ -2,7 +2,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(../img/2.png);
-  height: 100vh;
 }
 .input {
   width: 100%;
@@ -22,13 +21,13 @@ body {
   display: flex;
   height: 50px;
   width: 100%;
-  margin-top: 2vw;
+  margin-top: 4vw;
   background-color: #586efd;
   border: none;
   color: white;
   margin-bottom: 28px;
-  justify-content: center;
-  padding: 12px;
+  text-align: center;
+  padding: 7px 157px;
 }
 .connect:hover {
   color: #586efd;
@@ -37,23 +36,6 @@ body {
   -moz-box-shadow: inset 0 0 3px #586efd;
   -webkit-box-shadow: inset 0 0 3px #586efd;
   box-shadow: inset 0 0 3px #586efd;
-}
-.connect-fb{
-  border-radius: 8px;
-  display: flex;
-  height: 50px;
-  width: 100%;
-  margin-top: 4vw;
-  color: #586efd;
-  background-color: white;
-  border: 1px solid #586efd;
-  margin-bottom: 28px;
-  justify-content: center;
-  margin-top: 2vw;
-  padding: 12px ;
-  
-  justify-content: center;
-
 }
 .t1{
     text-align: center
@@ -67,12 +49,7 @@ body {
 .right-side{
     width:32rem;
     float: right;
-    padding:4rem;
-    display: flex;
-    
-    flex-direction: column;
-
-    height: 100vh;
+    padding:3rem;
 }
 .logo {
     width: 11vw;
@@ -98,7 +75,8 @@ body {
       margin-right: 0;
   }
   .link{
-      display:block; 
+      display:block;
+      margin-top: 190px;
       text-align: center;
   }
 .q1{
@@ -109,7 +87,6 @@ body {
         width:40vw;
         margin-bottom: 10vw;
         margin-top:10vw;
-       
     }
     .left-side{
     display: none;
@@ -144,7 +121,7 @@ body {
         
     }
     .link{
-        color: black;
+        color: white;
     }
     .q1{
         color: white;
