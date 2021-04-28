@@ -17,6 +17,7 @@ class CreateForumsTable extends Migration
             $table->Increments('id');
             $table->integer('id_etude')->unsigned();
             $table->integer('id_profe')->unsigned();
+            $table->string('description');
             $table->foreign('id_etude')->references('id')->on('etudiants')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('id_profe')->references('id')->on('enseignants')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();

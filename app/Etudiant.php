@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Etudiant extends Model
 {
-    //
+    public function forums (){
+        return $this->hasMany('App\Forum');
+    }
 }
