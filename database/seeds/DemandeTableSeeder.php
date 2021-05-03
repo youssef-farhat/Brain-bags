@@ -3,7 +3,7 @@
 use App\Stage;
 use Illuminate\Database\Seeder;
 
-class DemandesTableSeeder extends Seeder
+class DemandeTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -4,7 +4,7 @@ use App\Etudiant;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 
-class EtudiantsTableSeeder extends Seeder
+class EtudiantTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
