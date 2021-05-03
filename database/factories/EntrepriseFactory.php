@@ -7,13 +7,12 @@ use Faker\Generator as Faker;
 
 $factory->define(Entreprise::class, function (Faker $faker) {
     return [
-        'email' => $faker->freeEmail,
-        'mdp' => $faker->password,
-        'nom_entreprise' => $faker->name,
-        'categorie' => $faker->randomElement(['Informatique', 'Economie_gestion', 'Genie_proceder', 'mechanique', 'electrique']),
-        'ville' => $faker->state,
-        'logo' => $faker->imageUrl,
-        'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
-        'created_at' => now()
+        'email' => $faker->email,
+        'mdp' => $faker->word,
+        'nom_entreprise' => $faker->sentence,
+        'categorie' =>$faker->randomElement(['Informatique', 'Economie_gestion', 'Genie_proceder', 'mechanique', 'electrique']),
+        'ville' => $faker->city,
+        'logo' => $faker->word,
+        'description' => $faker->sentence
     ];
 });
