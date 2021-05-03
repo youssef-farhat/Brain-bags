@@ -1,6 +1,6 @@
 <?php
 
-use App\Stage;
+use App\Demande;
 use Illuminate\Database\Seeder;
 
 class DemandeTableSeeder extends Seeder
@@ -12,6 +12,6 @@ class DemandeTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Stage::class,10)->create();
+        factory(Demande::class,10)->create();
     }
 }
