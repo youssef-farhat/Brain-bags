@@ -25,7 +25,7 @@ Route::get('/con', function () {
 });
 Route::get('/profil',function(){
     return view('profil.profil');
-});
+})->middleware('auth');
 
 Route::get('/dem', function(){
     return view('connect.html.demande');
