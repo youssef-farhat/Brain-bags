@@ -15,10 +15,11 @@ class CreateDemandesTable extends Migration
     {
         Schema::create('demandes', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('stage_id');
+            $table->integer('stage_id')->unsigned();
             $table->integer('etudiant_id')->unsigned();
             $table->integer('entreprise_id')->unsigned();
             $table->timestamps();
+            $table->foreign('stage_id')->references('id')->on('stages');
             $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('cascade');
             $table->foreign('entreprise_id')->references('id')->on('entreprises')->onDelete('cascade');
         });
