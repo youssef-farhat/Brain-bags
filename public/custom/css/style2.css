@@ -1,14 +1,19 @@
 .text{
-<<<<<<< HEAD
+
     font-size: large;
     font-size: 40px;
     padding-left: 63px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-=======
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    font-size: large;
+    font-size: 40px;
+    padding-left: 63px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 font-size: large;
 font-size: 40px;
 padding-left: 63px;
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .foter {
     position: absolute;
@@ -105,8 +110,7 @@ input file{
     img {
         width: 100%;
         height: 65px;
-      
->>>>>>> 4fba9bb054552d6108f97d77ea987ac53692ed24
+
     }
     .foter {
         position: absolute;
@@ -122,17 +126,24 @@ input file{
         margin-top: -70px;
         padding-right: 450px;
     }
-<<<<<<< HEAD
+
     .blockinp3{
         padding-right: 450px;
-=======
+
   }
 
+
+    .blockinp3{
+        padding-right: 450px;
+
+
+  }
+}
 @media only screen and (max-width: 2024px) {
     img {
         width: 1023px;
         height: 74px;
->>>>>>> 4fba9bb054552d6108f97d77ea987ac53692ed24
+
     }
     
     
@@ -190,10 +201,15 @@ input file{
         
     }
     #fileim{
-<<<<<<< HEAD
+
     
         margin-top:26px ;
-=======
+
+
+    
+        margin-top:26px ;
+
+
 
         margin-top:20px ;
     }
@@ -219,7 +235,7 @@ input file{
     .input {
         margin-bottom: 50px;
         width: 101%;
->>>>>>> 4fba9bb054552d6108f97d77ea987ac53692ed24
+
     }
     .btne{
         margin-left: 889px;
@@ -234,20 +250,26 @@ input file{
         margin-bottom:-10px;
     }
     
-    
+}
     
     @media only screen and (max-width: 2440px) {
         img {
-<<<<<<< HEAD
+
             width: 100%;
             height: 65px;
           
-=======
+
+
+            width: 100%;
+            height: 65px;
+          
+
+
             display: none;
             width:450px;
            /* height: 50px;*/
            
->>>>>>> 4fba9bb054552d6108f97d77ea987ac53692ed24
+
         }
         
         .input{
@@ -294,7 +316,7 @@ input file{
       img {
         width: 100vw;
     }
-    
+
       @media only screen and (max-width: 768px) {
         img {
             width: 768px;
@@ -402,4 +424,5 @@ input file{
             width: 382px;
         }
         
-    }
+      }
+      
