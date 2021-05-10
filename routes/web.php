@@ -23,9 +23,7 @@ Route::get('/ins', function () {
 Route::get('/con', function () {
     return view('connect.html.authetude');
 });
-Route::get('/profil',function(){
-    return view('profil.profil');
-});
+
 
 Route::get('/dem', function(){
     return view('connect.html.demande');
@@ -36,4 +34,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'HomeController@admin')->middleware('auth');
+Route::get('/entreprise', 'HomeController@entreprise')->middleware('auth');
+
+Route::get('/etudiant', 'HomeController@etudiant')->middleware('auth');
+
+Route::get('/profile', 'HomeController@profile')->middleware('auth');

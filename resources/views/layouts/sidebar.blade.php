@@ -2,7 +2,7 @@
     <div class="logo_content">
         <div class="logo">
             <div class="logo_name">
-                <img src="img/logo.png" alt="" srcset="" class="logo2" /> Find It
+                <img src="/img/logo.png" alt="" srcset="" class="logo2" /> Find It
             </div>
         </div>
         <i class="bx bx-menu" id="btn"></i>
@@ -10,7 +10,7 @@
     <div class="profile_content">
         <div class="profile">
             <div class="profile_details">
-                <img src="img/youssef_farhat.jpg" alt="" />
+                <img src="#" alt="" />
                 <div class="name_job">
                     <div class="name">{{ Auth::user()->name }}</div>
                     <div class="job">Adminstrateur</div>
@@ -28,7 +28,7 @@
             <span class="tooltip">Liste de stages</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/profile">
                 <i class="bx bxs-user bx-tada-hover"></i>
                 <span class="links_name">Profile</span>
             </a>
@@ -44,19 +44,19 @@
         <li>
             <a href="#">
                 <i class="bx bx-paste bx-tada-hover"></i>
-                <span class="links_name">Mes Demandes </span>
+                <span class="links_name">Demandes </span>
             </a>
             <span class="tooltip">Demande de stages</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/entreprise">
                 <i class="bx bxs-city bx-tada-hover"></i>
                 <span class="links_name">Entreprise </span>
             </a>
             <span class="tooltip">Entreprises</span>
         </li>
         <li>
-            <a href="#">
+            <a href="/etudiant">
                 <i class="bx bxs-user-rectangle bx-tada-hover"></i>
                 <span class="links_name">Etudiants </span>
             </a>

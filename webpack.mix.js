@@ -13,7 +13,11 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .styles('resources/css/SidebarStyle.css', 'public/css/admin.css')
+    .styles([
+       'resources/css/SidebarStyle.css',
+       'resources/css/dataTables.css'
+
+   ], 'public/css/admin.css')
     .scripts([
        'resources/js/chart-area-demo.js',
        'resources/js/chart-bar-demo.js',
