@@ -16,7 +16,14 @@
                     <div class="job">Adminstrateur</div>
                 </div>
             </div>
-            <i class="bx bx-log-out" id="log_out"></i>
+            <a href="{{ route('logout') }}"
+                onclick="event.preventDefault() ; document.getElementById('logout-form').submit();">
+                <i class="bx bx-log-out" id="log_out"></i>
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+
         </div>
     </div>
     <ul class="nav_list">
@@ -28,7 +35,7 @@
             <span class="tooltip">Liste de stages</span>
         </li>
         <li>
-            <a href="/profile">
+            <a href="/">
                 <i class="bx bxs-user bx-tada-hover"></i>
                 <span class="links_name">Profile</span>
             </a>

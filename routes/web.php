@@ -34,8 +34,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/entreprise', 'HomeController@entreprise')->middleware('auth');
+Route::get('/entreprise', 'HomeController@entreprise')->middleware('admin');
 
-Route::get('/etudiant', 'HomeController@etudiant')->middleware('auth');
+Route::get('/etudiant', 'HomeController@etudiant')->middleware('admin');
 
-Route::get('/profile', 'HomeController@profile')->middleware('auth');
+Route::get('/', 'HomeController@profile')->middleware('admin');

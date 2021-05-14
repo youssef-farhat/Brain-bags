@@ -6,6 +6,7 @@ use App\Administrateur;
 use App\Entreprise;
 use App\Etudiant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -45,8 +46,7 @@ class HomeController extends Controller
     
     public function profile()
     {
-        $administrateur = Administrateur :: limit(1)->get();
-        return view('admin.profile', 
-        ['administrateurs' => $administrateur ]);
+        
+        return view('admin.profile');
     }
 }

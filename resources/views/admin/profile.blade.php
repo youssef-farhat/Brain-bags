@@ -16,49 +16,51 @@
 </head>
 
 <body>
+    
     {{-- ---------------------------------------------- Navigation ---------------------------------------------- --}}
     @include('layouts.sidebar')
+    
 
     <div class="home_content">
         <div class="container">
             <div class="text">
                 <h2>Profil</h2>
             </div>
-{{-- 
-            @foreach ($admistrateur as $admin)
+
+            
                 <div class="block" style="margin:auto;display:block;">
                     <div style="margin:auto;display:block;">
-                        <img src="{{ $admin->image }}" class="img">
-                        <h1 style="text-align:center;margin:15px">{{ $admin->nom }} {{ $admin->prenom }}</h1>
+                        <img src="" class="img">
+                        <h1 style="text-align:center;margin:15px">{{ Auth::user()->name }} </h1>
                         <div class="zone">
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                                 <div class="col">
                                     <i class='bx bxs-envelope bx-md' style='color:rgba(88, 110, 253, 1)'></i>
                                     <h3>Email</h3>
                                     <p>
-                                        {{ $admin->email }}
+                                        {{ Auth::user()->email }}
                                     </p>
                                 </div>
                                 <div class="col">
                                     <i class='bx bx-current-location bx-md' style='color:rgba(88, 110, 253, 1)'></i>
                                     <h3>Ville</h3>
-                                    <p>{{ $admin->ville }} </p>
+                                    <p> </p>
                                 </div>
                                 <div class="col">
                                     <i class='bx bxs-user-rectangle bx-md' style='color:rgba(88, 110, 253, 1)'></i>
                                     <h3>Role </h3>
-                                    <p>{{ $admin->role }} </p>
+                                    <p> </p>
                                 </div>
                                 <div class="col">
                                     <i class='bx bxs-key bx-md' style='color:rgba(88, 110, 253, 1)'></i>
                                     <h3>mot de passe </h3>
-                                    <p>{{ $admin->mdp }}</p>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endforeach --}}
+            
         </div>
     </div>
 
