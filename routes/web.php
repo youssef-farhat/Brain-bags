@@ -26,6 +26,9 @@ Route::get('/con', function () {
 Route::get('/profil',function(){
     return view('profil.profil');
 });
+Route::get('/index',function(){
+    return view('home.index')->middleware('auth','checkEntreprise');
+});
 
 Route::get('/dem', function(){
     return view('connect.html.demande');
