@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="{{ asset('custom/css/bootstrap.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('custom/css/style2.css') }}" />
@@ -79,14 +76,7 @@ href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
                 placeholder="Description"></textarea>
         </div>
       </div>
-      <div class="mb-3">
-        <textarea
-          class="form-control textera"
-          id="exampleFormControlTextarea1"
-          rows="3"
-          placeholder="Description"
-        ></textarea>
-      </div>
+      
       <div>
 
         <p>vous avez un compte?<a href="{{ url('con') }}">Se compte</a></p>
@@ -95,24 +85,11 @@ href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
         <input type="reset" value="Annuler" class="btn btn-danger">
       </div>
       </div>
-      </div>
-      <div class="foter">
-
-        <div>
-            <p>vous avez un compte?<a href="con">Se compte</a></p>
-            <div class="btne">
-                <input type="submit" value="envoyer" class="btn btn-primary">
-                <input type="reset" value="Annuler" class="btn btn-danger">
-            </div>
-        </div>
-    </div>
-    <div class="foter">
-
-
-
+    
+      
+    {{-- <div class="foter">
 
         <img src="{{ asset('custom/img/w4.png') }}" alt="">
 
-    </div>
+    </div> --}}
 
-@endsection

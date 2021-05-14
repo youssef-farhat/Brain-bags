@@ -1,0 +1,181 @@
+.blockinp{
+
+    margin-top: 7%;
+    margin-bottom: 5%;
+    
+}
+.blockinp2{
+    
+    margin-bottom: 5%;
+}
+.blockinp3{
+    margin-bottom: 5%;
+}
+
+.btne{
+    margin-left: 36%;
+}
+
+@media only screen and (max-width: 1440px) {
+    img {
+        width: 100%;
+        height: 51px;
+      
+    }
+    
+    .input{
+        margin-bottom:50px;
+        width:100%;
+    }
+    .btne{
+        
+        margin-top: -34px ;
+    }
+    #fileim {
+            
+        margin-bottom: 10px;
+    }
+  }
+
+@media only screen and (max-width: 1024px) {
+    img {
+        width: 1023px;
+        height: 62px;
+    }
+    
+    .input{
+        margin-bottom:50px;
+        width:100%;
+    }
+    .btne{
+        margin-left: 36%;
+    }
+   
+    .blockinp3 {
+        padding-right: 0px;
+        
+    }
+    .mb-3 {
+        margin-top: 29px;
+        margin-left: -28px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+   
+    .input {
+        margin-bottom: 50px;
+        width: 100%;
+    }
+    .btne{
+        margin-left: 36%;
+    }s
+    #fileim {
+        
+        padding-left: 11px;
+    }
+    .blockinp{
+       
+    margin-top: 7%;
+    margin-bottom: 5%;
+    }
+    .blockinp3{
+        padding-right: 0px;
+        
+    }
+    .mb-3 {
+        margin-top: 29px;
+        margin-left: -28px;
+    }
+}
+   
+@media only screen and (max-width: 574px) {
+        
+    .input{
+        margin-bottom:50px;
+        width:100%;
+    }
+    .btne {
+        margin-left: 140px ;
+        margin-top: -7px ;
+    }
+    .text{
+        font-size: 33px;
+
+    }
+    #fileim {
+       
+        margin-bottom: 40px;
+        padding-left: 5px;
+    }
+    .blockinp2 {
+        margin-top: 0px;
+        padding-right: 0;
+    }
+    .blockinp3 {
+        padding-right: 0px;
+        margin-top: 0px;
+    }
+}
+
+    @media only screen and (max-width: 425px) {
+        
+        .input{
+            margin-bottom:50px;
+            width:100%;
+        }
+        .btne{
+            margin-left: 16%;
+        }
+        .text{
+            font-size: 33px;
+
+        }
+        #fileim {
+           
+            margin-bottom: 50%;
+            padding-left: 5px;
+        }
+        .blockinp {
+            margin-bottom: 5%;
+        }
+        .blockinp2 {
+            margin-top: -49px;
+            padding-right: 0;
+        }
+        .blockinp3 {
+            padding-right: 0px;
+            margin-top: 0px;
+        }
+    }
+    
+    
+    
+    
+    @media only screen and (max-width: 375px) {
+        
+        .input{
+            width: 109% ;
+        }
+        .btne{
+            margin-left: 0%;
+        }
+        
+    }
+  @media only screen and (max-width: 320px) {
+    
+    .input {
+        margin-bottom: 50px;
+        width: 130%;
+    }
+    .btne{
+        margin-left: -17%;
+    }
+    .text{
+        font-size: 27px;
+    }
+    .mb-3 {
+        
+        width: 382px;
+    }
+    
+}

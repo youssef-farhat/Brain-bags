@@ -30,8 +30,13 @@ Route::get('/profil',function(){
 Route::get('/dem', function(){
     return view('connect.html.demande');
 });
+Route::get('/profileetud', function(){
+    return view('etudiantprofile.profilEtud');
+})->middleware('auth','checkifetudiant');
 
-
+Route::get('/modifprofiletude', function(){
+    return view('etudiantprofile.modifProfilEtude');
+})->name('modifprofE');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
