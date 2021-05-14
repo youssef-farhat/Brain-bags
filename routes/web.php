@@ -31,6 +31,14 @@ Route::get('/dem', function(){
     return view('connect.html.demande');
 });
 
+Route::get('/ajoutstage', function(){
+    return view('stage.ajoutstage');
+});
+
+Route::get('/modifstage', function(){
+    return view('stage.modifstage');
+});
+
 
 Auth::routes();
 
