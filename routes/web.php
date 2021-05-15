@@ -24,8 +24,8 @@ Route::get('/con', function () {
     return view('connect.html.authetude');
 });
 Route::get('/profil',function(){
-    return view('profil.profil')->middleware('auth','checkEntreprise');
-});
+    return view('profil.profil');
+})->middleware('auth','checkEntreprise');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
