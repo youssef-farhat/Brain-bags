@@ -26,6 +26,9 @@ Route::get('/con', function () {
 Route::get('/profil',function(){
     return view('profil.profil')->middleware('auth','checkEntreprise');
 });
+Route::get('/inscriE',function(){
+    return view('inscriEntreprise.inscription');
+});
 Route::get('/index',function(){
     return view('home.index');
 });
