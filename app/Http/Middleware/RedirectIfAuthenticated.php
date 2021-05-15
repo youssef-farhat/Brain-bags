@@ -18,10 +18,15 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if(Auth::user()->entreprise){
-            return redirect('profil');
-        }
+        if (Auth::guard($guard)->check()) {
+            // return redirect(RouteServiceProvider::HOME);
 
+            if (Auth::user()->role=="entreprise") {
+                // page profil entrerise
+                return '/profil';
+            }
+            return '/home';
+        }
         return $next($request);
     }
 }

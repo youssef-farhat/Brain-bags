@@ -24,10 +24,10 @@ Route::get('/con', function () {
     return view('connect.html.authetude');
 });
 Route::get('/profil',function(){
-    return view('profil.profil');
+    return view('profil.profil')->middleware('auth','checkEntreprise');
 });
 Route::get('/index',function(){
-    return view('home.index')->middleware('auth','checkEntreprise');
+    return view('home.index');
 });
 
 Route::get('/dem', function(){
