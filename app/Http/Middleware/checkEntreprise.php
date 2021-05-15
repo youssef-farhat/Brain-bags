@@ -14,11 +14,13 @@ class checkEntreprise
      * @param  \Closure  $next
      * @return mixed
      */
+
     public function handle($request, Closure $next)
-    {
-        if(!Auth::user()->role=="entreprise"){
+    { $role=Auth::user()->role;
+        if ($role!='entreprise'){
+            
             return redirect('profil');
         }
         return $next($request);
     }
-}
+    }
