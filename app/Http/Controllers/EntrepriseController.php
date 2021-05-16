@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Entreprise;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EntrepriseController extends Controller
 {
@@ -39,7 +40,7 @@ class EntrepriseController extends Controller
     {
        $Entreprise = new Entreprise;
        $Entreprise->email=$request->email;
-       $Entreprise->mdp=$request->mdp;
+       $Entreprise->mdp=Hash::make($request->mdp);
        $Entreprise->nom_entreprise=$request->nom_entreprise;
        $Entreprise->categorie=$request->Categorie;
        $Entreprise->ville=$request->ville;
