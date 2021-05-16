@@ -23,7 +23,7 @@
                     style="display: none;">
                     @csrf
                 </form>
-        <i class="bx bx-log-out" id="log_out"></i>
+        
       </div>
     </div>
     <ul class="nav_list">

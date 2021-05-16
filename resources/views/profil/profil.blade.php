@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Responsive Sidebar Menu | CodingLab</title>
+  <title>Profil {{Auth::user()->name}}</title>
   <link rel="stylesheet" href="{{asset ('dalistyle/css/style.css')}}" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <!-- Boxicons CDN Link -->
@@ -28,7 +28,7 @@
       <div class="block" style="margin:auto;display:block;">
         <div style="margin:auto;display:block;">
           <img src="{{asset('dalistyle/img/download.png')}}" class="img">
-          <h1 style="text-align:center;margin:15px">aurax</h1>
+          <h1 style="text-align:center;margin:15px">{{Auth::user()->name}}</h1>
           <div class="zone">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
               <div class="col">

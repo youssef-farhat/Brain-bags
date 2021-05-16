@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\EntrepriseController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,9 +25,7 @@ Route::get('/ins', function () {
 Route::get('/con', function () {
     return view('connect.html.authetude');
 });
-Route::get('/profil',function(){
-    return view('profil.profil');
-})->middleware('auth','checkEntreprise');
+Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
