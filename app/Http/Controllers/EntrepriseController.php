@@ -37,7 +37,16 @@ class EntrepriseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $Entreprise = new Entreprise;
+       $Entreprise->email=$request->email;
+       $Entreprise->mdp=$request->mdp;
+       $Entreprise->nom_entreprise=$request->nom_entreprise;
+       $Entreprise->categorie=$request->Categorie;
+       $Entreprise->ville=$request->ville;
+       $Entreprise->logo="hello";
+       $Entreprise->description=$request->description;
+        $Entreprise->save();
+    
     }
 
     /**

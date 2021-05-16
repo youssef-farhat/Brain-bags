@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\EntrepriseController;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -36,6 +37,8 @@ Route::get('/index',function(){
 Route::get('/dem', function(){
     return view('connect.html.demande');
 });
+
+Route::post('/inscriE','EntrepriseController@store')->name('store');
 
 
 Auth::routes();

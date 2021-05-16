@@ -5,43 +5,35 @@
 
 <link rel="stylesheet" href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')}}">
 
-<button class="btn1"><i class="fa fa-arrow-left"></i></button>
+<a href="{{('con') }}"><button class="btn1"><i class="fa fa-arrow-left"></i></button></a>
 
 <div class="container">
     <div class="text">creation un compte</div>
+    <form method="POST" action="{{route('store')}}">
+        @csrf
     <div class="blockinp">
         <div class="row">
             <div class="col-sm" class="in">
-                <input type="text" class="form-control input" placeholder="exemple@domaine.com" />
+                <input type="text" class="form-control input" placeholder="exemple@domaine.com" name="email"/>
             </div>
             <div class="col-sm" class="in">
-                <input type="text" class="form-control input" placeholder="Nom d'entreprise" />
+                <input type="text" class="form-control input" placeholder="Nom d'entreprise" name="nom_entreprise" />
             </div>
             <div class="col-sm" class="in" class="option">
-                <select clas aria-label=".form-select-lg example" class="form-control input">
-                    <option selected>catégorie d'entreprise</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
+                <input type="text" placeholder="Catégorie" class="form-control input" placeholder="password" name="Categorie">
             </div>
         </div>
     </div>
     <div class="blockinp">
         <div class="row">
             <div class="col-sm" class="in">
-                <select clas aria-label=".form-select-lg example" class="form-control input">
-                    <option selected>ville</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
+                <input type="text" placeholder="Ville" class="form-control input" placeholder="password" name="ville">
             </div>
             <div class="col-sm" class="in">
                 <input type="file" class="form-control" id="fileim">
             </div>
             <div class="col-sm" class="in" class="option">
-                <input type="file" class="form-control" id="fileim" >
+                <input type="file" class="form-control" id="fileim">
             </div>
         </div>
     </div>
@@ -49,10 +41,10 @@
     <div class="blockinp">
         <div class="row">
             <div class="col-sm" class="in">
-                <input type="text" class="form-control input" placeholder="password" />
+                <input type="text" class="form-control input" placeholder="password" name="mdp" />
             </div>
             <div class="col-sm" class="in">
-                <input type="text" class="form-control input" placeholder="confirm password" />
+                <input type="text" class="form-control input" placeholder="confirm password" name="CPassword" />
             </div>
             <div class="col-sm" class="in" class="option">
 
@@ -62,7 +54,7 @@
 
 
     <div class="mb-3">
-        <textarea class="form-control textera" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea>
+        <textarea class="form-control textera" id="exampleFormControlTextarea1" rows="3" placeholder="Description" name="description"></textarea>
     </div>
     <div>
         <p>vous avez un compte?<a href="con">Se compte</a></p>
@@ -71,6 +63,7 @@
             <input type="reset" value="Annuler" class="btn btn-outline-primary">
         </div>
     </div>
+    </form>
 </div>
 <div class="foter">
 
