@@ -11,7 +11,7 @@
         <div class="profile_details">
           <img src="{{asset('dalistyle/img/download.png')}}" alt="" />
           <div class="name_job">
-            <div class="name">aurax</div>
+            <div class="name">{{Auth::user()->name}}</div>
             <div class="job">Entreprise Devlepement</div>
           </div>
         </div>

@@ -42,11 +42,14 @@ class EntrepriseController extends Controller
        $Entreprise->email=$request->email;
        $Entreprise->mdp=Hash::make($request->mdp);
        $Entreprise->nom_entreprise=$request->nom_entreprise;
-       $Entreprise->categorie=$request->Categorie;
+       $Entreprise->categorie=$request->categorie;
        $Entreprise->ville=$request->ville;
        $Entreprise->logo="hello";
        $Entreprise->description=$request->description;
-        $Entreprise->save();
+       $Entreprise->save();
+       if($Entreprise->save()==1){
+           redirect('/con');
+       }
     
     }
 

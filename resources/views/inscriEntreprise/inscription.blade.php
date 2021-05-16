@@ -20,7 +20,15 @@
                 <input type="text" class="form-control input" placeholder="Nom d'entreprise" name="nom_entreprise" />
             </div>
             <div class="col-sm" class="in" class="option">
-                <input type="text" placeholder="Catégorie" class="form-control input" placeholder="password" name="Categorie">
+            <select clas aria-label=".form-select-lg example" class="form-control input" name="categorie">
+                        
+                        <option value="informatique">informatique</option>
+                        <option value="Economie_gestion">Economie_gestion</option>
+                        <option value="Genie_proceder">Genie_proceder</option>
+                        <option value="mechanique">mechanique</option>
+                        <option value="electrique">electrique</option>
+
+                    </select>
             </div>
         </div>
     </div>
