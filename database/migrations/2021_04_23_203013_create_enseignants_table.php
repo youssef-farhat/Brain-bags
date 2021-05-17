@@ -19,9 +19,9 @@ class CreateEnseignantsTable extends Migration
             $table->string('prenom');
             $table->string('email');
             $table->string('mdp');
-            $table->string('image');
+            $table->string('image')->default("");
             $table->string('ville');
-            $table->enum('departement', ['Technologie_de_l_information', 'Mecanique', 'électrique','Commerce']);
+            $table->enum('departement', ['Technologie de l information', 'Mecanique', 'électrique','Commerce']);
             $table->timestamps();
         });
     }
