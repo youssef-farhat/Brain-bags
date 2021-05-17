@@ -24,7 +24,7 @@ class AdminController extends Controller
     }
     public function index()
     {
-        return view('admin.admin.index' , ['administrateurs' => Administrateur::all()]);
+        return view('admin.admin.index', ['administrateurs' => Administrateur::all()]);
     }
 
     /**
@@ -34,7 +34,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.admin.cree' );
+        return view('admin.admin.cree');
     }
 
     /**
@@ -47,32 +47,32 @@ class AdminController extends Controller
     {
         // //dd($request);
 
-        // $validatedData=$request->validate([
-        //     'nom' => 'required|min2',
-        //     'prenom' => 'required|min2',
-        //     'email' => 'required|email',
-        //     'ville' =>'required',
-        //     'role' => ['required',Rule::in(['chef de département','enseignant','sous directeur'])],
-        //     'mdp' =>'required'
-        //     ]);
-            $administrateur = new Administrateur;
-            $administrateur->nom=$request->nom;
-            $administrateur->prenom=$request->prenom;
-            $administrateur->email=$request->email;
-            $administrateur->mdp=Hash::make($request->mdp);
-            $administrateur->role=$request->role;
-            $administrateur->ville=$request->ville;
+        $validatedData = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'email' => 'required|email',
+            'ville' => 'required',
+            'role' => ['required', Rule::in(['chef de département', 'enseignant', 'sous directeur'])],
+            'mdp' => 'required'
+        ]);
+        // $administrateur = new Administrateur;
+        // $administrateur->nom=$request->nom;
+        // $administrateur->prenom=$request->prenom;
+        // $administrateur->email=$request->email;
+        // $administrateur->mdp=Hash::make($request->mdp);
+        // $administrateur->role=$request->role;
+        // $administrateur->ville=$request->ville;
 
-            $administrateur->save();
-                    // ERREUR DANS LA METHODE DE VALIDATIONS
+        // $administrateur->save();
+        // ERREUR DANS LA METHODE DE VALIDATIONS
 
-           //          Method Illuminate\Validation\Validator::validateMin2 does not exist.
+        //          Method Illuminate\Validation\Validator::validateMin2 does not exist.
 
-           
-            // $admin = Administrateur::create($validatedData);
-             return redirect()->route('admins.show',$administrateur);
+
+        $admin = Administrateur::create($validatedData);
+        return redirect()->route('admins.show', $admin);
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -83,7 +83,7 @@ class AdminController extends Controller
     public function show($id)
     {
         $admin = Administrateur::find($id);
-        return view('admin.admin.detail' , ['administrateur' => $admin]);
+        return view('admin.admin.detail', ['administrateur' => $admin]);
     }
 
     /**
@@ -92,9 +92,11 @@ class AdminController extends Controller
      * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function edit(Administrateur $administrateur)
+    public function edit($id)
     {
-        //
+
+        $admin = Administrateur::find($id);
+        return view('admin.admin.edit', ['admin' => $admin]);
     }
 
     /**
@@ -104,9 +106,27 @@ class AdminController extends Controller
      * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Administrateur $administrateur)
+    public function update(Request $request, Administrateur  $administrateur )
     {
-        //
+        // $validatedData = $request->validate([
+        //     'nom' => 'required',
+        //     'prenom' => 'required',
+        //     'email' => 'required|email',
+        //     'ville' => 'required',
+        //     'role' => ['required', Rule::in(['chef de département', 'enseignant', 'sous directeur'])],
+        //     'mdp' => 'required'
+        // ]);
+ 
+        $administrateur->nom=$request->nom;
+        $administrateur->prenom=$request->prenom;
+        $administrateur->email=$request->email;
+        $administrateur->mdp=Hash::make($request->mdp);
+        $administrateur->role=$request->role;
+        $administrateur->ville=$request->ville;
+
+        $administrateur->save();
+        // dd ($validatedData);
+        return redirect()->route('admins.show' ,$administrateur );
     }
 
     /**

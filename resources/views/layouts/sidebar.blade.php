@@ -10,7 +10,7 @@
     <div class="profile_content">
         <div class="profile">
             <div class="profile_details">
-                <img src="{{ Auth::user()->img }}" alt="" />
+                <img src="/img/youssef.png " alt="" />
                 <div class="name_job">
                     <div class="name">{{ Auth::user()->name }}</div>
                     <div class="job">Adminstrateur</div>

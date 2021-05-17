@@ -7,33 +7,32 @@
     <div class="home_content">
         <div class="container">
             <div class="text">
-                <h2 style="text-align: center; margin-bottom: 51px;">Creation un compte administrateur</h2>
+                <h2 style="text-align: center; margin-bottom: 51px;"> Supprimer un compte administrateur</h2>
             </div>
-            <form action="{{ route('admins.store') }}" method="POST">
+            <form action="{{ route('admins.update', ['admin' => $admin->id]) }}" method="POST">
+
+
                 @csrf
+                @method('put')
                 <div class="container">
 
                     <div class="blockinp" style="margin-bottom: 77px;">
                         <div class="row">
                             <div class="col-sm" class="in">
-                                <input type="text" class="form-control input" placeholder="Nom " name="nom" />
-                                 @error('nom')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror 
+                                <input type="text" class="form-control input" placeholder="Nom " name="nom"
+                                    value="{{ $admin->nom }}" />
+
                             </div>
                             <div class="col-sm" class="in">
-                                <input type="text" class="form-control input" placeholder="Prenom" name="prenom" />
-                                 @error('prenom')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror 
+                                <input type="text" class="form-control input" placeholder="Prenom" name="prenom"
+                                    value="{{ $admin->prenom }}" />
+
                             </div>
                             <div class="col-sm" class="in">
 
                                 <input type="text" class="form-control input" @error('email') is-invalid @enderror
-                                    placeholder="exemple@domaine.com" name="email" />
-                                     @error('email')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror 
+                                    placeholder="exemple@domaine.com" name="email" value="{{ $admin->email }}" />
+
                             </div>
 
                         </div>
@@ -42,10 +41,9 @@
 
                         <div class="row">
                             <div class="col-sm" class="in" class="option">
-                                <input type="text" class="form-control input" placeholder="ville" name="ville" />
-                                 @error('ville')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror 
+                                <input type="text" class="form-control input" placeholder="ville" name="ville"
+                                    value="{{ $admin->ville }}" />
+
                             </div>
                             <div class="col-sm" class="in">
 
@@ -58,16 +56,15 @@
                             </div>
 
                             <div class="col-sm" class="in" class="option">
-                                <select clas aria-label=".form-select-lg example" class="form-control input" name="role" >
-                                    <option value="chef de département" >chef de département</option>
-                                    <option value="enseignant" selected>enseignant</option>
+                                <select clas aria-label=".form-select-lg example" class="form-control input" name="role"
+                                    value="{{ $admin->role }}">
+                                    <option value="chef de département">chef de département</option>
+                                    <option value="enseignant">enseignant</option>
                                     <option value="sous directeur">sous directeur</option>
 
 
                                 </select>
-                                 @error('role')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror 
+
                             </div>
 
                         </div>
@@ -75,17 +72,14 @@
                     <div class="blockinp3" style="padding-right: 0px;!important">
                         <div class="row">
                             <div class="col-sm" class="in">
-                                <input type="password" class="form-control input" placeholder="mot de passe" name="mdp">
-                                 @error('mdp')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror 
+                                <input type="password" class="form-control input" placeholder="mot de passe" name="mdp"
+                                    value="{{ $admin->mdp }}">
+
                             </div>
                             <div class="col-sm" class="in">
                                 <input type="password" class="form-control input" placeholder="Confirmer le mot de passe"
-                                    name="mdp">
-                                     @error('mdp')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror 
+                                    name="mdp" value="{{ $admin->mdp }}">
+
                             </div>
 
                         </div>
