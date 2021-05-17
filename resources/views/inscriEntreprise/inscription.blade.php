@@ -65,18 +65,11 @@
         <textarea class="form-control textera" id="exampleFormControlTextarea1" rows="3" placeholder="Description" name="description"></textarea>
     </div>
     <div>
-        <p>vous avez un compte?<a href="con">Se compte</a></p>
-        <div class="btne">
+        <span>vous avez un compte?<a href="con">Se compte</a></span>
+        <span style="float: right;">
             <input type="submit" value="envoyer" class="btn btn-primary">
             <input type="reset" value="Annuler" class="btn btn-outline-primary">
-        </div>
+        </span>
     </div>
     </form>
-</div>
-<div class="foter">
-
-
-
-    <img src="{{ asset('custom/img/w4.png') }}" alt="">
-
 </div>

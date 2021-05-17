@@ -1,3 +1,4 @@
+@section('content')
 <!DOCTYPE html>
 <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
@@ -15,6 +16,7 @@
 
 </head>
 <body>
+
 @include('layouts.sidebar')
 <div class="home_content">
 
@@ -76,22 +78,17 @@
         <textarea class="form-control textera" id="exampleFormControlTextarea1" rows="3" placeholder="Description" name="description"></textarea>
     </div>
     <div>
-        <p>vous avez un compte?<a href="con">Se compte</a></p>
-        <div class="btne">
+        
+
+    </div>
+    <span style="float: right;">
             <input type="submit" value="Update" class="btn btn-primary">
             <input type="reset" value="Annuler" class="btn btn-outline-primary">
-        </div>
-    </div>
+        </span>
     </form>
 </div>
 </div>
-<div class="foter">
 
-
-
-    <img src="{{ asset('custom/img/w4.png') }}" alt="">
-
-</div>
 <script>
     let btn = document.querySelector("#btn");
     let sidebar = document.querySelector(".sidebar");
@@ -109,3 +106,5 @@
       sidebar.classList.toggle("active");
     };
   </script>
+</body>
+</html>
