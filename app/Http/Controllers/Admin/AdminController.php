@@ -137,6 +137,7 @@ class AdminController extends Controller
      */
     public function destroy(Administrateur $administrateur)
     {
-        //
+        $administrateur->delete();
+        return redirect()->route('admins.index');
     }
 }
