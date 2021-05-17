@@ -78,7 +78,10 @@
                                                 href="/admins/{{ $administrateur->id }}/edit" onclick="return confirm('modifier?')"><i class='bx bx-pencil bx-sm' style="color:black;" ></i></button>
 
                                             <button type="button" class="btn btn-danger" style="margin-bottom: 5px;"><a
-                                                href=""  onclick="return confirm('supprimer?')"> <i class='bx bx-trash bx-sm' style="color:black;"></i></a></button>
+                                                 onclick="event.preventDefault();
+                                                 document.querySelector('#delete-admins-form').submit()
+                                                 
+                                                 "> <i class='bx bx-trash bx-sm' style="color:black;"></i></a></button>
                                                     <form action="{{ route('admins.destroy',['admin' => $administrateur->id]) }}" method="POST" id="delete-admins-form"> @csrf @method('DELETE')</form>
 
 
