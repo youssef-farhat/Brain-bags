@@ -27,10 +27,7 @@ Route::get('/profil',function(){
     return view('profil.profil');
 });
 
-Route::get('/dem', function(){
-    return view('connect.html.demande');
 });
-
 
 Auth::routes();
 
