@@ -31,7 +31,7 @@ Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
 Route::get('/updateE',function(){
-    return view('updateEntreprise.updateEntreprise');
+    return view('updateEntreprise.updateEntreprise')->middleware('checkEntreprise');
 });
 Route::get('/index',function(){
     return view('home.index');
