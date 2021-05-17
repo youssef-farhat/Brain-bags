@@ -26,7 +26,6 @@ Route::get('/ins', function () {
 Route::get('/con', function () {
     return view('connect.html.authetude');
 });
-<<<<<<< HEAD
 Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
@@ -37,9 +36,6 @@ Route::get('/updateE',function(){
 Route::get('/index',function(){
     return view('home.index');
 });
-=======
-
->>>>>>> master
 
 Route::get('/dem', function(){
     return view('connect.html.demande');
@@ -53,12 +49,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-<<<<<<< HEAD
-
-=======
-Route::get('/entreprise', 'HomeController@entreprise')->middleware('admin');
-
-Route::get('/etudiant', 'HomeController@etudiant')->middleware('admin');
-
-Route::get('/', 'HomeController@profile')->middleware('admin');
->>>>>>> master
