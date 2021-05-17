@@ -16,8 +16,8 @@ class EntrepriseController extends Controller
      */
     public function index()
     {
-        $Entreprise =User::get();
-        return view('profil.profil',['entreprise'=>$Entreprise]);
+        $Entreprise = User::get();
+        return view('profil.profil', ['entreprise' => $Entreprise]);
     }
 
     /**
@@ -38,19 +38,27 @@ class EntrepriseController extends Controller
      */
     public function store(Request $request)
     {
-       $Entreprise = new Entreprise;
-       $Entreprise->email=$request->email;
-       $Entreprise->mdp=Hash::make($request->mdp);
-       $Entreprise->nom_entreprise=$request->nom_entreprise;
-       $Entreprise->categorie=$request->categorie;
-       $Entreprise->ville=$request->ville;
-       $Entreprise->logo="hello";
-       $Entreprise->description=$request->description;
-       $Entreprise->save();
-       if($Entreprise->save()==1){
-           redirect('/con');
-       }
-    
+        $this->validate($request, [
+            'email' => 'required',
+            'mdp' => 'required',
+            'nom_entreprise' => 'required',
+            'categorie' => 'required',
+            'ville' => 'required',
+            'description' => 'required'
+        ]);
+
+        $Entreprise = new Entreprise;
+        $Entreprise->email = $request->email;
+        $Entreprise->mdp = Hash::make($request->mdp);
+        $Entreprise->nom_entreprise = $request->nom_entreprise;
+        $Entreprise->categorie = $request->categorie;
+        $Entreprise->ville = $request->ville;
+        $Entreprise->logo = "hello";
+        $Entreprise->description = $request->description;
+        $Entreprise->save();
+        if ($Entreprise->save() == 1) {
+            redirect('/con');
+        }
     }
 
     /**
@@ -61,7 +69,6 @@ class EntrepriseController extends Controller
      */
     public function show(Entreprise $entreprise)
     {
-        
     }
 
     /**
@@ -72,7 +79,6 @@ class EntrepriseController extends Controller
      */
     public function edit(Entreprise $entreprise)
     {
-        
     }
 
     /**
