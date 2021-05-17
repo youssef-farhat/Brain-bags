@@ -12,10 +12,12 @@ $factory->define(Etudiant::class, function (Faker $faker) {
         'prenom'=>$faker->firstName,
         'img'=>$faker->imageUrl,
         'ville_E'=>$faker->city,
-        'depar_E'=>$faker->jobTitle,
+
+        'departement' => $faker->randomElement(['Technologie de linformation', 'Mecanique', 'électrique','Commerce']),
+        
         'motp_E'=>$faker->word,
         'class_E'=>$faker->word,
-        'depar_E'=>$faker->word,
+        
         'description'=>$faker->sentence
     ];
 });

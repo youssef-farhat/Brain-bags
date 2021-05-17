@@ -18,6 +18,7 @@ Route::get('/ins', function () {
     return view('connect.html.inscription');
 });
 Route::get('/con', function () {
+<<<<<<< HEAD
     return view('connect.html.auth');
 });
 Route::middleware('auth' )->group(function () {
@@ -25,6 +26,11 @@ Route::middleware('auth' )->group(function () {
 Route::get('/profil',function(){return view('profil.profil');})->middleware('auth');
 //----------------------Demandes----------------------------
 Route::get('/dem', 'DemandeController@index')->middleware('auth')->name('index');
+=======
+    return view('connect.html.authetude');
+});
+
+>>>>>>> c8c081a55bd9931d02c5a542935be8bf09d3fbff
 
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
@@ -44,8 +50,29 @@ Route::get('/admin-dashboard', function () {
 })->middleware('auth','checkAdmin');
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
 //test
 Route::get('/live_search', 'LiveSearch@index');
 Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
 
 Route::resource('demandes','DemandeController');
+=======
+
+Route::get('/etudiants', function(){
+    return view('etudiant.index');
+})->middleware( 'auth' , 'admin');
+
+Route::get('/entreprise', 'HomeController@entreprise')->middleware('admin');
+
+
+
+Route::get('/accueil', function(){
+    return view('admin.accueil');
+})->name('accueil')->middleware('admin');
+
+Route::resource('admins', 'Admin\AdminController' );
+Route::resource('etudiants', 'Admin\EtudiantController' );
+Route::resource('entreprises', 'Admin\EntrepriseController' );
+Route::resource('enseignants', 'Admin\EnseignantController' );
+
+>>>>>>> c8c081a55bd9931d02c5a542935be8bf09d3fbff

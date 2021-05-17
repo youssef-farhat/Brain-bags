@@ -20,9 +20,11 @@ class CreateEtudiantsTable extends Migration
             $table->string('prenom',70);
             $table->string('img');
             $table->string('ville_E');
-            $table->string('depar_E',20);
-            $table->string('class_E',70);
+            
+            $table->enum('departement', ['Technologie de linformation', 'Mecanique', 'électrique','Commerce']);
+  
             $table->string('motp_E');
+            $table->string('class_E',70);
             $table->string('description');
             $table->timestamps();
             $table->engine = "InnoDB";

@@ -39,11 +39,21 @@ class LoginController extends Controller
         }
         return '/';
     }
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+    public function redirectTo()
+    {
+        if (Auth::user()->role=="admin") {
+            // page index admin pas encore prete 
+            return '/accueil';
+        }
+        return '/home';
+    }
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
