@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Validator;
 use App\Administrateur;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class AdminController extends Controller
 {
@@ -42,23 +44,27 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // //dd($request);
-        // $validatedData=$request->validate([
-        //     'nom' => 'required|min2',
-        //     'prenom' => 'required|min2',
-        //     'email' => 'required|email',
-        //     'ville' =>'required',
-        //     'mdp' =>'required'        
-        //     ]);
-            $administrateur = new Administrateur;
-            $administrateur->nom=$request->nom;
-            $administrateur->prenom=$request->prenom;
-            $administrateur->email=$request->email;
-            $administrateur->mdp=Hash::make($request->mdp);
-            $administrateur->role=$request->role;
-            $administrateur->ville=$request->ville;
+        //dd($request);
+        $validatedData=$request->validate([
+            'nom' => 'required|min2',
+            'prenom' => 'required|min2',
+            'email' => 'required|email',
+            'ville' =>'required',
+            'role' => ['required',Rule::in('chef de département','enseignant','sous directeur')],
+            'mdp' =>'required'        
+            ]);
+            // $administrateur = new Administrateur;
+            // $administrateur->nom=$request->nom;
+            // $administrateur->prenom=$request->prenom;
+            // $administrateur->email=$request->email;
+            // $administrateur->mdp=Hash::make($request->mdp);
+            // $administrateur->role=$request->role;
+            // $administrateur->ville=$request->ville;
 
-            $administrateur->save();
+            // $administrateur->save();
+
+            $admin = Administrateur::create($validatedData);
+            return redirect()->route('admins.show');
     }
     
 

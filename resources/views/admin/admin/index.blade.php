@@ -38,14 +38,19 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
+                        <div class="btne" style="display: flex; flex-wrap: wrap; ">
+                            <a href="{{ route('admins.create')}}" class="btn btn-outline-primary">
+                                <i class='bx bxs-user-plus bx-sm' ></i> Ajouter un administeur 
+                            </a>
+                        </div>
                         <table class="table table-bordered" id="dataTable">
                             <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>Image</th>
-                                    <th>nom enseignant </th>
+                                    <th>nom d'administrateurs </th>
                                     <th>email</th>
-                                    <th>departement</th>
+                                    <th>Role</th>
                                     <th>ville</th>
                                     <th>action</th>
 
@@ -53,21 +58,21 @@
                             </thead>
 
                             <tbody>
-                                @foreach ($enseignants as $key => $enseignant)
+                                @foreach ($administrateurs as $key => $administrateur)
                                     <tr>
                                         <td>{{ $key }}</td>
-                                        <td> <img src="{{ $enseignant->image }}" style="width: 8vw; border-radius: 12px;"
+                                        <td> <img src="{{ $administrateur->image }}" style="width: 8vw; border-radius: 12px;"
                                             alt=""></td>
-                                        <td>{{ $enseignant->nom }} {{ $enseignant->prenom }} </td>
-                                        <td>{{ $enseignant->email }}</td>
-                                        <td>{{ $enseignant->departement }}</td>
-                                        <td>{{ $enseignant->ville }}</td>
+                                        <td>{{ $administrateur->nom }} {{ $administrateur->prenom }} </td>
+                                        <td>{{ $administrateur->email }}</td>
+                                        <td>{{ $administrateur->role }}</td>
+                                        <td>{{ $administrateur->ville }}</td>
                                         <td>
 
 
 
                                             <button type="button" class="btn btn-info" style="margin-bottom: 5px;"> <a
-                                                   href="/enseignants/{{ $enseignant->id }}" onclick="return "><i class='bx bxs-user-detail bx-sm' style="color:black;"></i></button>
+                                                   href="/admins/{{ $administrateur->id }}" onclick="return "><i class='bx bxs-user-detail bx-sm' style="color:black;"></i></button>
 
                                             <button type="button" class="btn btn-warning" style="margin-bottom: 5px;"><a
                                                     onclick="return confirm('modifier?')"><i

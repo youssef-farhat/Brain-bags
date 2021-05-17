@@ -9,17 +9,17 @@
             <div class="text">
                 <h2 style="text-align: center; margin-bottom: 51px;">Creation un compte administrateur</h2>
             </div>
-            <form action="{{-- route('store') --}}" method="POST">
+            <form action="{{ route('admins.store') }}" method="POST">
                 @csrf
                 <div class="container">
                     
-                    <div class="blockinp">
+                    <div class="blockinp" style="margin-bottom: 77px;">
                         <div class="row">
                             <div class="col-sm" class="in">
-                                <input type="text" class="form-control input" placeholder="Nom " name="Nom" />
+                                <input type="text" class="form-control input" placeholder="Nom " name="nom" />
                             </div>
                             <div class="col-sm" class="in">
-                                <input type="text" class="form-control input" placeholder="Prenom" name="Prenom" />
+                                <input type="text" class="form-control input" placeholder="Prenom" name="prenom" />
                             </div>
                             <div class="col-sm" class="in">
 
@@ -29,15 +29,15 @@
                            
                         </div>
                     </div>
-                    <div class="blockinp2" style="padding-right: 0px;!important">
+                    <div class="blockinp2" style="padding-right: 0px;margin-bottom: 44px;">
 
                         <div class="row">
                             <div class="col-sm" class="in" class="option">
-                                <input type="text" class="form-control input" placeholder="ville" name="ville_E" />
+                                <input type="text" class="form-control input" placeholder="ville" name="ville" />
                             </div>
                             <div class="col-sm" class="in">
 
-                                <select clas aria-label=".form-select-lg example" class="form-control input" name="role">
+                                <select clas aria-label=".form-select-lg example" class="form-control input" >
                                     <option value="admin">admin</option>
                                     <option value="Etudiant">Etudiant</option>
                                     <option value="enseignant">enseignant</option>
@@ -46,12 +46,11 @@
                             </div>
                      
                             <div class="col-sm" class="in" class="option">
-                                <select clas aria-label=".form-select-lg example" class="form-control input" name="class_E">
-                                    <option value="1 ére licence ">1 ére licence</option>
-                                    <option value="2 eme licence ">2 éme licence</option>
-                                    <option value="3 eme licence ">3 éme licence</option>
-                                    <option value="1 ére master ">1 ére master</option>
-                                    <option value="2 eme master ">2 éme master</option>
+                                <select clas aria-label=".form-select-lg example" class="form-control input" name="role">
+                                    <option value="chef de département">chef de département</option>
+                                    <option value="enseignant">enseignant</option>
+                                    <option value="sous directeur">sous directeur</option>
+                                   
 
                                 </select>
                             </div>
@@ -62,24 +61,26 @@
                         <div class="row">
                             <div class="col-sm" class="in">
                                 <input type="password" class="form-control input" placeholder="mot de passe"
-                                    name="password">
+                                    name="mdp">
                             </div>
                             <div class="col-sm" class="in">
-                                <input type="text" class="form-control input" placeholder="Confirmer le mot de passe"
-                                    name="password">
+                                <input type="password" class="form-control input" placeholder="Confirmer le mot de passe"
+                                    name="mdp">
                             </div>
 
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <textarea class="form-control textera" id="exampleFormControlTextarea1" rows="3"
-                            placeholder="Description" name="Description"></textarea>
-                    </div>
+                  
 
                     <div>
                         <div class="btne" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;  margin: 67px; margin: 54px; ">
-                            <input type="submit" value="envoyer" class="btn btn-primary">
-                            <input type="reset" value="Annuler" class="btn btn-danger">
+                            <button type="submit" class="btn btn-outline-primary">
+                                <i class='bx bxs-save bx-sm' style="margin-right: 11px;"></i>Envoyer
+                            </button>
+                            <button type="reset" class="btn btn-outline-danger">
+                                <i class='bx bx-window-close bx-sm' style="margin-right: 11px;"></i>Annuler
+                            </button>
+                            
                         </div>
                     </div>
                 </div>
