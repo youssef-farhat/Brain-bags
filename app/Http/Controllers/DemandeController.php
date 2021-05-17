@@ -127,7 +127,7 @@ class DemandeController extends Controller
      */
     public function destroy(Demande $demande)
     {
-        dd($demande);
+        // dd($demande);
         $demande->delete();
   
         return redirect()->route('demandesList')->with('success','demande supprimé avec succée');

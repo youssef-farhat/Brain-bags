@@ -32,7 +32,7 @@ class LoginController extends Controller
     public function redirectTo(){
         
         if(Auth::user()->role=='admin'){
-            return '/admin-dashboard';
+            return '/accueil';
         }
         if(Auth::user()->role=='etudiant'){
             return '/dem';
@@ -45,6 +45,8 @@ class LoginController extends Controller
      *
      * @return void
      */
+ 
+
   
     public function __construct()
     {
