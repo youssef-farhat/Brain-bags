@@ -44,9 +44,5 @@ class HomeController extends Controller
         ['etudiants' => $etudiants ]);
     }
     
-    public function profile()
-    {
-        
-        return view('admin.profile');
-    }
+   
 }

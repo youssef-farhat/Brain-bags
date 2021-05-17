@@ -38,7 +38,7 @@ class LoginController extends Controller
     {
         if (Auth::user()->role=="admin") {
             // page index admin pas encore prete 
-            return '/admin-profile';
+            return '/accueil';
         }
         return '/home';
     }

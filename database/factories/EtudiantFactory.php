@@ -12,7 +12,7 @@ $factory->define(Etudiant::class, function (Faker $faker) {
         'img'=>$faker->imageUrl,
         'ville_E'=>$faker->city,
 
-        'departement' => $faker->randomElement(['Technologie_de_l_information', 'Mecanique', 'électrique','Commerce']),
+        'departement' => $faker->randomElement(['Technologie de linformation', 'Mecanique', 'électrique','Commerce']),
         
         'motp_E'=>$faker->word,
         'class_E'=>$faker->word,

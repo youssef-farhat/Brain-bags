@@ -20,7 +20,7 @@ class CreateEtudiantsTable extends Migration
             $table->string('img');
             $table->string('ville_E');
             
-            $table->enum('departement', ['Technologie_de_l_information', 'Mecanique', 'électrique','Commerce']);
+            $table->enum('departement', ['Technologie de linformation', 'Mecanique', 'électrique','Commerce']);
   
             $table->string('motp_E');
             $table->string('class_E',70);
