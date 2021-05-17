@@ -38,14 +38,14 @@ class EntrepriseController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'email' => 'required',
-            'mdp' => 'required',
-            'nom_entreprise' => 'required',
-            'categorie' => 'required',
-            'ville' => 'required',
-            'description' => 'required'
-        ]);
+        // $this->validate($request, [
+        //     'email' => 'required',
+        //     'mdp' => 'required',
+        //     'nom_entreprise' => 'required',
+        //     'categorie' => 'required',
+        //     'ville' => 'required',
+        //     'description' => 'required'
+        // ]);
 
         $Entreprise = new Entreprise;
         $Entreprise->email = $request->email;
@@ -69,6 +69,8 @@ class EntrepriseController extends Controller
      */
     public function show(Entreprise $entreprise)
     {
+        $entreprise = Entreprise::find();
+        return view('updateentreprise.profil',['entreprise'=>$entreprise]);
     }
 
     /**
@@ -90,7 +92,17 @@ class EntrepriseController extends Controller
      */
     public function update(Request $request, Entreprise $entreprise)
     {
-        //
+        $entreprise->email = $request->email;
+        $entreprise->mdp = Hash::make($request->mdp);
+        $entreprise->nom_entreprise = $request->nom_entreprise;
+        $entreprise->categorie = $request->categorie;
+        $entreprise->ville = $request->ville;
+        $entreprise->logo = "hello";
+        $entreprise->description = $request->description;
+        $entreprise->save();
+        if ($entreprise->save() == 1) {
+            redirect('/profil');
+        }
     }
 
     /**
@@ -101,6 +113,7 @@ class EntrepriseController extends Controller
      */
     public function destroy(Entreprise $entreprise)
     {
-        //
+        $entreprise->delete();
+        return redirect()->route('/inscriE');
     }
 }

@@ -42,6 +42,7 @@ Route::get('/dem', function(){
 });
 
 Route::post('/inscriE','EntrepriseController@store')->name('store');
+Route::post('/updateE','EntrepriseController@edit')->name('update');
 
 
 Auth::routes();
