@@ -8,7 +8,8 @@ use Faker\Generator as Faker;
 $factory->define(Etudiant::class, function (Faker $faker) {
     return [
         'E_mail'=> $faker->email,
-        'nom_prenom_E'=>$faker->firstName,
+        'nom'=>$faker->firstName,
+        'prenom'=>$faker->firstName,
         'img'=>$faker->imageUrl,
         'ville_E'=>$faker->city,
         'depar_E'=>$faker->jobTitle,
