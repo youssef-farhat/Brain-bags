@@ -18,7 +18,6 @@ Route::get('/ins', function () {
     return view('connect.html.inscription');
 });
 Route::get('/con', function () {
-<<<<<<< HEAD
     return view('connect.html.auth');
 });
 Route::middleware('auth' )->group(function () {
@@ -26,11 +25,9 @@ Route::middleware('auth' )->group(function () {
 Route::get('/profil',function(){return view('profil.profil');})->middleware('auth');
 //----------------------Demandes----------------------------
 Route::get('/dem', 'DemandeController@index')->middleware('auth')->name('index');
-=======
     return view('connect.html.authetude');
 });
 
->>>>>>> c8c081a55bd9931d02c5a542935be8bf09d3fbff
 
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
