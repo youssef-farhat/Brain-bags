@@ -29,7 +29,7 @@
                         <div>
 
                             <button type="button" class="btn btn-warning btn-lg" style="margin-right: 74px;"><a
-                                    onclick="return confirm('modifier?')"><i class='bx bx-pencil bx-sm'
+                                href="/admins/{{ $administrateur->id }}/edit" onclick="return confirm('modifier?')"><i class='bx bx-pencil bx-sm'
                                         style="color:black;"></i></button>
 
                             <button type="button" class="btn btn-danger btn-lg" ><a
