@@ -47,7 +47,7 @@
               </div>
               <div class="col">
                 <div class="btne">
-                  <input type="submit" value="Modifier" class="btn btn-primary">
+                 <a href="{{url('updateE')}}"> <input type="submit" value="Modifier" class="btn btn-primary"></a>
                   
                 </div>
               </div>

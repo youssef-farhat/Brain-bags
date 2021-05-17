@@ -11,7 +11,7 @@
         <div class="profile_details">
           <img src="{{asset('dalistyle/img/download.png')}}" alt="" />
           <div class="name_job">
-            <div class="name">{{Auth::user()->name}}</div>
+            <div class="name"><a href="{{url('profil')}}">{{Auth::user()->name}}</a></div>
             <div class="job">Entreprise Devlepement</div>
           </div>
         </div>
@@ -51,7 +51,7 @@
       </li>
 
       <li>
-        <a href="#">
+        <a href="{{url('updateE') }}">
           <i class="bx bx-cog"></i>
           <span class="links_name">Setting</span>
         </a>

@@ -30,6 +30,9 @@ Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntr
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
+Route::get('/updateE',function(){
+    return view('updateEntreprise.updateEntreprise');
+});
 Route::get('/index',function(){
     return view('home.index');
 });
