@@ -11,7 +11,7 @@
     <title>Side bar</title>
   </head>
   <body>
-    <div class="sidebar active">
+    {{-- <div class="sidebar active">
       <div class="logo_content">
         <div class="logo">
           <div class="logo_name">
@@ -83,7 +83,8 @@
           <span class="tooltip">Setting</span>
         </li>
       </ul>
-    </div>
+    </div> --}}
+    @include('layouts.sidebareE')
     <div class="home_content">
       <div class="container">
         <div class="text">
@@ -93,27 +94,23 @@
           <div class="blockinp">
             <div class="row">
               <div class="col-sm" class="in">
-                <input type="text" class="form-control input" placeholder="exemple@domaine.com" />
+                <input type="text" class="form-control input" value="{{Auth::user()->email}}" />
               </div>
               <div class="col-sm" class="in">
-                <input type="text" class="form-control input" placeholder="Nom et prenom"/>
+                <input type="text" class="form-control input" value="{{Auth::user()->name}}"/>
               </div>
-              <div class="col-sm" class="in" >
-          
-                <input type="file" class="form-control" id="fileim">
-              </div>
+              <div class="col-sm" class="in">
+
+                <input type="text" class="form-control input" value="{{Auth::user()->role}}" >
+            </div>
               
             </div>
           </div>
           <div class="blockinp2">
             <div class="row">
                 <div class="col-sm" class="in" class="option">
-                    <select clas aria-label=".form-select-lg example"  class="form-control input" >
-                      <option selected >ville</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
+                  <input type="text" class="form-control input" value="{{Auth::user()->ville_E}}" name="ville_E" />
+
                   </div>
               <div class="col-sm" class="in" class="option">
                 <select clas aria-label=".form-select-lg example"  class="form-control input" >

@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('custom/css/bootstrap.min.css') }}">
-    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"rel="stylesheet"/>
+    <link href="{{asset('https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"rel="stylesheet')}}"/>
     <link rel="stylesheet" href="{{asset('custom/css/styleprofil.css')}}">
     <link rel="stylesheet" href="{{asset('custom/css/SidebarStyle.css')}}">
     <title>profile</title>
 </head>
 <body>
-    @include('layouts.sidebareE')
-  
-    {{-- <div class="sidebar active">
+    
+    <div class="sidebar active">
       <div class="logo_content">
         <div class="logo">
           <div class="logo_name">
@@ -31,7 +30,16 @@
               <div class="job">Etudiant</div>
             </div>
           </div>
-          <i class="bx bx-log-out " id="log_out"></i>
+          <a  href="{{ route('logout') }}" onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+                     
+                        <i class="bx bx-log-out " id="log_out"></i>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                    style="display: none;">
+                    @csrf
+                </form>
+          
         </div>
       </div>
       <ul class="nav_list">
@@ -85,31 +93,15 @@
         <div class="text">
           <h2>Profil</h2>
           <i class="fas fa-city"></i>
-      <img src="../img/fb.jpg" alt="" class="img2"> --}}
-    <div class="zonePE">
-      
-    <div class="para2">
-      <p>Email:{{Auth::user()->email}}</p>
-      <p>Nom et Prenom:{{Auth::user()->name}}</p>
-      <p>Département:{{Auth::user()->depe_E}}</p>
-      <p>Classe:{{Auth::user()->class_E}}</p>
-      <p>Ville:{{Auth::user()->ville_E}}</p>
+
+         
     </div>
-  </div>
-  <div id="btn1">
-    <a href="{{route('modifprofE')}}"><input type="submit" class="btn btn-primary" value="Modifer"></a>
-  </div>
-    <div id="btn2">  
-      <input type="submit" value="Votre cv"  class="btn btn-success">
-    </div>
-  
+
+    <i class="fas fa-city"></i>
+
+    <script src="{{asset('custom/js/Sidebar.js')}}"></script>
     
-  </div>
-      </div>
-    </div>
-    
-  <script src="{{asset('custom/js/Sidebar.js')}}"></script>
-  <script src="{{asset('custom/js/bootstrap.min.js')}}"></script>
-  
-</body>
+
+
+  </body>
 </html>

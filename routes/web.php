@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,7 +21,7 @@ Route::get('/new', function () {
 });
 Route::get('/ins', function () {
     return view('connect.html.inscription');
-});
+})->name('ins');
 Route::get('/con', function () {
     return view('connect.html.authetude');
 });
@@ -37,7 +39,10 @@ Route::get('/profileetud', function(){
 Route::get('/modifprofiletude', function(){
     return view('etudiantprofile.modifProfilEtude');
 })->name('modifprofE');
-Auth::routes();
 
+Route::post('/ins','EtudiantController@store')->name('store');
 Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+Route::resource('Etudian','EtudiantControler');
+
 
