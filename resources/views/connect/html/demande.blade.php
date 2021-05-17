@@ -91,14 +91,7 @@
             
                     <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-primary">Demander</button>
-                    
-                    </div>
-                </div>
-                <div class="item2">
-                    <img src="{{asset('custom/img/instructor-helping-students-in-computer-class.jpg')}}" class="rounded float-end" >
-                </div>
-            </div>    
-        </div>
+
 
         <div class="blockinp2">
             <div class="grid-container">
