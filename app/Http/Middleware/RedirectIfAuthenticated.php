@@ -19,11 +19,21 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
+<<<<<<< HEAD
             //return redirect(RouteServiceProvider::HOME);
             if (Auth::user()->role =='entreprise'){
                  return '/profil' ;
             }
             return('/');
+=======
+            // return redirect(RouteServiceProvider::HOME);
+
+            if (Auth::user()->role=="admin") {
+                // page index admin pas encore prete 
+                return '/admin-profile';
+            }
+            return '/home';
+>>>>>>> master
         }
 
         return $next($request);

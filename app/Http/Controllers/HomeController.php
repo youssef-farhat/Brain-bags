@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Administrateur;
+use App\Entreprise;
+use App\Etudiant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,5 +28,25 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function entreprise()
+    {
+        $entreprises = Entreprise :: get();
+        return view('admin.entreprise', 
+        ['entreprises' => $entreprises ]);
+    }
+    
+    public function etudiant()
+    {
+        $etudiants = Etudiant :: get();
+        return view('admin.etudiant', 
+        ['etudiants' => $etudiants ]);
+    }
+    
+    public function profile()
+    {
+        
+        return view('admin.profile');
     }
 }
