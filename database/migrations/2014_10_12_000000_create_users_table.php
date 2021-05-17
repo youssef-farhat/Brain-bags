@@ -21,6 +21,14 @@ class CreateUsersTable extends Migration
             $table->string('email',50)->unique();
             $table->timestamp('email_verified_at')->nullable();
 <<<<<<< HEAD
+<<<<<<< HEAD
+            $table->string('password',50);
+            $table->enum('role', ['admin','entreprise','etudiant']);
+=======
+            $table->string('password',255);
+            $table->enum('role',['admin','enseignant','etudiant']);
+>>>>>>> master
+=======
             $table->string('password',70);
             $table->enum('role',['admin','enseignant','etudiant']);
 =======
@@ -28,6 +36,7 @@ class CreateUsersTable extends Migration
             $table->enum('role',['admin','enseignant','etudiant']);
             $table->string('img')->default("");
 >>>>>>> c8c081a55bd9931d02c5a542935be8bf09d3fbff
+>>>>>>> 1fbbb44bcd673b7d4f8fe4480ca4e77708e90eeb
             $table->rememberToken();
             $table->timestamps();
         });

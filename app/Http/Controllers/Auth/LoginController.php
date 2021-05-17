@@ -52,4 +52,10 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    public function redirectTO()
+    {
+        if(Auth::user()->role=='entreprise'){
+            return '/profil';
+        }
+    }
 }
