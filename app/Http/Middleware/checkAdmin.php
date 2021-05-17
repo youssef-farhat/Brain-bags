@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class CheckIfAdmin
+class checkAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class CheckIfAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->role!="admin"){
-            return redirect('home');
+        if (Auth::user()->role!='admin') {
+            return redirect('/');
         }
         return $next($request);
     }

@@ -15,13 +15,13 @@ class CreateStagesTable extends Migration
     {
         Schema::create('stages', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('type', ['initiatin', 'perfectionnement' ,'pfe']);
+            $table->enum('type', ['initiation', 'perfectionnement' ,'pfe']);
             $table->enum('departement', ['Informatique', 'Economie_gestion', 'Genie_proceder', 'mechanique', 'electrique']);
             $table->date('date');
             $table->string('image');
             $table->string('localisation');
             $table->string('payement');
-            $table->string('description');
+            $table->text('description');
             $table->integer('id_entreprise')->unsigned();
             $table->foreign('id_entreprise')->references('id')->on('entreprises')->onDelete('cascade');
             $table->timestamps();

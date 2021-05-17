@@ -16,11 +16,12 @@ class CreateEtudiantsTable extends Migration
         Schema::create('etudiants', function (Blueprint $table) {
             $table->Increments('id');
             $table-> string('E_mail',70);
-            $table->string('nom_prenom_E',70);
+            $table->string('nom',70);
+            $table->string('prenom',70);
             $table->string('img');
             $table->string('ville_E');
             
-            $table->enum('departement', ['Technologie_de_l_information', 'Mecanique', 'électrique','Commerce']);
+            $table->enum('departement', ['Technologie de linformation', 'Mecanique', 'électrique','Commerce']);
   
             $table->string('motp_E');
             $table->string('class_E',70);

@@ -27,6 +27,11 @@ class RedirectIfAuthenticated
             return('/');
 =======
             // return redirect(RouteServiceProvider::HOME);
+            
+            if(Auth::user()->role=='etudiant'){
+                return '/dem';
+            }
+            return '/';
 
             if (Auth::user()->role=="admin") {
                 // page index admin pas encore prete 
