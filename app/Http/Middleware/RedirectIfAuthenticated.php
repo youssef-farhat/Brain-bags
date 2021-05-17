@@ -28,14 +28,12 @@ class RedirectIfAuthenticated
                 return '/dem';
             }
             return '/';
-=======
 
             if (Auth::user()->role=="admin") {
                 // page index admin pas encore prete 
                 return '/admin-profile';
             }
             return '/home';
->>>>>>> c8c081a55bd9931d02c5a542935be8bf09d3fbff
         }
 
         return $next($request);
