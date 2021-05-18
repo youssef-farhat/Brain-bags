@@ -37,6 +37,9 @@ class LoginController extends Controller
         if(Auth::user()->role=='etudiant'){
             return '/dem';
         }
+        if(Auth::user()->role=='entreprise'){
+            return '/profil';
+        }
         return '/';
     }
 
@@ -52,10 +55,5 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    public function redirectTO()
-    {
-        if(Auth::user()->role=='entreprise'){
-            return '/profil';
-        }
-    }
+
 }
