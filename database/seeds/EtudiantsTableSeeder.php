@@ -1,8 +1,9 @@
 <?php
-use App\Enseignant;
+use App\Etudiant;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
-class EnseignantTableSeeder extends Seeder
+class EtudiantsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,7 @@ class EnseignantTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Enseignant::class, 10)->create();
-        }
+        factory(Etudiant::class,10)->create();
+
+    }
 }

@@ -1,8 +1,9 @@
 <?php
-use App\Enseignant;
+use App\Forum;
+
 use Illuminate\Database\Seeder;
 
-class EnseignantTableSeeder extends Seeder
+class ForumTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,7 @@ class EnseignantTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Enseignant::class, 10)->create();
-        }
+        factory(Forum::class,)->create();
+
+    }
 }

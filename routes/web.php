@@ -11,7 +11,10 @@
 |
 */
 
+<<<<<<< HEAD
+=======
 use App\Http\Controllers\EntrepriseController;
+>>>>>>> 0946bed8ef0ca289501079489dba012950333e4b
 
 
 Route::get('/', function () {
@@ -19,7 +22,7 @@ Route::get('/', function () {
 });
 Route::get('/ins', function () {
     return view('connect.html.inscription');
-});
+})->name('ins');
 Route::get('/con', function () {
     return view('connect.html.auth');
 });
@@ -30,6 +33,14 @@ Route::get('/profil',function(){return view('profil.profil');})->middleware('aut
 Route::get('/dem', 'DemandeController@index')->middleware('auth')->name('index');
     return view('connect.html.authetude');
 });
+<<<<<<< HEAD
+Route::get('/profil',function(){
+    return view('profil.profil');
+})->middleware('auth');
+
+Route::get('/dem', function(){
+    return view('connect.html.demande');
+=======
 Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
@@ -39,8 +50,23 @@ Route::get('/updateE',function(){
 });
 Route::get('/index',function(){
     return view('home.index');
+>>>>>>> 0946bed8ef0ca289501079489dba012950333e4b
 });
+Route::get('/profileetud', function(){
+    return view('etudiantprofile.profilEtud');
+})->middleware('auth','checkifetudiant');
 
+<<<<<<< HEAD
+Route::get('/modifprofiletude', function(){
+    return view('etudiantprofile.modifProfilEtude');
+})->name('modifprofE');
+
+Route::post('/ins','EtudiantController@store')->name('store');
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+Route::resource('Etudian','EtudiantControler');
+
+=======
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
 Route::post('/inscriE','EntrepriseController@store')->name('store');
@@ -58,4 +84,5 @@ Route::get('/admin-dashboard', function () {
     return 'admin';
 })->middleware('auth','checkAdmin');
 Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> 0946bed8ef0ca289501079489dba012950333e4b
 
