@@ -1,4 +1,4 @@
-<?php
+z<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,16 +15,16 @@ class CreateAdministrateursTable extends Migration
     {
         Schema::create('administrateurs', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer("soutenace_id")->unsigned();
+            // $table->integer("soutenace_id")->unsigned();
             $table->string('nom');
             $table->string('prenom');
             $table->string('email');
             $table->string('mdp');
-            $table->string('image');
+            $table->string('image')->default("");
             $table->string('ville');
-            $table->enum('role', ['sous_directeur', 'chef_de_département', 'enseignant']);
+            $table->enum('role', ['sous directeur', 'chef de département', 'enseignant']);
             $table->timestamps();      
-            $table->foreign('soutenace_id')->references('id')->on('soutenances')->onDelete('restrict')->onUpdate('restrict'); 
+            // $table->foreign('soutenace_id')->references('id')->on('soutenances')->onDelete('restrict')->onUpdate('restrict'); 
         });
     }
 

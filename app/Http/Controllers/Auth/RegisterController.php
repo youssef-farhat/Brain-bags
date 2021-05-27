@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -53,6 +54,16 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+<<<<<<< HEAD
+            'role'=>['required', 'string'],
+            'ville_E'=>['required','string'],
+            'depe_E'=>['required','string'],
+            'class_E'=>['required','string'],
+            'Description'=>['string'],
+
+=======
+>>>>>>> 0946bed8ef0ca289501079489dba012950333e4b
+
         ]);
     }
 
@@ -68,6 +79,37 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+<<<<<<< HEAD
+            'role'=>$data['role'],
+            'ville_E'=>$data['ville_E'],
+            'depe_E'=>$data['depe_E'],
+            'class_E'=>$data['class_E'],
+            'Description'=>$data['Description'],
+
+=======
+            
+>>>>>>> 0946bed8ef0ca289501079489dba012950333e4b
         ]);
     }
+
+    public  function redirectTo(){
+        $role=Auth::user()->role;
+        switch($role){
+
+           case 'etudiant':
+           return '/profileetud';
+           break;
+
+           case 'admin':
+           return '/admine-dashbord';
+           break;
+
+          case 'ensignement':
+          return'/profil';
+          break;
+           default:
+           //code
+           break;
+        }
+       }
 }
