@@ -1,8 +1,15 @@
 .text{
+
+    font-size: large;
+    font-size: 40px;
+    padding-left: 63px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
     font-size: large;
     font-size: 40px;
     padding-left: 63px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 font-size: large;
 font-size: 40px;
 padding-left: 63px;
@@ -28,7 +35,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 
 
 .input {
-    width: 100%;
+    width:50%;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
@@ -66,7 +73,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
     
   }
   .col-sm{
-    margin-bottom: -25px;
+    margin-bottom: 5px;
   }
 .mb-3{
 
@@ -76,7 +83,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
     
 }
 .in{
-    margin-top: 40px;
+    margin-top: 2px;
     margin-left: -23px;
     
 }
@@ -103,6 +110,7 @@ input file{
     img {
         width: 100%;
         height: 65px;
+
     }
     .foter {
         position: absolute;
@@ -123,16 +131,24 @@ input file{
         padding-right: 450px;
 
   }
+
+
+    .blockinp3{
+        padding-right: 450px;
+
+
+  }
 }
 @media only screen and (max-width: 2024px) {
     img {
         width: 1023px;
         height: 74px;
+
     }
     
     
     .input {
-        width: 100%;
+        width: 90%;
         background-color: white;
         border-radius: 12px;
         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
@@ -190,6 +206,11 @@ input file{
         margin-top:26px ;
 
 
+    
+        margin-top:26px ;
+
+
+
         margin-top:20px ;
     }
     .blockinp3 {
@@ -237,6 +258,12 @@ input file{
             width: 100%;
             height: 65px;
           
+
+
+            width: 100%;
+            height: 65px;
+          
+
 
             display: none;
             width:450px;
@@ -365,7 +392,7 @@ input file{
         height: 30px;
             }
             .input{
-                width: 109% ;
+                width: 100% ;
             }
             .btne {
                 margin-left: 100px ;
@@ -383,7 +410,7 @@ input file{
         }
         .input {
             margin-bottom: 50px;
-            width: 130%;
+            width: 120%;
         }
         .btne {
             margin-left: 80px;

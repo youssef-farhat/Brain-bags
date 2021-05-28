@@ -28,6 +28,12 @@ class LoginController extends Controller
      *
      * @var string
      */
+<<<<<<< HEAD
+   /* protected $redirectTo = RouteServiceProvider::HOME;*/
+     public  function redirectTo(){
+         $role=Auth::user()->role;
+         switch($role){
+=======
     // protected $redirectTo = RouteServiceProvider::HOME;
     public function redirectTo(){
         
@@ -37,9 +43,34 @@ class LoginController extends Controller
         if(Auth::user()->role=='etudiant'){
             return '/dem';
         }
+        if(Auth::user()->role=='entreprise'){
+            return '/profil';
+        }
         return '/';
     }
+>>>>>>> 0946bed8ef0ca289501079489dba012950333e4b
 
+            case 'etudiant':
+            return '/profileetud';
+            break;
+
+            case 'admin':
+            return '/admine-dashbord';
+            break;
+
+           case 'ensignement':
+           return'/profil';
+           break;
+            default:
+            //code
+            break;
+         }
+        }
+         
+       
+
+
+     
     /**
      * Create a new controller instance.
      *
@@ -52,4 +83,5 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
 }

@@ -19,11 +19,19 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            // return redirect(RouteServiceProvider::HOME);
+<<<<<<< HEAD
+            $role=Auth::user()->role;
+            //return redirect(RouteServiceProvider::HOME);
+            if ($role!='etudiant'){
             
-            if(Auth::user()->role=='etudiant'){
-                return '/dem';
+                return redirect('home');
+            } 
+=======
+            //return redirect(RouteServiceProvider::HOME);
+            if (Auth::user()->role =='entreprise'){
+                 return '/profil' ;
             }
+<<<<<<< HEAD
             return '/';
 
             if (Auth::user()->role=="admin") {
@@ -31,6 +39,10 @@ class RedirectIfAuthenticated
                 return '/accueil';
             }
             return '/home';
+=======
+            return('/');
+>>>>>>> 0946bed8ef0ca289501079489dba012950333e4b
+>>>>>>> 8597f470e14be9c2236efc3b7d47df9fe326e458
         }
 
         return $next($request);
