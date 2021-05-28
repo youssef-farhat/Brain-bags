@@ -37,9 +37,7 @@ Route::get('/updateE',function(){
 Route::get('/index',function(){
     return view('home.index');
 });
-<<<<<<< HEAD
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
-=======
 Route::get('/profileetud', function(){
     return view('etudiantprofile.profilEtud');
 })->middleware('auth','checkifetudiant');
@@ -57,7 +55,6 @@ Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('sho
 Route::post('/inscriE','EntrepriseController@store')->name('store');
 Route::post('/updateE','EntrepriseController@edit')->name('update');
 
->>>>>>> 8597f470e14be9c2236efc3b7d47df9fe326e458
 Route::get('/formm/{idDemande}','DemandeController@test')->name('formm');
 Route::post('/formm/{idDemande}', 'DemandeController@store')->name('store');
 
@@ -73,7 +70,6 @@ Auth::routes();
 Route::get('/admin-dashboard', function () {
     return 'admin';
 })->middleware('auth','checkAdmin');
-<<<<<<< HEAD
 Route::get('/home', 'HomeController@index')->name('home');
 
 //test
@@ -91,8 +87,6 @@ Route::get('/entreprise', 'HomeController@entreprise')->middleware('admin');
 Route::get('/accueil', function(){
     return view('admin.accueil');
 })->name('accueil')->middleware('admin');
-=======
 Route::get('/home', function () {return view('home.index');})->name('home');
->>>>>>> 8597f470e14be9c2236efc3b7d47df9fe326e458
 
 
