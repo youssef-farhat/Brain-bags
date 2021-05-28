@@ -48,7 +48,7 @@ Route::get('/modifprofiletude', function(){
 
 Route::post('/ins','EtudiantController@store')->name('store');
 Auth::routes();
-Route::resource('Etudian','EtudiantControler');
+Route::resource('Etudian','EtudiantController');
 
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
