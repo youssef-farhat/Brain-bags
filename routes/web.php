@@ -90,3 +90,7 @@ Route::get('/accueil', function(){
 Route::get('/home', function () {return view('home.index');})->name('home');
 
 
+Route::resource('admins', 'Admin\AdminController' );
+Route::resource('etudiants', 'Admin\EtudiantController' );
+Route::resource('entreprises', 'Admin\EntrepriseController' );
+Route::resource('enseignants', 'Admin\EnseignantController' );
