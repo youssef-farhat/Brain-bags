@@ -25,16 +25,15 @@ Route::middleware('auth' )->group(function () {
 
 Route::get('/profil',function(){return view('profil.profil');})->middleware('auth');
 //----------------------Demandes----------------------------
-Route::get('/dem', 'DemandeController@index')->middleware('auth')->name('index');
-    return view('connect.html.authetude');
+Route::get('/dem', 'DemandeController@index')->name('index');
 });
 Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
 Route::get('/updateE',function(){
-    return view('updateEntreprise.updateEntreprise')->middleware('checkEntreprise');
-});
+    return view('updateEntreprise.updateEntreprise');
+})->middleware('auth','checkEntreprise');
 Route::get('/index',function(){
     return view('home.index');
 });
@@ -47,7 +46,6 @@ Route::get('/modifprofiletude', function(){
 })->name('modifprofE');
 
 Route::post('/ins','EtudiantController@store')->name('store');
-Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 Route::resource('Etudian','EtudiantControler');
 
@@ -56,6 +54,8 @@ Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('sho
 Route::post('/inscriE','EntrepriseController@store')->name('store');
 Route::post('/updateE','EntrepriseController@edit')->name('update');
 
+Route::get('/formm/{idDemande}','DemandeController@test')->name('formm');
+Route::post('/formm/{idDemande}', 'DemandeController@store')->name('store');
 
 Route::get('/form', function(){
     return view('connect.html.demandeForm');})->name('formDemande')->middleware('auth');
@@ -67,5 +67,6 @@ Auth::routes();
 Route::get('/admin-dashboard', function () {
     return 'admin';
 })->middleware('auth','checkAdmin');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function () {return view('home.index');})->name('home');
+
 
