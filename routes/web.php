@@ -41,14 +41,15 @@ Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('sho
 Route::get('/profileetud', function(){
     return view('etudiantprofile.profilEtud');
 })->middleware('auth','checkifetudiant');
+Route::put('/modifprofiletude/{user}', 'EtudiantController@update')->name('updateEt');
 
 Route::get('/modifprofiletude', function(){
     return view('etudiantprofile.modifProfilEtude');
 })->name('modifprofE');
 
-Route::post('/ins','EtudiantController@store')->name('store');
+Route::post('/ins','EtudiantController@store')->name('storeEt');
 Auth::routes();
-Route::resource('Etudian','EtudiantController');
+Route::resource('Etudiant','EtudiantController');
 
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 

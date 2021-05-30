@@ -9,7 +9,7 @@ href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
 >
     
         <button class="btn1"><i class="fa fa-arrow-left"></i></button>
-   <form action="{{ route('store') }}" method="POST">
+   <form action="{{ route('storeEt') }}" method="POST">
     @csrf
     <div class="container">
         <div class="text">creation un compte</div>
