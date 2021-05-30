@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Enseignant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class EnseignantController extends Controller
 {
@@ -65,7 +67,8 @@ class EnseignantController extends Controller
      */
     public function edit(Enseignant $enseignant)
     {
-        //
+        return view('admin.enseignant.edit', ['enseignants'=>$enseignant]);
+
     }
 
     /**
@@ -77,7 +80,18 @@ class EnseignantController extends Controller
      */
     public function update(Request $request, Enseignant $enseignant)
     {
-        //
+        $validatedData = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'email' => 'required|email',
+            'ville' => 'required',
+            'departement' => ['required', Rule::in(['Technologie de l information','Mecanique','électrique','Commerce'])],
+            'mdp' => 'required',
+        ]);
+        $validatedData['mdp']=Hash::make($validatedData['mdp']);
+        //dd($request);
+            $enseignant->update($validatedData);
+            return redirect()->route('enseignants.show', $enseignant )->with('update','l enseignant Updated successfully');
     }
 
     /**
@@ -88,6 +102,7 @@ class EnseignantController extends Controller
      */
     public function destroy(Enseignant $enseignant)
     {
-        //
+        $enseignant->delete();
+        return redirect()->route('enseignants.index');
     }
 }

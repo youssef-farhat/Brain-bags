@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Entreprise;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class EntrepriseController extends Controller
 {
@@ -64,7 +66,8 @@ class EntrepriseController extends Controller
      */
     public function edit(Entreprise $entreprise)
     {
-        //
+        return view('admin.entreprise.edit', ['entreprises'=>$entreprise]);
+
     }
 
     /**
@@ -76,7 +79,19 @@ class EntrepriseController extends Controller
      */
     public function update(Request $request, Entreprise $entreprise)
     {
-        //
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'mdp' => 'required',
+            'nom_entreprise' => 'required',
+            'categorie' => ['required', Rule::in(['Informatique','Economie_gestion','Genie_proceder','mechanique','electrique'])],
+            'ville' => 'required',
+            'logo'=>'required',
+            'description'=>'',
+        ]);
+        $validatedData['mdp']=Hash::make($validatedData['mdp']);
+        //dd($request);
+            $entreprise->update($validatedData);
+            return redirect()->route('entreprises.show', $entreprise )->with('update','l entreprise Updated successfully');
     }
 
     /**
@@ -87,6 +102,7 @@ class EntrepriseController extends Controller
      */
     public function destroy(Entreprise $entreprise)
     {
-        //
+        $entreprise->delete();
+        return redirect()->route('entreprises.index');
     }
 }

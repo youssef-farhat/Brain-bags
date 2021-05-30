@@ -26,16 +26,23 @@
                   <p class="card-text">Ville :  <strong> {{ $etudiant->ville_E }} </strong></p>
                   <p class="card-text">Description :  <strong> {{ $etudiant->description }}</strong></p>
                 </div>
+                
                 <div>
                     <button type="button" class="btn btn-warning" style="margin-bottom: 5px;"><a
                         onclick="return confirm('modifier?')"><i
                            class='bx bx-pencil bx-sm' style="color:black;"></i></button>
     
-               <button type="button" class="btn btn-danger" style="margin-bottom: 5px;"><a
-                       onclick="return confirm('supprimer?')"> <i
-                           class='bx bx-trash bx-sm' style="color:black;"></i></a></button>
+                           <a href="" class="btn btn-outline-danger"
+                           onclick="event.preventDefault();document.querySelector('#delete-form').submit();"><i class='bx bx-trash bx-sm'
+                           style="color:black;"></i></a>
+                       <form id="delete-form" action="{{ route('etudiants.destroy', $etudiant->id) }}"
+                           method="post" style="display: none">
+                           @csrf
+                           @method('delete')
+                          
+
+                       </form>
                   </div>
-              
                 <div class="card-footer text-muted">
                     <p class="card-text">ce compte a été créé le  <strong> {{ $etudiant->created_at }}</strong></p>
                 </div>

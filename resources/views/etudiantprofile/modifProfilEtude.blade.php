@@ -90,18 +90,20 @@
         <div class="text">
           <h2>Modifier Profile</h2>
           <i class="fas fa-city"></i>
-      
+      <form action="{{route('updateEt',Auth::user())}}" method="post">
+        @csrf
+        @method('put')
           <div class="blockinp">
             <div class="row">
               <div class="col-sm" class="in">
-                <input type="text" class="form-control input" value="{{Auth::user()->email}}" />
+                <input type="text" class="form-control input" value="{{Auth::user()->email}}" name="email"/>
               </div>
               <div class="col-sm" class="in">
-                <input type="text" class="form-control input" value="{{Auth::user()->name}}"/>
+                <input type="text" class="form-control input" value="{{Auth::user()->name}}" name="name"/>
               </div>
               <div class="col-sm" class="in">
 
-                <input type="text" class="form-control input" value="{{Auth::user()->role}}" >
+                <input type="text" class="form-control input" value="{{Auth::user()->role}}" name="role" >
             </div>
               
             </div>
@@ -113,7 +115,7 @@
 
                   </div>
               <div class="col-sm" class="in" class="option">
-                <select clas aria-label=".form-select-lg example"  class="form-control input" >
+                <select clas aria-label=".form-select-lg example"  class="form-control input" name="depe_e" >
                   <option selected >Département</option>
                   <option value="1">ti</option>
                   <option value="2">mec</option>
@@ -123,9 +125,9 @@
                 </select>
               </div>
                <div class="col-sm" class="in" class="option">
-                <select clas aria-label=".form-select-lg example"  class="form-control input" >
+                <select clas aria-label=".form-select-lg example"  class="form-control input" name="class">
                   <option selected >Classe</option>
-                  <option value="1">1 ére ls</option>
+                  <option value="1 ére ls">1 ére ls</option>
                   <option value="2">2 éme ls</option>
                   <option value="3">3 éme ls</option>
                   <option value="4">1 ére ms</option>
@@ -139,7 +141,7 @@
           <div class="blockinp3">
             <div class="row">
               <div class="col-sm" class="in">
-                <input type="text" class="form-control input" placeholder="mot de passe"/>
+                <input type="text" class="form-control input" placeholder="mot de passe" name="password"/>
               </div>
               <div class="col-sm" class="in">
                 <input type="text" class="form-control input" placeholder="Confirmer le mot de passe" />
@@ -153,6 +155,8 @@
             <input type="submit" value="envoyer" class="btn btn-primary">
             <input type="reset" value="Annuler" class="btn btn-danger">
           </div>
+        </form>
+
           </div>
           </div>
       
