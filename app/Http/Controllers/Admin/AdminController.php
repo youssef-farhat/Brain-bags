@@ -116,17 +116,17 @@ class AdminController extends Controller
         //     'role' => ['required', Rule::in(['chef de département', 'enseignant', 'sous directeur'])],
         //     'mdp' => 'required'
         // ]);
- 
+            // dd($request);
         $administrateur->nom=$request->nom;
         $administrateur->prenom=$request->prenom;
         $administrateur->email=$request->email;
         $administrateur->mdp=Hash::make($request->mdp);
         $administrateur->role=$request->role;
         $administrateur->ville=$request->ville;
-
+        // dd($administrateur);
         $administrateur->save();
         // dd ($validatedData);
-        return redirect()->route('admins.show' ,$administrateur );
+        return redirect()->route('admins.show' ,$administrateur->id );
     }
 
     /**
