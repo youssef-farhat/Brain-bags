@@ -77,6 +77,7 @@ class DemandeController extends Controller
 
 
         echo $demande->save();
+        return redirect('/dem');
         }
         else return redirect('/dem')->with('msg','cette demande est deja existe');
 
@@ -126,10 +127,10 @@ class DemandeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Demande $demande)
-    {
-        // dd($demande);
+    {   //$demande->id=37;
+       // dd($demande);
         $demande->delete();
-  
+     
         return redirect()->route('demandesList')->with('success','demande supprimé avec succée');
     }
     
