@@ -12,6 +12,7 @@
 </head>
 <body>
     @include('layouts.sidebareE')
+    <img src="../img/avatar1.jpg" alt="">
   
     {{-- <div class="sidebar active">
       <div class="logo_content">
@@ -89,18 +90,19 @@
     <div class="zonePE">
       
     <div class="para2">
-      <p>Email:{{Auth::user()->email}}</p>
-      <p>Nom et Prenom:{{Auth::user()->name}}</p>
-      <p>Département:{{Auth::user()->depe_E}}</p>
-      <p>Classe:{{Auth::user()->class_E}}</p>
-      <p>Ville:{{Auth::user()->ville_E}}</p>
+      <p><span style="color:blue ;font-weight:bold">Email:</span>  {{Auth::user()->email}}</p>
+      <p><span style="color:blue ;font-weight:bold">Nom et Prenom: </span>{{Auth::user()->name}}</p>
+      <p> <span style="color:blue ;font-weight:bold">Département:</span> {{Auth::user()->depe_E}}</p>
+      <p> <span style="color:blue ;font-weight:bold">Classe:</span> {{Auth::user()->class_E}}</p>
+      <p><span style="color:blue ;font-weight:bold">Ville:</span> {{Auth::user()->ville_E}}</p>
+
     </div>
   </div>
   <div id="btn1">
     <a href="{{route('modifprofE')}}"><input type="submit" class="btn btn-primary" value="Modifer"></a>
   </div>
     <div id="btn2">  
-      <input type="submit" value="Votre cv"  class="btn btn-success">
+     <a href="https://www.cv.fr/?gclid=Cj0KCQjw78yFBhCZARIsAOxgSx06DdV5X2-4czlYaiAgVI4YHMU2iUdHjR9xXM5p1tqN1s5KLQcqlW0aAgFyEALw_wcB"> <input type="submit" value="Votre cv"  class="btn btn-success"></a>
     </div>
   
     

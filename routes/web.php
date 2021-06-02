@@ -41,7 +41,7 @@ Route::get('/index',function(){
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 Route::get('/profileetud', function(){
     return view('etudiantprofile.profilEtud');
-})->middleware('auth','checkifetudiant');
+})->middleware('auth','checkifetudiant')->name('profileetud');
 Route::put('/modifprofiletude/{user}', 'EtudiantController@update')->name('updateEt');
 
 Route::get('/modifprofiletude', function(){
