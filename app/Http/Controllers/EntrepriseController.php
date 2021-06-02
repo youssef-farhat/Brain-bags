@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Entreprise;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class EntrepriseController extends Controller
@@ -14,12 +16,6 @@ class EntrepriseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-       // $this->middleware('checkEntreprise');
-        
-    }
     public function index()
     {
         $Entreprise = User::get();
@@ -54,16 +50,23 @@ class EntrepriseController extends Controller
         // ]);
 
         $Entreprise = new Entreprise;
-        $Entreprise->email = $request->email;
-        $Entreprise->mdp = Hash::make($request->mdp);
+        $User = new User;
+        $User->email = $request->email;
+        $User->role = "entreprise";
+        $User->name=$request->nom_entreprise;
+        $User->password = Hash::make($request->mdp);
         $Entreprise->nom_entreprise = $request->nom_entreprise;
         $Entreprise->categorie = $request->categorie;
         $Entreprise->ville = $request->ville;
         $Entreprise->logo = "hello";
+        $Entreprise->email = $User->email;
         $Entreprise->description = $request->description;
+        
+        $User->save();
         $Entreprise->save();
+        
         if ($Entreprise->save() == 1) {
-            redirect('/con');
+           return redirect('/con');
         }
     }
 
@@ -75,8 +78,10 @@ class EntrepriseController extends Controller
      */
     public function show(Entreprise $entreprise)
     {
-        $entreprise = Entreprise::find();
-        return view('updateentreprise.profil',['entreprise'=>$entreprise]);
+       $entreprise ==DB::table('entreprises')->join('users','users.email','=','entreprises.email')
+       ->where('users.email','=', Auth::user()->email)
+   ->get();
+        return view('profil.profil',['entreprise'=>$entreprise]);
     }
 
     /**

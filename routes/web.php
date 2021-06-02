@@ -42,7 +42,7 @@ Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('sho
 Route::get('/profileetud', function(){
     return view('etudiantprofile.profilEtud');
 })->middleware('auth','checkifetudiant')->name('profileetud');
-})->middleware('auth','checkifetudiant');
+
 Route::put('/modifprofiletude/{user}', 'EtudiantController@update')->name('updateEt');
 
 Route::get('/modifprofiletude', function(){
@@ -55,7 +55,7 @@ Route::resource('Etudiant','EtudiantController');
 
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
-Route::post('/inscriE','EntrepriseController@store')->name('store');
+Route::post('/inscriE','EntrepriseController@store')->name('storeEn');
 Route::post('/updateE','EntrepriseController@edit')->name('update');
 
 Route::get('/formm/{idDemande}','DemandeController@test')->name('formm');
