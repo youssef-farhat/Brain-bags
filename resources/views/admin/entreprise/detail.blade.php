@@ -21,8 +21,23 @@
                   <p class="card-text">Description :  <strong> {{ $entreprise->description }}</strong></p>
                   <p class="card-text">Logo :  <strong> {{ $entreprise->logo }}</strong></p>
                 </div>
-              
-              
+                <div>
+                     <button type="button" class="btn btn-warning" style="margin-bottom: 5px;"><a
+                    onclick="return confirm('modifier?')"><i
+                       class='bx bx-pencil bx-sm' style="color:black;"></i></button>
+
+                <a href="" class="btn btn-outline-danger"
+                onclick="event.preventDefault();document.querySelector('#delete-form').submit();"><i class='bx bx-trash bx-sm'
+                style="color:black;"></i></a>
+            <form id="delete-form" action="{{ route('entreprises.destroy', $entreprise->id) }}"
+                method="post" style="display: none">
+                @csrf
+                @method('delete')
+               
+
+            </form>
+                </div>
+               
                 <div class="card-footer text-muted">
                     <p class="card-text">ce compte a été créé le  <strong> {{ $entreprise->created_at }}</strong></p>
                 </div>

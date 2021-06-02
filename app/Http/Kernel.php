@@ -58,6 +58,10 @@ class Kernel extends HttpKernel
         'checkEntreprise' => \App\Http\Middleware\checkEntreprise::class,
         'admin' => \App\Http\Middleware\CheckIfAdmin::class,
 
+
+        'checkEntreprise' => \App\Http\Middleware\checkEntreprise::class,
+        'admin' => \App\Http\Middleware\CheckIfAdmin::class,
+        'checkAdmin'=> \App\Http\Middleware\CheckIfAdmin::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,

@@ -66,6 +66,11 @@ class EtudiantController extends Controller
             redirect('/profileetud');
         }
          
+         //$etudiant->ville_E=$request->ville_E;
+        // $etudiant->depe_E=$request->depe_E;
+         //$etudiant->class_E=$request->class_E;
+         //$etudiant->Description=$request->Description;
+         $etudiant->save(); 
           
             
             
@@ -153,6 +158,19 @@ class EtudiantController extends Controller
                 $validatedData['password']=Hash::make($validatedData['password']);
                 $user->update($validatedData);
                 return redirect()->back();
+    {   
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        $validatedData['password']=Hash::make($validatedData['password']);
+        $user->update($validatedData);
+        return redirect()->back();
+        // $user->name=$request->name;
+        // $user->email=$request->email;
+        // $user->password=$request->password;
+        //     $user->save();
     }
 
     /**
