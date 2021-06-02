@@ -1,8 +1,18 @@
 @extends('layouts.admin')
 
 @section('main')
+
     <div class="home_content">
         <div class="container">
+            @if(session('update'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('update')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+            
+            @endif
             <div class="text">
                 <h2>administrateur</h2>
             </div>
@@ -29,12 +39,19 @@
                         <div>
 
                             <button type="button" class="btn btn-warning btn-lg" style="margin-right: 74px;"><a
-                                href="/admins/{{ $administrateur->id }}/edit" onclick="return confirm('modifier?')"><i class='bx bx-pencil bx-sm'
-                                        style="color:black;"></i></button>
+                                    href="/admins/{{ $administrateur->id }}/edit" onclick="return confirm('modifier?')"><i
+                                        class='bx bx-pencil bx-sm' style="color:black;"></i></button>
+                                        <a href="" class="btn btn-outline-danger"
+                                        onclick="event.preventDefault();document.querySelector('#delete-form').submit();"><i class='bx bx-trash bx-sm'
+                                        style="color:black;"></i></a>
+                                    <form id="delete-form" action="{{ route('admins.destroy', $administrateur->id) }}"
+                                        method="post" style="display: none">
+                                        @csrf
+                                        @method('delete')
+                                       
+        
+                                    </form>
 
-                            <button type="button" class="btn btn-danger btn-lg" ><a
-                                    onclick="return confirm('supprimer?')" > <i class='bx bx-trash bx-sm'
-                                        style="color:black;"></i></a></button>
                         </div>
                     </div>
 

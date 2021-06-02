@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Administrateur;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -70,6 +71,7 @@ class AdminController extends Controller
 
 
         $admin = Administrateur::create($validatedData);
+
         return redirect()->route('admins.show', $admin);
     }
 
@@ -80,9 +82,9 @@ class AdminController extends Controller
      * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Administrateur $admin)
     {
-        $admin = Administrateur::find($id);
+    //    $admin = Administrateur::find($id);
         return view('admin.admin.detail', ['administrateur' => $admin]);
     }
 
@@ -92,11 +94,13 @@ class AdminController extends Controller
      * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit(Administrateur $admin)
+    {   
+        return view('admin.admin.edit', compact('admin'));
 
-        $admin = Administrateur::find($id);
-        return view('admin.admin.edit', ['admin' => $admin]);
+
+        // $admin = Administrateur::find($id);
+        // return view('admin.admin.edit', ['admin' => $admin]);
     }
 
     /**
@@ -106,27 +110,29 @@ class AdminController extends Controller
      * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Administrateur  $administrateur )
+    public function update(Request $request, Administrateur  $admin   )
     {
-        // $validatedData = $request->validate([
-        //     'nom' => 'required',
-        //     'prenom' => 'required',
-        //     'email' => 'required|email',
-        //     'ville' => 'required',
-        //     'role' => ['required', Rule::in(['chef de département', 'enseignant', 'sous directeur'])],
-        //     'mdp' => 'required'
-        // ]);
-            // dd($request);
-        $administrateur->nom=$request->nom;
-        $administrateur->prenom=$request->prenom;
-        $administrateur->email=$request->email;
-        $administrateur->mdp=Hash::make($request->mdp);
-        $administrateur->role=$request->role;
-        $administrateur->ville=$request->ville;
-        // dd($administrateur);
-        $administrateur->save();
+        $validatedData = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'email' => 'required|email',
+            'ville' => 'required',
+            'role' => ['required', Rule::in(['chef de département', 'enseignant', 'sous directeur'])],
+            'mdp' => 'required'
+        ]);
+        //dd($request);
+            $admin->update($validatedData);
+      
+        // $administrateur->nom=$request->nom;
+        // $administrateur->prenom=$request->prenom;
+        // $administrateur->email=$request->email;
+        // $administrateur->mdp=Hash::make($request->mdp);
+        // $administrateur->role=$request->role;
+        // $administrateur->ville=$request->ville;
+
+      //  $administrateur->save();
         // dd ($validatedData);
-        return redirect()->route('admins.show' ,$administrateur->id );
+        return redirect()->route('admins.show', $admin )->with('update','User Updated successfully');
     }
 
     /**
@@ -135,9 +141,19 @@ class AdminController extends Controller
      * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Administrateur $administrateur)
+    public function destroy(Administrateur $admin)
     {
-        $administrateur->delete();
+        $admin->delete();
         return redirect()->route('admins.index');
+    }
+    public function validationRules(){
+        return [
+            'nom' => 'required',
+            'prenom' => 'required',
+            'email' => 'required|email',
+            'ville' => 'required',
+            'role' => ['required'],
+            'mdp' => 'required'
+        ];
     }
 }

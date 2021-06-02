@@ -1,0 +1,11 @@
+@media(min-width:900px){
+
+
+.card-deck {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+}

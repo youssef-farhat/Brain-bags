@@ -1,5 +1,4 @@
 <?php
-
 use App\Enseignant;
 use Illuminate\Database\Seeder;
 
@@ -13,5 +12,5 @@ class EnseignantTableSeeder extends Seeder
     public function run()
     {
         factory(Enseignant::class, 10)->create();
-    }
+        }
 }

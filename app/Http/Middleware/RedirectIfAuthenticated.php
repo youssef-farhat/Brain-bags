@@ -19,13 +19,17 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            // return redirect(RouteServiceProvider::HOME);
-
-            if (Auth::user()->role=="admin") {
-                // page index admin pas encore prete 
-                return '/admin-profile';
+            $role=Auth::user()->role;
+            //return redirect(RouteServiceProvider::HOME);
+            if ($role=='etudiant'){
+            
+                return redirect('/dem');
+            } 
+            //return redirect(RouteServiceProvider::HOME);
+            if (Auth::user()->role =='entreprise'){
+                 return '/profil' ;
             }
-            return '/home';
+            return('/admin-dashboard');
         }
 
         return $next($request);

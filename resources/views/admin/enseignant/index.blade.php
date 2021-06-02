@@ -70,13 +70,19 @@
                                                    href="/enseignants/{{ $enseignant->id }}" onclick="return "><i class='bx bxs-user-detail bx-sm' style="color:black;"></i></button>
 
                                             <button type="button" class="btn btn-warning" style="margin-bottom: 5px;"><a
-                                                    onclick="return confirm('modifier?')"><i
+                                                href="/enseignants/{{ $enseignant->id }}/edit"   onclick="return confirm('modifier?')"><i
                                                         class='bx bx-pencil bx-sm' style="color:black;" ></i></button>
 
-                                            <button type="button" class="btn btn-danger" style="margin-bottom: 5px;"><a
-                                                    onclick="return confirm('supprimer?')"> <i
-                                                        class='bx bx-trash bx-sm' style="color:black;"></i></a></button>
-
+                                                        <a href="" class="btn btn-outline-danger"
+                                                        onclick="event.preventDefault();document.querySelector('#delete-form').submit();"><i class='bx bx-trash bx-sm'
+                                                        style="color:black;"></i></a>
+                                                    <form id="delete-form" action="{{ route('enseignants.destroy', $enseignant->id) }}"
+                                                        method="post" style="display: none">
+                                                        @csrf
+                                                        @method('delete')
+                                                       
+                        
+                                                    </form>
 
 
                                         </td>
