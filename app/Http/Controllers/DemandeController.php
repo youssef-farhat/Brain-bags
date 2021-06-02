@@ -77,6 +77,7 @@ class DemandeController extends Controller
 
 
         echo $demande->save();
+        return redirect('/dem');
         }
         else return redirect('/dem')->with('msg','cette demande est deja existe');
 

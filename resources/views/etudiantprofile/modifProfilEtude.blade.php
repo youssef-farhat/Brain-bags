@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{asset('custom/css/ModifProfil.css')}}">
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"rel="stylesheet"/>
    <link rel="stylesheet" href="{{asset('custom/css/bootstrap.min.css')}}">
-    <title>Side bar</title>
+    <title>modifier profile</title>
   </head>
   <body>
     {{-- <div class="sidebar active">
@@ -90,6 +90,22 @@
         <div class="text">
           <h2>Modifier Profile</h2>
           <i class="fas fa-city"></i>
+      <form action="{{route('updateEt',auth::user())}}" method="POST">
+        @csrf
+        @method('put')
+        
+          <div class="blockinp">
+            <div class="row">
+              <div class="col-sm" class="in">
+                <input type="text" class="form-control input" name="email" value="{{Auth::user()->email}}"  />
+              </div>
+              <div class="col-sm" class="in">
+                <input type="text" class="form-control input" name="name" value="{{Auth::user()->name}}"/>
+              </div>
+              <div class="col-sm" class="in">
+
+                <input type="text" class="form-control input" name="role" value="{{Auth::user()->role}}" readonly>
+
       <form action="{{route('updateEt',Auth::user())}}" method="post">
         @csrf
         @method('put')
@@ -115,16 +131,25 @@
 
                   </div>
               <div class="col-sm" class="in" class="option">
+                <select clas aria-label=".form-select-lg example"  class="form-control input"  name="depe_E">
                 <select clas aria-label=".form-select-lg example"  class="form-control input" name="depe_e" >
+
                   <option selected >Département</option>
-                  <option value="1">ti</option>
-                  <option value="2">mec</option>
-                  <option value="3">com</option>
-                  <option value="4">ele</option>
-                  <option value="5">ya4ort</option>
+                  <option value="informatique">ti</option>
+                  <option value="informatique">mec</option>
+                  <option value="informatique">com</option>
+                  <option value="informatique">ele</option>
+                  <option value="informatique">ya4ort</option>
                 </select>
               </div>
                <div class="col-sm" class="in" class="option">
+                <select clas aria-label=".form-select-lg example"  class="form-control input" name="class_E" >
+                  <option selected >Classe</option>
+                  <option value="1 ére licence">1 ére ls</option>
+                  <option value="1 ére licence">2 éme ls</option>
+                  <option value="1 ére licence">3 éme ls</option>
+                  <option value="1 ére licence">1 ére ms</option>
+                  <option value="1 ére licence">2 éme ms</option>
                 <select clas aria-label=".form-select-lg example"  class="form-control input" name="class">
                   <option selected >Classe</option>
                   <option value="1 ére ls">1 ére ls</option>
@@ -141,10 +166,11 @@
           <div class="blockinp3">
             <div class="row">
               <div class="col-sm" class="in">
+                <input type="password" class="form-control input" placeholder="mot de passe" name="password"/>
                 <input type="text" class="form-control input" placeholder="mot de passe" name="password"/>
               </div>
               <div class="col-sm" class="in">
-                <input type="text" class="form-control input" placeholder="Confirmer le mot de passe" />
+                <input type="text" class="form-control input" placeholder="Confirmer le mot de passe" name="password"/>
               </div>
              
             </div>
@@ -154,6 +180,7 @@
             <div class="btne">
             <input type="submit" value="envoyer" class="btn btn-primary">
             <input type="reset" value="Annuler" class="btn btn-danger">
+          </form>
           </div>
         </form>
 

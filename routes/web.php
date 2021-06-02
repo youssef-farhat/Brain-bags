@@ -12,6 +12,7 @@
 */
 
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -40,6 +41,7 @@ Route::get('/index',function(){
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 Route::get('/profileetud', function(){
     return view('etudiantprofile.profilEtud');
+})->middleware('auth','checkifetudiant')->name('profileetud');
 })->middleware('auth','checkifetudiant');
 Route::put('/modifprofiletude/{user}', 'EtudiantController@update')->name('updateEt');
 
