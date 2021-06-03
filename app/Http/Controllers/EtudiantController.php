@@ -158,7 +158,7 @@ class EtudiantController extends Controller
                 $validatedData['password']=Hash::make($validatedData['password']);
                 $user->update($validatedData);
                 return redirect()->back();
-    {   
+      
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
