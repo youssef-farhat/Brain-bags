@@ -12,33 +12,36 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
+
+    <form method="POST" action="{{ route('ajoutstage') }}">
+    @csrf
 <div class="container">
       <div class="blockinp">
         <div class="text">Ajout d'un offre</div>
         <br>
         <div class="row">
             <div class="col-sm" class="in">
-                <select clas aria-label=".form-select-lg example"  class="form-control input">
+                <select clas aria-label=".form-select-lg example"  class="form-control input" name="type">
                   <option disabled selected hidden>Type de Stage</option>
-                  <option value="1">Initiation</option>
-                  <option value="2">Perfectionnement</option>
-                  <option value="3">pfe</option>
+                  <option value="Initiation">Initiation</option>
+                  <option value="Perfectionnement">Perfectionnement</option>
+                  <option value="pfe">pfe</option>
                 </select>
               </div>
             <div class="col-sm" class="in">
-                <select clas aria-label=".form-select-lg example" class="form-control input">
+                <select clas aria-label=".form-select-lg example" class="form-control input" name="departement">
                   <option disabled selected hidden >Département</option>
-                  <option value="1">Technologie de l'information</option>
-                  <option value="2">Mecanique</option>
-                  <option value="3">électrique</option>
-                  <option value="4">Commerce</option>
-                  <option value="5">Génie de Procédés</option>
+                  <option value="Informatique">Informatique</option>
+                  <option value="mechanique">mechanique</option>
+                  <option value="electrique">electrique</option>
+                  <option value="Economie_gestion">Economie_gestion</option>
+                  <option value="Genie_proceder">Genie_proceder</option>
                 </select>
               </div>
               
           
               <div class="col-sm" class="in">
-                <input type="date" class="form-control input"  />
+                <input type="date" class="form-control input" name="date" />
               </div>
         </div>
       </div>
@@ -52,18 +55,18 @@
               </div>
               
               <div class="col-sm" class="in">
-                <input type="text" class="form-control input" placeholder="Localisation" />
+                <input type="text" class="form-control input" placeholder="Localisation" name="localisation" />
               </div>
               <div class="col-sm" class="in">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked>
+              <div class="form-check" name="paiment">
+                <input value="payée" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked>
                 <label class="form-check-label" for="flexRadioDefault1">
                   payée
                 </label>
                 </div>
               
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                <input value="non payée" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
                 <label class="form-check-label" for="flexRadioDefault2">
                   non payée
                 </label>
@@ -78,6 +81,7 @@
           id="exampleFormControlTextarea1"
           rows="3"
           placeholder="Description"
+          name="description"
         ></textarea>
       </div>
     
@@ -87,4 +91,5 @@
       
     
       </div>
+      </form>
 @endsection

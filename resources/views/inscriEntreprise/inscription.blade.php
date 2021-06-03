@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="text">creation un compte</div>
-    <form method="POST" action="{{route('store')}}">
+    <form method="POST" action="{{route('storeEn')}}">
         @csrf
     <div class="blockinp">
         <div class="row">

@@ -35,19 +35,25 @@ Route::get('/profil',function(){
 })->middleware('auth');
 Route::get('/dem', function(){
     return view('connect.html.demande');
-
+});
 Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
-
-
-Route::get('/ajoutstage', function(){
-    return view('stage.ajoutstage');
 });
 
-Route::get('/modifstage', function(){
-    return view('stage.modifstage');
-});
+Route::get('/ajoutstage', 'admin\AjoutStageController@index');
+Route::POST('/ajoutstage', 'admin\AjoutStageController@store')->name('ajoutstage');
+// Route::get('/ajoutstage', function(){
+//     return view('stage.ajoutstage');
+// });
+// )->middleware('auth','checkEntreprise';
+
+Route::get('/modifstage', 'admin\StageController@index');
+Route::delete('/modifstage', 'admin\StageController@destroy')->name('deletestage');
+// Route::get('/modifstage', function(){
+//     return view('stage.modifstage');
+// });
+// );
 
 
 
@@ -64,7 +70,7 @@ Route::resource('Etudian','EtudiantControler');
 
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
-Route::post('/inscriE','EntrepriseController@store')->name('store');
+Route::post('/inscriE','EntrepriseController@store')->name('storeEn');
 Route::post('/updateE','EntrepriseController@edit')->name('update');
 
 

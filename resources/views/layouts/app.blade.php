@@ -15,14 +15,9 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-<<<<<<< HEAD
     
  
     
-=======
-
-
->>>>>>> 1fbbb44bcd673b7d4f8fe4480ca4e77708e90eeb
     <!-- Styles -->
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -53,19 +48,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-<<<<<<< HEAD
                                 <a class="nav-link" href="{{ url('/new') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('ins') }}">{{ __('Register') }}</a>
-=======
-                                <a class="nav-link" href="{{ url('con') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/inscriE') }}">{{ __('Register') }}</a>
->>>>>>> 0946bed8ef0ca289501079489dba012950333e4b
                                 </li>
                             @endif
                         @else

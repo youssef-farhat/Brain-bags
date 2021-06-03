@@ -38,66 +38,46 @@
               </div>
             </div>
           </div>
+
         
-        <div class="blockinp2">
-            <div class="grid-container">
-                <div class="item1">
-                    <p> Stage de Perfectionnement</p>
-                    <p>02/08/2021 </p>
-                    <p>Département Technologie de l'information</p>
-                    <p class="desc">Description:</p>
-                    <p>orem lpsum is simply dummy text of the printing and typestting industry. Lorem Lpsum has been the industry's standard dummy text ever since 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book. it has survived not only five centuries</p>
-            
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary">Modifier</button>
-                    <button type="button" class="btn btn-danger">Supprimer</button>
-                    </div>
-                </div>
-                <div class="item2">
-                    <img src="{{asset('custom/img/instructor-helping-students-in-computer-class.jpg')}}" class="rounded float-end" >
-                </div>
-            </div>    
-        </div>
 
-        <div class="blockinp2">
-            <div class="grid-container">
-                <div class="item1">
-                    <p> Stage de Perfectionnement</p>
-                    <p>02/08/2021 </p>
-                    <p>Département Technologie de l'information</p>
-                    <p class="desc">Description:</p>
-                    <p>orem lpsum is simply dummy text of the printing and typestting industry. Lorem Lpsum has been the industry's standard dummy text ever since 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book. it has survived not only five centuries</p>
-            
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary">Modifier</button>
-                    <button type="button" class="btn btn-danger">Supprimer</button>
-                    </div>
-                </div>
-                <div class="item2">
-                    <img src="{{asset('custom/img/instructor-helping-students-in-computer-class.jpg')}}" class="rounded float-end" >
-                </div>
-            </div>    
-        </div>
+        {{-- @php
+        dump($stages);
+        die;
+        @endphp --}}
 
+        @foreach ($stages as $stage)
         <div class="blockinp2">
             <div class="grid-container">
                 <div class="item1">
-                    <p> Stage de Perfectionnement</p>
-                    <p>02/08/2021 </p>
-                    <p>Département Technologie de l'information</p>
+                    <p> Stage de {{ $stage->type }}</p>
+                    <p>{{ $stage->date }}</p>
+                    <p>Département {{ $stage->departement}}</p>
                     <p class="desc">Description:</p>
-                    <p>orem lpsum is simply dummy text of the printing and typestting industry. Lorem Lpsum has been the industry's standard dummy text ever since 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book. it has survived not only five centuries</p>
+                    <p>{{ $stage->description }}</p>
             
                     <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-primary">Modifer</button>
                     <button type="button" class="btn btn-danger">Supprimer</button>
+                    
+                    
+                    <form action="{{ route('deletestage',['id'=>$stage->id ]) }}" method="POST">
+                        <a class="btn btn-outline-danger btn-block col-m-6 " href="{{route('deletestage',[ 'id'=>$stage->id ])}}">
+                        <i class="fa fa-window-close"></i> Annuler 
+                        </a>
+                        @csrf
+                        @method('delete')
+                        
+                        </form>
                     </div>
                 </div>
                 <div class="item2">
-                    <img src="{{asset('custom/img/instructor-helping-students-in-computer-class.jpg')}}" class="rounded float-end" >
+                    <img src="custom/img/{{ $stage->image }}" class="rounded float-end" >
                 </div>
             </div>    
         </div>
-
+            
+    
+    @endforeach
     </div>
 @endsection

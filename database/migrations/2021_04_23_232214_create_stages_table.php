@@ -21,15 +21,9 @@ class CreateStagesTable extends Migration
             $table->string('image');
             $table->string('localisation');
             $table->string('payement');
-<<<<<<< HEAD
             $table->string('description');
             $table->integer('entreprise_id')->unsigned();
             $table->foreign('entreprise_id')->references('id')->on('entreprises')->onDelete('cascade');
-=======
-            $table->text('description');
-            $table->integer('id_entreprise')->unsigned();
-            $table->foreign('id_entreprise')->references('id')->on('entreprises')->onDelete('cascade');
->>>>>>> 3f632b0d7822e1c50873da04bc36b64d14c8fb22
             $table->timestamps();
         });
     }
