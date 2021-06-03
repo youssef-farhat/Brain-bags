@@ -40,14 +40,7 @@ class EntrepriseController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //     'email' => 'required',
-        //     'mdp' => 'required',
-        //     'nom_entreprise' => 'required',
-        //     'categorie' => 'required',
-        //     'ville' => 'required',
-        //     'description' => 'required'
-        // ]);
+
 
         $Entreprise = new Entreprise;
         $User = new User;

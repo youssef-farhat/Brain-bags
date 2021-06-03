@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  @include('layouts.sidebarE')
+  @include('layouts.sidebarEn')
   <div class="home_content">
     <div class="container">
       <div class="text">
