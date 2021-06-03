@@ -51,16 +51,20 @@ class EtudiantController extends Controller
     {
        
         
-        $etudiant=new User;
-         $etudiant->name=$request->name;
-         $etudiant->email=$request->email;
-         $etudiant->password=Hash::make($request->password);
-         $etudiant->role=$request->role;
+        $etudiant = new Etudiant;
+        $User = new User;
+         $User->name=$request->name;
+         $User->email=$request->email;
+         $etudiant->email = $User->email;
+
+         $User->password=Hash::make($request->password);
+         $User->role=$request->role;
          $etudiant->ville_E=$request->ville_E;
          $etudiant->depe_E=$request->depe_E;
          $etudiant->class_E=$request->class_E;
          $etudiant->Description=$request->Description;
-         
+         $User->save();
+
          $etudiant->save();
          if ($etudiant->save() == 1) {
             redirect('/profileetud');
@@ -158,7 +162,7 @@ class EtudiantController extends Controller
                 $validatedData['password']=Hash::make($validatedData['password']);
                 $user->update($validatedData);
                 return redirect()->back();
-    {   
+
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -172,6 +176,7 @@ class EtudiantController extends Controller
         // $user->password=$request->password;
         //     $user->save();
     }
+
 
     /**
      * Remove the specified resource from storage.
