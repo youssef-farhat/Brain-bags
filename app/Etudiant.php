@@ -10,4 +10,7 @@ class Etudiant extends Model
     public function forums (){
         return $this->hasMany('App\Forum');
     }
+    public function user(){
+        return $this->belongsTo('App\User','email','email');
+    }
 }
