@@ -71,10 +71,12 @@ class EntrepriseController extends Controller
      */
     public function show(Entreprise $entreprise)
     {
-       $entreprise ==DB::table('entreprises')->join('users','users.email','=','entreprises.email')
-       ->where('users.email','=', Auth::user()->email)
-   ->get();
+        $entreprise =DB::table('entreprises')
+        ->join('users','users.email','=','entreprises.email')
+        ->where('users.email','=', Auth::user()->email)
+        ->get();
         return view('profil.profil',['entreprise'=>$entreprise]);
+
     }
 
     /**
@@ -94,17 +96,22 @@ class EntrepriseController extends Controller
      * @param  \App\Entreprise  $entreprise
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Entreprise $entreprise)
+    public function update(Request $request, Entreprise $Entreprise,User $User)
     {
-        $entreprise->email = $request->email;
-        $entreprise->mdp = Hash::make($request->mdp);
-        $entreprise->nom_entreprise = $request->nom_entreprise;
-        $entreprise->categorie = $request->categorie;
-        $entreprise->ville = $request->ville;
-        $entreprise->logo = "hello";
-        $entreprise->description = $request->description;
-        $entreprise->save();
-        if ($entreprise->save() == 1) {
+        $User->email = $request->email;
+        $User->role = "entreprise";
+        $User->name=$request->nom_entreprise;
+        $User->password = Hash::make($request->mdp);
+        $Entreprise->nom_entreprise = $request->nom_entreprise;
+        $Entreprise->categorie = $request->categorie;
+        $Entreprise->ville = $request->ville;
+        $Entreprise->logo = "hello";
+        $Entreprise->email = $User->email;
+        $Entreprise->description = $request->description;
+        
+        $User->save();
+        $Entreprise->save();
+        if ($Entreprise->save() == 1) {
             redirect('/profil');
         }
     }

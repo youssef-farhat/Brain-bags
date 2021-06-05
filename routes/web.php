@@ -24,7 +24,7 @@ Route::get('/con', function () {
 });
 Route::middleware('auth' )->group(function () {
 
-Route::get('/profil',function(){return view('profil.profil');})->middleware('auth');
+Route::get('/profilEn',"EntrepriseController@show")->middleware('auth');
 //----------------------Demandes----------------------------
 Route::get('/dem', 'DemandeController@index')->name('index');
 });
@@ -97,3 +97,4 @@ Route::resource('admins', 'Admin\AdminController' );
 Route::resource('etudiants', 'Admin\EtudiantController' );
 Route::resource('entreprises', 'Admin\EntrepriseController' );
 Route::resource('enseignants', 'Admin\EnseignantController' );
+Route::resource('entreprises', 'EntrepriseController' );
