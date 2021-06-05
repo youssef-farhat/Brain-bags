@@ -19,6 +19,7 @@
 
 <body>
   @include('layouts.sidebarEn')
+
   <div class="home_content">
     <div class="container">
       <div class="text">
