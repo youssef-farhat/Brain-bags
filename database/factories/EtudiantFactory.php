@@ -17,7 +17,6 @@ $factory->define(Etudiant::class, function (Faker $faker) {
         
         'motp_E'=>$faker->word,
         'class_E'=>$faker->word,
-        
         'description'=>$faker->sentence
     ];
 });
