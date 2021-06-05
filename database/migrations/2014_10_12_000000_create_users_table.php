@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('password',70);
             $table->enum('role',['admin','enseignant','etudiant','entreprise']);
             $table->string('img')->default("");
-
             $table->rememberToken();
             $table->timestamps();
         });
