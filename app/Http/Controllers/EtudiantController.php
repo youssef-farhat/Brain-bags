@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use PhpParser\Node\Stmt\Echo_;
+use Illuminate\Support\Facades\Validator;
+
 
 class EtudiantController extends Controller
 {
@@ -49,9 +51,20 @@ class EtudiantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    
+    
     public function store(Request $request)
     {
-       
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|confirmed',
+            'role'=>'',
+            'ville_E' => 'required',
+            'depe_E'=> 'required',
+            'class_E'=> 'required'
+        ]);
         
         $etudiant = new Etudiant;
         $User = new User;
@@ -68,9 +81,9 @@ class EtudiantController extends Controller
          $User->save();
 
          $etudiant->save();
-         if ($etudiant->save() == 1) {
+        
             redirect('/profileetud');
-        }
+        
          
          //$etudiant->ville_E=$request->ville_E;
         // $etudiant->depe_E=$request->depe_E;
@@ -106,14 +119,13 @@ class EtudiantController extends Controller
      */
     public function edit(Etudiant $etudiant)
     {
-        // $etudiant =DB::table('etudiants')
-        // ->join('users','users.email','=','etudiants.email')
-        // ->where('users.email','=', Auth::user()->email)
-        // ->get();
-        // dd($etudiant);
+          $etudiant =DB::table('etudiants')
+          ->join('users','users.email','=','etudiants.email')
+          ->where('users.email','=', Auth::user()->email)
+          ->get();
         
-        // return view('etudiantprofile.modifProfilEtude',['etudiant'=>$etudiant]);
-    }
+        return view('etudiantprofile.modifProfilEtude',['etudiant'=>$etudiant]);
+     }
 
     /**
      * Update the specified resource in storage.
@@ -122,72 +134,34 @@ class EtudiantController extends Controller
      * @param  \App\Etudiant  $etudiant
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $user,Etudiant $etudiant)
     {
 
-            //  $validatedData = $request->validate([
-            //      'email' => 'required|email',
-            //      'name' => 'required',
-            //      'password' => 'required',
-            //      'ville_E' => 'required',
-            //      'depe_E'=>'required',
-            //      'class_E'=>'required'
-                 
-            // ]);
-            //  $user->update($validatedData);
-            // //dd($validatedData);
-            //     // $user->email=$request->email;
-            //     // $user->name=$request->name;
-            //     // $user->ville_E=$request->ville_E;
-            //     // $user->depe_E=$request->depe_E;
-            //     // $user->class_E=$request->class_E;
-            //     // $user->password=Hash::make($request->password);
-
-            //     // $user->save();
-
-                // $validatedData = $request->validate([
-                //     'email' => 'required|email',
-                //    'name' => '',
-                //    'password' => '',
-                //    'ville_E' => '',
-                //    'depe_E'=>'',
-                //    'class_E'=>''
-                // ]);
-                //  $user->update($validatedData);
-                // //  $user->email=$request->email;
-                // //   $user->name=$request->name;
-                // //   $user->ville_E=$request->ville_E;
-                // //   $user->depe_E=$request->depe_E;
-                // // $user->class_E=$request->class_E;
-                // //  $user->password=Hash::make($request->password);
-                // //     $user->save();
-                    
+            
+                
                 $validatedData = $request->validate([
                     'name' => 'required',
-                    'email' => 'required|email',
+                    'email' => 'required|email|',
                     'password' => 'required',
                     'role'=>'',
+                    
+                ]);
+                
+                $validatedData['password']=Hash::make($validatedData['password']);
+               $user->update($validatedData);
+
+                $validatedData2 = $request->validate([
                     'ville_E' => 'required',
                     'depe_E'=> 'required',
                     'class_E'=> 'required'
                 ]);
                 
-                $validatedData['password']=Hash::make($validatedData['password']);
-                $user->update($validatedData);
-                return redirect()->back();
+                $etudiant->update($validatedData2);
+                DB::update('update etudiants set ville_E = ? , depe_E = ? , class_E = ?  where email = ?',[$validatedData2['ville_E'],$validatedData2['depe_E'],$validatedData2['class_E'],Auth::user()->email]);
+                return redirect()->back();               
 
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-        $validatedData['password']=Hash::make($validatedData['password']);
-        $user->update($validatedData);
-        return redirect()->back();
-        // $user->name=$request->name;
-        // $user->email=$request->email;
-        // $user->password=$request->password;
-        //     $user->save();
+       
+        
     }
 
 
