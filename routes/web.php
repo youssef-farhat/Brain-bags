@@ -24,11 +24,11 @@ Route::get('/con', function () {
 });
 Route::middleware('auth' )->group(function () {
 
-Route::get('/profilEn',"EntrepriseController@show")->middleware('auth');
+Route::get('/profilEn',"EntrepriseController@show")->middleware('auth','checkEntreprise')->name('profil');;
 //----------------------Demandes----------------------------
 Route::get('/dem', 'DemandeController@index')->name('index');
 });
-Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
+// Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
