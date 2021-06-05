@@ -8,11 +8,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Etudiant::class, function (Faker $faker) {
     return [
-        'email'=>User::get('email')->random(),
+        'email'=>User::all()->random()->email,
         'ville_E'=>$faker->city,
-        'depar_E'=>$faker->jobTitle,
+        'depe_E'=>$faker->randomElement(['informatique', 'Economie_gestion', 'Genie_proceder','mechanique','electrique']),
         'class_E'=>$faker->word,
-        'depar_E'=>$faker->word,
         'description'=>$faker->sentence
     ];
 });
