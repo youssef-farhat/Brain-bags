@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class EntrepriseController extends Controller
 {
@@ -38,16 +39,25 @@ class EntrepriseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
 
+        // $validatedData = $request->validate([
+        //     'nom_entreprise' => 'required',
+        //     'email' => 'required|email|unique:users',
+        //     'password' => 'required|min:8|confirmed',
+        //     'ville' => 'required|'
+            
+
+        // ]);
 
         $Entreprise = new Entreprise;
         $User = new User;
         $User->email = $request->email;
         $User->role = "entreprise";
         $User->name=$request->nom_entreprise;
-        $User->password = Hash::make($request->mdp);
+        $User->password = Hash::make($request->password);
         $Entreprise->nom_entreprise = $request->nom_entreprise;
         $Entreprise->categorie = $request->categorie;
         $Entreprise->ville = $request->ville;
@@ -87,6 +97,7 @@ class EntrepriseController extends Controller
      */
     public function edit(Entreprise $entreprise)
     {
+
     }
 
     /**

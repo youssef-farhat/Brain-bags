@@ -22,9 +22,14 @@ Route::get('/ins', function () {
 Route::get('/con', function () {
     return view('connect.html.auth');
 });
+
+Route::get('/en', function () {
+    return view('profil.index');
+});
+
 Route::middleware('auth' )->group(function () {
 
-Route::get('/profilEn',"EntrepriseController@show")->middleware('auth','checkEntreprise')->name('profil');;
+Route::get('/profilEn/{user}',"EntrepriseController@show")->middleware('auth','checkEntreprise')->name('profil');;
 //----------------------Demandes----------------------------
 Route::get('/dem', 'DemandeController@index')->name('index');
 });
@@ -32,7 +37,7 @@ Route::get('/dem', 'DemandeController@index')->name('index');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
-Route::get('/updateE',function(){
+Route::get('/updateE/{user}',function(){
     return view('updateEntreprise.updateEntreprise');
 })->middleware('auth','checkEntreprise');
 Route::get('/index',function(){
