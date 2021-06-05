@@ -6,6 +6,8 @@ use App\Etudiant;
 use App\User;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use PhpParser\Node\Stmt\Echo_;
@@ -88,7 +90,12 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
-        //
+        $etudiant =DB::table('etudiants')
+        ->join('users','users.email','=','etudiants.email')
+        ->where('users.email','=', Auth::user()->email)
+        ->get();
+        
+        return view('etudiantprofile.profilEtud',['etudiant'=>$etudiant]);
     }
 
     /**
@@ -99,7 +106,13 @@ class EtudiantController extends Controller
      */
     public function edit(Etudiant $etudiant)
     {
-        //
+        // $etudiant =DB::table('etudiants')
+        // ->join('users','users.email','=','etudiants.email')
+        // ->where('users.email','=', Auth::user()->email)
+        // ->get();
+        // dd($etudiant);
+        
+        // return view('etudiantprofile.modifProfilEtude',['etudiant'=>$etudiant]);
     }
 
     /**
