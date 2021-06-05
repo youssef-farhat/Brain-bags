@@ -38,7 +38,7 @@ class LoginController extends Controller
             return '/dem';
         }
         if(Auth::user()->role=='entreprise'){
-            return '/profilEn';
+            return '/en';
         }
         return '/';
     }

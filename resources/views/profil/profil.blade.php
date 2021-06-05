@@ -19,6 +19,7 @@
 
 <body>
   @include('layouts.sidebarEn')
+
   <div class="home_content">
     <div class="container">
       <div class="text">
@@ -49,7 +50,7 @@
               </div>
               <div class="col">
                 <div class="btne">
-                  <a href="{{url('updateE')}}"> <input type="submit" value="Modifier" class="btn btn-primary"></a>
+                  <a href="{{url('updateE',Auth::user()->email)}}"> <input type="submit" value="Modifier" class="btn btn-primary"></a>
 
                 </div>
               </div>
