@@ -14,7 +14,6 @@ $factory->define(Entreprise::class, function (Faker $faker) {
         'ville' => $faker->city,
         'logo' => $faker->word,
         'description' => $faker->sentence,
-        'email'=>User::get('email')->random()
-
+        'email'=>User::all()->random()->email
     ];
 });
