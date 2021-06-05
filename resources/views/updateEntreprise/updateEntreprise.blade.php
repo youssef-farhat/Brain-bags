@@ -18,7 +18,7 @@
 
 <body>
 
-    @include('layouts.sidebar')
+    @include('layouts.sidebarEn')
     @section('content')
     <div class="home_content">
 
