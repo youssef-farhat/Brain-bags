@@ -85,7 +85,8 @@ class StageController extends Controller
      */
     public function destroy(Stage $stage)
     {
+        
         $stage->delete();
-        return redirect()->route('/modifstage');
+        return redirect('/modifstage');
     }
 }

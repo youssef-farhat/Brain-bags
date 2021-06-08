@@ -57,18 +57,20 @@
                     <p>{{ $stage->description }}</p>
             
                     <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary">Modifer</button>
-                    <button type="button" class="btn btn-danger">Supprimer</button>
+                    <button type="button" class="btn btn-primary"><a href="updatestage.blade.php"> Modifer</a></button>
+                    <!-- <button type="button" class="btn btn-danger">Supprimer</button> -->
                     
                     
-                    <form action="{{ route('deletestage',['id'=>$stage->id ]) }}" method="POST">
-                        <a class="btn btn-outline-danger btn-block col-m-6 " href="{{route('deletestage',[ 'id'=>$stage->id ])}}">
+                    <form action="{{ route('stage.destroy',$stage->id) }}" method="POST" id="delete-form">
+                        @csrf
+                        @method('DELETE')
+                        <a   onclick="event.preventDefault();
+                                                 document.querySelector('#delete-form').submit()" class="btn btn-outline-danger btn-block col-m-6 " href="{{route('deletestage',[ 'id'=>$stage->id ])}}">
                         <i class="fa fa-window-close"></i> Annuler 
                         </a>
-                        @csrf
-                        @method('delete')
                         
                         </form>
+
                     </div>
                 </div>
                 <div class="item2">

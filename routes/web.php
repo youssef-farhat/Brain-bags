@@ -49,12 +49,14 @@ Route::POST('/ajoutstage', 'admin\AjoutStageController@store')->name('ajoutstage
 // )->middleware('auth','checkEntreprise';
 
 Route::get('/modifstage', 'admin\StageController@index');
-Route::delete('/modifstage', 'admin\StageController@destroy')->name('deletestage');
+Route::delete('/modifstage/{id}', 'admin\StageController@destroy')->name('deletestage');
 // Route::get('/modifstage', function(){
 //     return view('stage.modifstage');
 // });
 // );
 
+Route::get('/updatestage', 'admin\StageController@index');
+Route::resource('stage','admin\StageController');
 
 
 Route::get('/modifprofiletude', function(){
@@ -65,7 +67,7 @@ Route::get('/modifprofiletude', function(){
 Route::post('/ins','EtudiantController@store')->name('store');
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
-Route::resource('Etudian','EtudiantControler');
+Route::resource('Etudian','EtudiantController');
 
 
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
