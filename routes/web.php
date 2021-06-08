@@ -22,17 +22,22 @@ Route::get('/ins', function () {
 Route::get('/con', function () {
     return view('connect.html.auth');
 });
+
+Route::get('/en', function () {
+    return view('profil.index');
+});
+
 Route::middleware('auth' )->group(function () {
 
-Route::get('/profil',function(){return view('profil.profil');})->middleware('auth');
+Route::get('/profilEn/{user}',"EntrepriseController@show")->middleware('auth','checkEntreprise')->name('profil');;
 //----------------------Demandes----------------------------
 Route::get('/dem', 'DemandeController@index')->name('index');
 });
-Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
+// Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
-Route::get('/updateE',function(){
+Route::get('/updateE/{user}',function(){
     return view('updateEntreprise.updateEntreprise');
 })->middleware('auth','checkEntreprise');
 Route::get('/index',function(){
@@ -42,7 +47,7 @@ Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('sho
 Route::get('/profileetud', function(){
     return view('etudiantprofile.profilEtud');
 })->middleware('auth','checkifetudiant')->name('profileetud');
-})->middleware('auth','checkifetudiant');
+
 Route::put('/modifprofiletude/{user}', 'EtudiantController@update')->name('updateEt');
 
 Route::get('/modifprofiletude', function(){
@@ -55,7 +60,7 @@ Route::resource('Etudiant','EtudiantController');
 
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
-Route::post('/inscriE','EntrepriseController@store')->name('store');
+Route::post('/inscriE','EntrepriseController@store')->name('storeEn');
 Route::post('/updateE','EntrepriseController@edit')->name('update');
 
 Route::get('/formm/{idDemande}','DemandeController@test')->name('formm');
@@ -97,3 +102,4 @@ Route::resource('admins', 'Admin\AdminController' );
 Route::resource('etudiants', 'Admin\EtudiantController' );
 Route::resource('entreprises', 'Admin\EntrepriseController' );
 Route::resource('enseignants', 'Admin\EnseignantController' );
+Route::resource('entreprises', 'EntrepriseController' );

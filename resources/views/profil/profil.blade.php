@@ -18,42 +18,46 @@
 </head>
 
 <body>
-  @include('layouts.sidebarE')
+  @include('layouts.sidebarEn')
+
   <div class="home_content">
     <div class="container">
       <div class="text">
-        <h2>Profil</h2>
+        <h2>Profil {{$entreprise[0]->nom_entreprise}} </h2>
       </div>
 
       <div class="block" style="margin:auto;display:block;">
         <div style="margin:auto;display:block;">
           <img src="{{asset('dalistyle/img/download.png')}}" class="img">
-          <h1 style="text-align:center;margin:15px">{{Auth::user()->name}}</h1>
+          <h1 style="text-align:center;margin:15px">{{$entreprise[0]->nom_entreprise}}</h1>
           <div class="zone">
+            
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
               <div class="col">
+
                 <h6>Description</h6>
                 <p>
-                  What is Lorem Ipsum?
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                {{$entreprise[0]->description}}
                 </p>
               </div>
               <div class="col">
                 <h6>Localisation</h6>
-                <p>Ariana,Technopole Al ghazala <span> <i class="fa fa-map-marker" style="color: blue;"></i></span></p>
+                <p>{{$entreprise[0]->ville}}<span> <i class="fa fa-map-marker" style="color: blue;"></i></span></p>
               </div>
               <div class="col">
                 <h6>Catégorie<span><i class="fa fa-bars" style="color: blue;"></i></span> </h6>
+                {{$entreprise[0]->categorie}}
               </div>
               <div class="col">
                 <div class="btne">
-                 <a href="{{url('updateE')}}"> <input type="submit" value="Modifier" class="btn btn-primary"></a>
-                  
+                  <a href="{{url('updateE',Auth::user()->email)}}"> <input type="submit" value="Modifier" class="btn btn-primary"></a>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
+       
       </div>
 
     </div>
@@ -77,5 +81,6 @@
     };
   </script>
 </body>
+
 
 </html>

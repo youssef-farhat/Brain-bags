@@ -51,7 +51,7 @@
           <span class="tooltip">Liste de stages</span>
         </li>
         <li>
-            <a href="{{route('profileetud')}}">
+            <a href="{{route('Etudiant.show',Auth::user()->email)}}">
                 <i class='bx bxs-user bx-tada-hover' ></i>
               <span class="links_name">Profile</span>
             </a>
