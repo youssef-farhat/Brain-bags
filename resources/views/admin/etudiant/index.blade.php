@@ -66,9 +66,9 @@
                                         <td>{{ $key }}</td>
                                         <td> <img src="{{ $etudiant->img }}" style="width: 8vw; border-radius: 12px;"
                                                 alt=""></td>
-                                        <td>{{ $etudiant->nom_prenom_E }}</td>
-                                        <td>{{ $etudiant->E_mail }}</td>
-                                        <td>{{ $etudiant->departement}}</td>
+                                        <td>{{ $etudiant->name }}</td>
+                                        <td>{{ $etudiant->email }}</td>
+                                        <td>{{ $etudiant->depe_E}}</td>
                                         <td>{{ $etudiant->ville_E }}</td>
                                         <td>{{ $etudiant->description }}</td>                                   
                                         <td>

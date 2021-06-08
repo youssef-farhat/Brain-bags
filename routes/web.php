@@ -102,4 +102,4 @@ Route::resource('admins', 'Admin\AdminController' );
 Route::resource('etudiants', 'Admin\EtudiantController' );
 Route::resource('entreprises', 'Admin\EntrepriseController' );
 Route::resource('enseignants', 'Admin\EnseignantController' );
-Route::resource('entreprises', 'EntrepriseController' );
+Route::resource('entreprise', 'EntrepriseController' );
