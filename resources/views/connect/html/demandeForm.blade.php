@@ -30,7 +30,7 @@
      <p class="card-text">Localisation :  <strong> {{$d->ville}} , {{$d->localisation}} </strong></p>
      <p class="card-text">Localisation :  <strong> {{$d->description}}</strong></p>
    </div>
-     <a class="btn btn-outline-secondary" href="{{ route('submit',['idDemande'=>$d->id]) }}" onclick="event.preventDefault();
+     <a class="btn btn-outline-secondary" href="{{ route('store',['idDemande'=>$d->id]) }}" onclick="event.preventDefault();
      document.getElementById('submit-form').submit();">
   <strong> Envoyer votre demande</strong>
  </a>
@@ -39,7 +39,7 @@
     {{$d->created_at }} 
    </div>
  </div>
-<form method="POST" action="{{route('submit',['idDemande'=>$d->id])}}" id="submit-form" style="display:none">
+<form method="POST" action="{{route('store',['idDemande'=>$d->id])}}" id="submit-form" style="display:none">
   @csrf
   @php
   // var_dump($idDemande);
