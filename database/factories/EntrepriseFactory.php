@@ -14,7 +14,7 @@ $factory->define(Entreprise::class, function (Faker $faker) {
         'ville' => $faker->address,
         'logo' => $faker->imageUrl,
         'description' => $faker->sentence,
-        'email'=>User::all()->random()->email,
+        'email'=>User::all()->random()->email
 
     ];
 });

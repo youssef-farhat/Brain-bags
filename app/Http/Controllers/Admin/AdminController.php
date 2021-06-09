@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
-
+use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
     /**
@@ -156,4 +156,11 @@ class AdminController extends Controller
             'mdp' => 'required'
         ];
     }
+     // fonction Recherche
+    // public function search(Request $request)
+    // {
+    //     $search =$request->get('search');
+    //     $admin = DB::table('admins')->where('','like','%'.$search.'%')->paginate(5);
+    //     return view('admin.admins.index',['admins'=> $admin]);
+    // }
 }
