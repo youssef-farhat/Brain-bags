@@ -108,3 +108,21 @@ Route::resource('etudiants', 'Admin\EtudiantController' );
 Route::resource('entreprises', 'Admin\EntrepriseController' );
 Route::resource('enseignants', 'Admin\EnseignantController' );
 Route::resource('entreprise', 'EntrepriseController' );
+
+Route::get('/ajoutstage', 'admin\AjoutStageController@index');
+Route::POST('/ajoutstage', 'admin\AjoutStageController@store')->name('ajoutstage');
+// Route::get('/ajoutstage', function(){
+//     return view('stage.ajoutstage');
+// });
+// )->middleware('auth','checkEntreprise');
+
+Route::get('/modifstage', 'admin\StageController@index');
+Route::delete('/modifstage/{id}', 'admin\StageController@destroy')->name('deletestage');
+// Route::get('/modifstage', function(){
+//     return view('stage.modifstage');
+// });
+// );
+
+Route::post('/updatestage/{id}', 'admin\UpdateStageController@edit')->name('updatestage');
+Route::get('/updatestage', 'admin\UpdateStageController@index')->name('updatestage');
+Route::resource('stage','admin\StageController');

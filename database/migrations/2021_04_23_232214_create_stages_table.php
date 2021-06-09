@@ -19,7 +19,7 @@ class CreateStagesTable extends Migration
             $table->enum('departement', ['Informatique', 'Economie_gestion', 'Genie_proceder', 'mechanique', 'electrique']);
             $table->date('date');
             $table->string('localisation');
-            $table->string('payement');
+            $table->string('payement')->nullable();
             $table->text('description');
             //$table->string('payement')->nullable();
             $table->integer('entreprise_id')->unsigned()->nullable();
