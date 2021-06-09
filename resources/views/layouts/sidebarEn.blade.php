@@ -51,7 +51,7 @@
       </li>
 
       <li>
-        <a href="{{url('updateE') }}">
+        <a href="{{url('updateEn',Auth::user()->email)}}">
           <i class="bx bx-cog"></i>
           <span class="links_name">Setting</span>
         </a>

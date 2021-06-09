@@ -58,7 +58,6 @@ class EntrepriseController extends Controller
         $User->role = "entreprise";
         $User->name=$request->nom_entreprise;
         $User->password = Hash::make($request->password);
-        $Entreprise->nom_entreprise = $request->nom_entreprise;
         $Entreprise->categorie = $request->categorie;
         $Entreprise->ville = $request->ville;
         $Entreprise->logo = "hello";
@@ -68,7 +67,7 @@ class EntrepriseController extends Controller
         $User->save();
         $Entreprise->save();
         
-        if ($Entreprise->save() == 1) {
+        if ($User->save() == 1) {
            return redirect('/con');
         }
     }
@@ -97,7 +96,12 @@ class EntrepriseController extends Controller
      */
     public function edit(Entreprise $entreprise)
     {
-
+        $entreprise =DB::table('entreprises')
+        ->join('users','users.email','=','entreprises.email')
+        ->where('users.email','=', Auth::user()->email)
+        ->get();
+      
+      return view('profil.updateEntreprise',['entreprise'=>$entreprise]);
     }
 
     /**
@@ -107,24 +111,50 @@ class EntrepriseController extends Controller
      * @param  \App\Entreprise  $entreprise
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Entreprise $Entreprise,User $User)
+    public function update(Request $request ,User $User, Entreprise $Entreprise)
     {
-        $User->email = $request->email;
-        $User->role = "entreprise";
-        $User->name=$request->nom_entreprise;
-        $User->password = Hash::make($request->mdp);
-        $Entreprise->nom_entreprise = $request->nom_entreprise;
-        $Entreprise->categorie = $request->categorie;
-        $Entreprise->ville = $request->ville;
-        $Entreprise->logo = "hello";
-        $Entreprise->email = $User->email;
-        $Entreprise->description = $request->description;
+        // $User->email = $request->email;
+        // $User->role = "entreprise";
+        // $User->name=$request->nom_entreprise;
+        // $User->password = Hash::make($request->mdp);
+        // $Entreprise->nom_entreprise = $request->nom_entreprise;
+        // $Entreprise->categorie = $request->categorie;
+        // $Entreprise->ville = $request->ville;
+        // $Entreprise->logo = "hello";
+        // $Entreprise->email = $User->email;
+        // $Entreprise->description = $request->description;
         
-        $User->save();
-        $Entreprise->save();
-        if ($Entreprise->save() == 1) {
-            redirect('/profil');
-        }
+        // $User->save();
+        // $Entreprise->save();
+        // if ($Entreprise->save() == 1) {
+        //     redirect('/profil');
+        // }
+        $e = $User->email;
+        $validatedData3 = $request->validate([
+            'email' => 'required|email|',
+            'name' => 'required',
+            'password' => 'required',
+            'role'=>'',
+            
+        ]);
+        
+        $validatedData3['password']=Hash::make($validatedData3['password']);
+        $User->update($validatedData3);
+
+        $validatedData4 = $request->validate([
+            
+            'ville' => 'required',
+            'categorie'=>'required',
+            
+
+        ]);
+            
+        
+            
+        $Entreprise->update($validatedData4);
+        DB::update('update entreprises set  categorie = ? ,ville = ? where email = ?',[$validatedData4['categorie'],$validatedData4['ville'],$e]);
+        
+        return redirect()->back();
     }
 
     /**
