@@ -64,7 +64,7 @@
                                 @foreach ($entreprises as $key => $entreprise)
                                     <tr>
                                         <td>{{ $key }}</td>
-                                        <td>{{ $entreprise->nom_entreprise }}</td>
+                                        <td>{{ $entreprise->name }}</td>
                                         <td>{{ $entreprise->email }}</td>
                                         <td>{{ $entreprise->categorie }}</td>
                                         <td>{{ $entreprise->ville }}</td>

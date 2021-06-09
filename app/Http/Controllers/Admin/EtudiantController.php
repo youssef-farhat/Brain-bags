@@ -21,7 +21,8 @@ class EtudiantController extends Controller
     public function index()
     {
         $etudiant=DB::table('users')
-        ->join('etudiants','etudiants.email','users.email')->where('users.role','=','etudiant')->get();
+        ->join('etudiants','etudiants.email','users.email')->get();
+        //dd($etudiant);
         return view('admin.etudiant.index' ,['etudiants' => $etudiant]);
     }
 
@@ -116,9 +117,10 @@ class EtudiantController extends Controller
             'depe_E'=> 'required',
             'class_E'=> 'required'
         ]);
-        
-        $etudiant->update($validatedData2);
-        DB::update('update etudiants set ville_E = ? , depe_E = ? , class_E = ?  where email = ?',[$validatedData2['ville_E'],$validatedData2['depe_E'],$validatedData2['class_E'],Auth::user()->email]);
+        DB::update('update users set name = ? , email = ? , password = ?  where email = ?',[$validatedData['name'],$validatedData['email'],$validatedData['password'],$request->oldEmail]);
+
+        //dd($etudiant->update($validatedData2));
+        DB::update('update etudiants set ville_E = ? , depe_E = ? , class_E = ?  where email = ?',[$validatedData2['ville_E'],$validatedData2['depe_E'],$validatedData2['class_E'],$request->oldEmail]);
         
         return redirect()->back()->with('success','etudiant updated successfully');            
       
