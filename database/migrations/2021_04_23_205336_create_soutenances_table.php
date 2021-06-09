@@ -23,7 +23,7 @@ class CreateSoutenancesTable extends Migration
             $table->enum('salle', ['ST1', 'ST2' ,'Amphi']);
             $table->string('image');
             //$table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('enseignant_id')->references('id')->on('enseignants')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('enseignant_id')->references('id')->on('enseignants')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

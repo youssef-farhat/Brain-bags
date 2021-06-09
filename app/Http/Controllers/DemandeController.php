@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Demande;
+use App\Entreprise;
 use App\Etudiant;
 use App\Stage;
 use Illuminate\Http\Request;
@@ -43,7 +44,10 @@ class DemandeController extends Controller
 
     {
         $demandes=DB::table('stages')->join('entreprises','entreprises.id','id_entreprise')->paginate(5);
-        // $demandes = Stage::paginate(5);
+         //$demandes = Stage::paginate(5);
+        
+
+
         return view('connect.html.demande',['demandes'=>$demandes]);
     }
 
@@ -72,12 +76,12 @@ class DemandeController extends Controller
         if($find<1){
              $demande = new Demande;
         $demande->stage_id =$request->stage_id;
-        $demande->etudiant_id =$request->etudiant_id;
+        $demande->etudiant_id =Auth::user()->id;
         $demande->entreprise_id  =$request->id_entreprise;
 
 
         echo $demande->save();
-        return redirect('/dem');
+        return redirect('/dem')->with('sent',' demande envoyée avec succée');
         }
         else return redirect('/dem')->with('msg','cette demande est deja existe');
 

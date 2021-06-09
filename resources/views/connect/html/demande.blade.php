@@ -17,6 +17,14 @@
                     </button>
                   </div>
                   @endif
+                  @if (\Session::has('sent'))
+                  <div class="alert alert-success alert-dismissible fade show col-md-4" role="alert">
+                      {!! \Session::get('sent') !!}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    @endif
                 <div class="row">
                     <div class="col-sm" class="in">
                         <select clas aria-label=".form-select-lg example" class="form-control input" id="search">
