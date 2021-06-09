@@ -13,6 +13,6 @@ $factory->define(Stage::class, function (Faker $faker) {
         'localisation' => $faker->address,
         'payement' => $faker->word,
         'description' => $faker->sentence,
-        'id_entreprise' => Entreprise::get('id')->random()
+        'entreprise_id' => Entreprise::get('id')->random()
     ];
 });

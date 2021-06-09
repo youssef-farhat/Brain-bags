@@ -56,13 +56,11 @@
         <label for="inputPassword4">Nom d'entreprise</label>
         {{-- <input type="text" class="form-control" id="inputPassword4" placeholder="Nom" name="nom" value="{{$entreprise[0]->name}}"> --}}
       </div>
-      <div class="form-group col-md-2">
-        <img class="rounded float-end" id=""src={{$d->image}} width='150px'height='150px'>
-      </div>
+      
     </div>
     <div class="form-group">
       <label for="inputAddress">Localisation de stage</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="id_entreprise" value="{{$d->id_entreprise}} " >
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="id_entreprise" value="{{$d->entreprise_id}} " >
     </div>
     <div class="form-group">
       <label for="inputAddress2">Departement</label>
