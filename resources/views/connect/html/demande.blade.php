@@ -47,6 +47,7 @@
                 </div>
             </div>
 
+                         
             <div class="blockinp2">
                 @foreach ($demandes as $demande )
                     
@@ -61,9 +62,6 @@
                             <p>{{ $demande->departement }}</p>
                             <p class="desc">Description:</p>
                             <p>{{ $demande->description }}</p>
-                            @php
-                          //  dd($entreprises->name);
-                            @endphp
                             {{-- <p> nom entreprise :{{ $entreprises->name }}</p> --}}
 
                             <div class="btn-group" role="group" aria-label="Basic example">

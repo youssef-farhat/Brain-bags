@@ -33,52 +33,37 @@ Route::get('/profilEn/{user}',"EntrepriseController@show")->middleware('auth','c
 //----------------------Demandes----------------------------
 Route::get('/dem', 'DemandeController@index')->name('index');
 });
-
-Route::get('/profil',function(){
-    return view('profil.profil');
-})->middleware('auth');
-Route::get('/dem', function(){
-    return view('connect.html.demande');
-});
-Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
+// Route::get('/profil','EntrepriseController@index')->middleware('auth','checkEntreprise')->name('profil');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
+Route::get('/updateEn/{user}',function(){
+    return view('profil.updateEntreprise');
+})->middleware('auth','checkEntreprise')->name('misajourE');;
+Route::put('/updateEn/{user}', 'EntrepriseController@update')->middleware('auth','checkEntreprise')->name('updateEn');
 
-Route::get('/ajoutstage', 'admin\AjoutStageController@index');
-Route::POST('/ajoutstage', 'admin\AjoutStageController@store')->name('ajoutstage');
-// Route::get('/ajoutstage', function(){
-//     return view('stage.ajoutstage');
-// });
-// )->middleware('auth','checkEntreprise';
+Route::get('/index',function(){
+    return view('home.index');
+});
+Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
+Route::get('/profileetud', function(){
+    return view('etudiantprofile.profilEtud');
+})->middleware('auth','checkifetudiant')->name('profileetud');
 
-Route::get('/modifstage', 'admin\StageController@index');
-Route::delete('/modifstage/{id}', 'admin\StageController@destroy')->name('deletestage');
-// Route::get('/modifstage', function(){
-//     return view('stage.modifstage');
-// });
-// );
-
-Route::post('/updatestage/{id}', 'admin\UpdateStageController@edit')->name('updatestage');
-Route::get('/updatestage', 'admin\UpdateStageController@index')->name('updatestage');
-Route::resource('stage','admin\StageController');
-
+Route::put('/modifprofiletude/{user}', 'EtudiantController@update')->name('updateEt');
 
 Route::get('/modifprofiletude', function(){
     return view('etudiantprofile.modifProfilEtude');
 })->name('modifprofE');
 
-
 Route::post('/ins','EtudiantController@store')->name('storeEt');
-Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
-Route::resource('Etudian','EtudiantController');
-
+Route::resource('Etudiant','EtudiantController');
 
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
 Route::post('/inscriE','EntrepriseController@store')->name('storeEn');
-Route::post('/updateE','EntrepriseController@edit')->name('update');
+// Route::post('/updateEn','EntrepriseController@edit')->name('updaten');
 
 Route::get('/formm/{idDemande}','DemandeController@test')->name('formm');
 Route::post('/formm/{idDemande}', 'DemandeController@store')->name('store');
