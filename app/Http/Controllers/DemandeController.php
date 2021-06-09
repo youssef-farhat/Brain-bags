@@ -25,7 +25,7 @@ class DemandeController extends Controller
         
     }
     public function getDemandes(){
-        $demandes=DB::table('stages')->join('entreprises','entreprises.id','=','stages.id_entreprise')
+        $demandes=DB::table('stages')->join('entreprises','entreprises.id','=','stages.entreprise_id')
             ->join('demandes','demandes.stage_id','=','stages.id')
             ->where('demandes.etudiant_id','=', Auth::user()->id)
         ->get();
@@ -37,7 +37,7 @@ class DemandeController extends Controller
         // $demande = Stage::find($idDemande);
 
         $demandes=DB::table('stages')
-                                    ->join('entreprises','entreprises.id','id_entreprise')
+                                    ->join('entreprises','entreprises.id','entreprise_id')
                                     ->where('stages.id','=',$idDemande)
                                     ->get() ;
                                  //   dd($demandes);
