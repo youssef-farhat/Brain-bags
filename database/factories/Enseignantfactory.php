@@ -13,7 +13,7 @@ $factory->define(Enseignant::class, function (Faker $faker) {
         'mdp'=> $faker->password,
         'image'=> $faker->imageUrl,
         'ville'=> $faker->address,
-        'departement'=> $faker->randomElement(['Technologie de l information', 'Mecanique', 'électrique','Commerce']),
+        'departement'=> $faker->randomElement(['Technologie_de_l_information', 'Mecanique', 'électrique','Commerce']),
         'created_at'=> now()
     ];
 });
