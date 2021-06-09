@@ -55,7 +55,8 @@ Route::delete('/modifstage/{id}', 'admin\StageController@destroy')->name('delete
 // });
 // );
 
-Route::get('/updatestage', 'admin\StageController@index');
+Route::post('/updatestage/{id}', 'admin\UpdateStageController@edit')->name('updatestage');
+Route::get('/updatestage', 'admin\UpdateStageController@index')->name('updatestage');
 Route::resource('stage','admin\StageController');
 
 

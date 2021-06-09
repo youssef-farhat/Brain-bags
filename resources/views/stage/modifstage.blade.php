@@ -17,8 +17,13 @@
 
     <div class="container">
           <div class="blockinp">
+          <a href="{{ route('ajoutstage')}}" class="btn btn-outline-primary">
+                                <i class='bx bxs-user-plus bx-sm' ></i> Ajouter un offre 
+                            </a>
             <div class="row">
-              <div class="col-sm" class="in">
+            
+                            
+              <!-- <div class="col-sm" class="in">
                 <select clas aria-label=".form-select-lg example" class="form-control input">
                   <option disabled selected hidden >Département</option>
                   <option value="1">Technologie de l'information</option>
@@ -35,9 +40,13 @@
                   <option value="2">Perfectionnement</option>
                   <option value="3">pfe</option>
                 </select>
-              </div>
+              </div> -->
             </div>
           </div>
+
+          <br>
+          <br>
+          <br>
 
         
 
@@ -50,15 +59,14 @@
         <div class="blockinp2">
             <div class="grid-container">
                 <div class="item1">
-                    <p> Stage de {{ $stage->type }}</p>
-                    <p>{{ $stage->date }}</p>
+                    <p> Stage {{ $stage->type }} a {{ $stage->localisation }}</p>
+                    <p>le {{ $stage->date }}</p>
                     <p>Département {{ $stage->departement}}</p>
                     <p class="desc">Description:</p>
                     <p>{{ $stage->description }}</p>
             
                     <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary"><a href="updatestage.blade.php"> Modifer</a></button>
-                    <!-- <button type="button" class="btn btn-danger">Supprimer</button> -->
+                    <a href="{{ route('stage.edit',$stage->id) }}"class="btn btn-outline-primary"> Modifer</a>
                     
                     
                     <form action="{{ route('stage.destroy',$stage->id) }}" method="POST" id="delete-form">
@@ -66,7 +74,7 @@
                         @method('DELETE')
                         <a   onclick="event.preventDefault();
                                                  document.querySelector('#delete-form').submit()" class="btn btn-outline-danger btn-block col-m-6 " href="{{route('deletestage',[ 'id'=>$stage->id ])}}">
-                        <i class="fa fa-window-close"></i> Annuler 
+                        <i class="fa fa-window-close"></i> Supprimer
                         </a>
                         
                         </form>
@@ -74,7 +82,7 @@
                     </div>
                 </div>
                 <div class="item2">
-                    <img src="custom/img/{{ $stage->image }}" class="rounded float-end" >
+                    <img src="custom/img/instructor-helping-students-in-computer-class.jpg " class="rounded float-end" >
                 </div>
             </div>    
         </div>

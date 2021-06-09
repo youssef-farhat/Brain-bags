@@ -62,7 +62,7 @@ class StageController extends Controller
      */
     public function edit(Stage $stage)
     {
-        //
+        return view('stage.updatestage',['stage' => $stage]);
     }
 
     /**
@@ -74,7 +74,14 @@ class StageController extends Controller
      */
     public function update(Request $request, Stage $stage)
     {
-        //
+        //$stage->type=$request->type;
+        $stage->departement=$request->departement;
+        $stage->date=$request->date;
+        $stage->localisation=$request->localisation;
+        $stage->description=$request->description;
+        $stage->save();
+        // return dd($stage);
+        return redirect('/modifstage');
     }
 
     /**
