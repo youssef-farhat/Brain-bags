@@ -38,9 +38,9 @@ Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
 Route::get('/updateEn/{user}',function(){
-    return view('updateEntreprise.updateEntreprise');
+    return view('profil.updateEntreprise');
 })->middleware('auth','checkEntreprise')->name('misajourE');;
-Route::put('/updateEn/{user}', 'EntrepriseController@update')->name('updateEn');
+Route::put('/updateEn/{user}', 'EntrepriseController@update')->middleware('auth','checkEntreprise')->name('updateEn');
 
 Route::get('/index',function(){
     return view('home.index');
@@ -63,7 +63,7 @@ Route::resource('Etudiant','EtudiantController');
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
 Route::post('/inscriE','EntrepriseController@store')->name('storeEn');
-// Route::post('/updateE','EntrepriseController@edit')->name('update');
+// Route::post('/updateEn','EntrepriseController@edit')->name('updaten');
 
 Route::get('/formm/{idDemande}','DemandeController@test')->name('formm');
 Route::post('/formm/{idDemande}', 'DemandeController@store')->name('store');

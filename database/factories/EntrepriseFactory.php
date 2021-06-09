@@ -9,7 +9,7 @@ use Faker\Generator as Faker;
 $factory->define(Entreprise::class, function (Faker $faker) {
     return [
 
-        'nom_entreprise' => $faker->sentence,
+        
         'categorie' =>$faker->randomElement(['Informatique', 'Economie_gestion', 'Genie_proceder', 'mechanique', 'electrique']),
         'ville' => $faker->city,
         'logo' => $faker->word,

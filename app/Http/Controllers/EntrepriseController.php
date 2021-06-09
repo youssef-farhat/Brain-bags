@@ -58,7 +58,6 @@ class EntrepriseController extends Controller
         $User->role = "entreprise";
         $User->name=$request->nom_entreprise;
         $User->password = Hash::make($request->password);
-        $Entreprise->nom_entreprise = $request->nom_entreprise;
         $Entreprise->categorie = $request->categorie;
         $Entreprise->ville = $request->ville;
         $Entreprise->logo = "hello";
@@ -102,7 +101,7 @@ class EntrepriseController extends Controller
         ->where('users.email','=', Auth::user()->email)
         ->get();
       
-      return view('updateEntreprise.updateEntreprise',['entreprise'=>$entreprise]);
+      return view('profil.updateEntreprise',['entreprise'=>$entreprise]);
     }
 
     /**
@@ -133,7 +132,7 @@ class EntrepriseController extends Controller
         $e = $User->email;
         $validatedData3 = $request->validate([
             'email' => 'required|email|',
-            'nom_entreprise' => 'required',
+            'name' => 'required',
             'password' => 'required',
             'role'=>'',
             
@@ -143,17 +142,17 @@ class EntrepriseController extends Controller
         $User->update($validatedData3);
 
         $validatedData4 = $request->validate([
-            'nom_entreprise' => 'required',
+            
             'ville' => 'required',
             'categorie'=>'required',
-            'description'=>'required'
+            
 
         ]);
             
         
             
         $Entreprise->update($validatedData4);
-        DB::update('update entreprises set nom_entreprise = ? , categorie = ? ,ville = ?  ,description = ? where email = ?',[$validatedData4['nom_entreprise'],$validatedData4['categorie'],$validatedData4['ville'],$validatedData4['description'],$e]);
+        DB::update('update entreprises set  categorie = ? ,ville = ? where email = ?',[$validatedData4['categorie'],$validatedData4['ville'],$e]);
         
         return redirect()->back();
     }

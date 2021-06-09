@@ -23,13 +23,13 @@
   <div class="home_content">
     <div class="container">
       <div class="text">
-        <h2>Profil {{$entreprise[0]->nom_entreprise}} </h2>
+        <h2>Profil {{Auth::user()->name}} </h2>
       </div>
 
       <div class="block" style="margin:auto;display:block;">
         <div style="margin:auto;display:block;">
           <img src="{{asset('dalistyle/img/download.png')}}" class="img">
-          <h1 style="text-align:center;margin:15px">{{$entreprise[0]->nom_entreprise}}</h1>
+          <h1 style="text-align:center;margin:15px">{{Auth::user()->name}}</h1>
           <div class="zone">
             
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
@@ -46,7 +46,7 @@
               </div>
               <div class="col">
                 <h6>Catégorie<span><i class="fa fa-bars" style="color: blue;"></i></span> </h6>
-                {{$entreprise[0]->categorie}}
+                
               </div>
               <div class="col">
                 <div class="btne">
