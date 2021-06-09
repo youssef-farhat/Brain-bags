@@ -23,12 +23,12 @@
                         <small class="text-muted">{{ $demande->created_at }} </small>
                     </div>
                     <div class="card-footer text-center  ">
-                        <form action="{{ route('delete',['id'=>$demande->id ]) }}" method="POST">
-                        <a class="btn btn-outline-dark btn-block col-m-6 " href="test/{{ $demande->id }}"> <i class="fas fa-edit"></i>Modifier </a>
-                        <a class="btn btn-outline-danger btn-block col-m-6 " href="{{route('delete',[ 'id'=>$demande->id ])}}"><i class="fa fa-window-close"></i> Annuler </a>
+                        <a class="btn btn-outline-dark btn-block col-m-6 " href="{{ $demande->id }}"> <i class="fas fa-edit"></i>Modifier </a>
+                        <a class="btn btn-outline-danger btn-block col-m-6 " href="{{route('delete',$demande->id )}}" onclick="event.preventDefault();
+                            document.getElementById('delete-form').submit();"><i class="fa fa-window-close"></i> Annuler </a>
+                            <form id="delete-form"  action="{{ route('demande.destroy',$demande->id ) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     
                     </div>

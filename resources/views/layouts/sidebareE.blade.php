@@ -24,8 +24,8 @@
       <div class="profile_content">
         <div class="profile">
           <div class="profile_details">
-            <img src="../img/fb.jpg" alt="" />
-            <div class="name_job">
+            <img src="/img/avatar1.jpg" alt="" />
+              <div class="name_job">
               <div class="name"> {{ Auth::user()->name }}</div>
               <div class="job">Etudiant</div>
             </div>
@@ -44,14 +44,14 @@
       </div>
       <ul class="nav_list">
         <li>
-          <a href="#">
+          <a href="{{route('index')}}">
             <i class="bx bx-list-ul bx-tada-hover"></i>
             <span class="links_name">Accueil</span>
           </a>
           <span class="tooltip">Liste de stages</span>
         </li>
         <li>
-            <a href="#">
+            <a href="{{route('Etudiant.show',Auth::user()->email)}}">
                 <i class='bx bxs-user bx-tada-hover' ></i>
               <span class="links_name">Profile</span>
             </a>
@@ -64,20 +64,8 @@
             </a>
             <span class="tooltip">Liste de stages</span>
           </li>
-        <li>
-          <a href="#">
-            <i class="bx bx-paste bx-tada-hover"></i>
-            <span class="links_name">Mes Demandes </span>
-          </a>
-          <span class="tooltip">Demande de stages</span>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bxs-city bx-tada-hover'></i>
-              <span class="links_name">Entreprise </span>
-            </a>
-            <span class="tooltip">Entreprises</span>
-          </li>
+        
+        
            
         <li>
           <a href="#">

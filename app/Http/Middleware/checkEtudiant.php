@@ -17,7 +17,7 @@ class checkEtudiant
     public function handle($request, Closure $next)
     {
         if (Auth::user()->role!='etudiant') {
-            return redirect('/');
+            return redirect('/home');
         }
         return $next($request);
     }

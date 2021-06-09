@@ -95,6 +95,8 @@
                 </form>
                     <a class="dropdown-item" href="#">Another action</a>
                     <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="{{route('Etudiant.show',Auth::user()->email)}}">profile étudiante</a>
+
                 </div>
             @endauth
 

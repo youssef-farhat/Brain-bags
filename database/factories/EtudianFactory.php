@@ -3,18 +3,15 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Etudiant;
+use App\User;
 use Faker\Generator as Faker;
 
 $factory->define(Etudiant::class, function (Faker $faker) {
     return [
-        'E_mail'=> $faker->email,
-        'nom_prenom_E'=>$faker->firstName,
-        'img'=>$faker->imageUrl,
+        'email'=>User::all()->random()->email,
         'ville_E'=>$faker->city,
-        'depar_E'=>$faker->jobTitle,
-        'motp_E'=>$faker->word,
+        'depe_E'=>$faker->randomElement(['informatique', 'Economie_gestion', 'Genie_proceder','mechanique','electrique']),
         'class_E'=>$faker->word,
-        'depar_E'=>$faker->word,
         'description'=>$faker->sentence
     ];
 });

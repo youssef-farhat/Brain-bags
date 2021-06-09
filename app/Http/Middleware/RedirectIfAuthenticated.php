@@ -21,10 +21,18 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
             $role=Auth::user()->role;
             //return redirect(RouteServiceProvider::HOME);
-            if ($role!='etudiant'){
+            if ($role=='etudiant'){
             
-                return redirect('home');
+                return redirect('/dem');
             } 
+<<<<<<< HEAD
+=======
+            //return redirect(RouteServiceProvider::HOME);
+            if (Auth::user()->role =='entreprise'){
+                 return '/profil' ;
+            }
+            return('/admin-dashboard');
+>>>>>>> 1298f03a74091ad8fd94e1f47230069552f049df
         }
 
         return $next($request);

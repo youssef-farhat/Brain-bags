@@ -21,7 +21,7 @@
                         <div class="form-group row">
 
                             <div class="col-md-12">
-                                <input id="email" type="email" class="form-control form-control input @error('email') is-invalid @enderror" pla name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email@exemple.domaine">
+                                <input id="email" name="email"type="email" class="form-control form-control input @error('email') is-invalid @enderror"  value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email@exemple.domaine">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -73,7 +73,10 @@
           <button class="title btn connect-fb">Se connecter Avec facebook <img src="../img/f.png" alt="" style="width:25px; padding: auto; float: right;margin-left: 5px;"></button>
 
           <h6 class="link">
-            vous n'avez pas de compte ? <a href="">Crée un compte</a>
+            vous n'avez pas de compte ? <a href="{{url('inscriE')}}">Crée un compte</a>
+          </h6>
+          <h6 class="link">
+            vous n'avez pas de compte Etudiant ? <a href="{{url('ins')}}">Crée un compte</a>
           </h6>
         </div>
       </div>

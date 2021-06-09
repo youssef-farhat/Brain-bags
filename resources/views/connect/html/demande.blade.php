@@ -52,7 +52,7 @@
                             <p>{{ $demande->departement }}</p>
                             <p class="desc">Description:</p>
                             <p>{{ $demande->description }}</p>
-                            <p> nom entreprise :{{ $demande->nom_entreprise }}</p>
+                            {{-- <p> nom entreprise :{{ $demande->nom_entreprise }}</p> --}}
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a class="btn btn-outline-info"
                                     href="{{route('formm',['idDemande'=>$demande->id])}}"><strong> Plus de Detail ici </strong></a>
@@ -80,30 +80,5 @@
     {{-- <script src="{{asset('js/app.js')}}"></script> --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-    <script>
-        // $(document).ready(function(){
-        
-        //  fetch_customer_data();
-        
-        //  function fetch_customer_data(query = '')
-        //  {
-        //   $.ajax({
-        //    url:"{{ route('live_search.action') }}",
-        //    method:'GET',
-        //    data:{query:query},
-        //    dataType:'json',
-        //    success:function(data)
-        //    {
-        //       console.log(data.table_data);
-        //     $('blockinp2').html(data.table_data);
-        //    }
-        //   })
-        //  }
-        
-        //  $(document).on('click', '#search', function(){
-        //   var query = $(this).val();
-        //   fetch_customer_data(query);
-        //  });
-        // });
-        </script>
+    
 @endsection

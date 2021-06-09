@@ -10,4 +10,7 @@ class Entreprise extends Model
     {
         return $this->hasMany('App\Stage');
     }
+    public function user(){
+        return $this->belongsTo('App\User','email','email');
+    }
 }

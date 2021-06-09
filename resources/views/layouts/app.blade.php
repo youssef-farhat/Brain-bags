@@ -15,9 +15,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<<<<<<< HEAD
     
  
     
+=======
+>>>>>>> 1298f03a74091ad8fd94e1f47230069552f049df
     <!-- Styles -->
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -47,14 +50,26 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
+<<<<<<< HEAD
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/new') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('ins') }}">{{ __('Register') }}</a>
+=======
+                            
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('ins') }}">{{ __('Register etudiant') }}</a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('inscriE') }}">{{ __('Register entreprise') }}</a>
+>>>>>>> 1298f03a74091ad8fd94e1f47230069552f049df
                                 </li>
                             @endif
+                           
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

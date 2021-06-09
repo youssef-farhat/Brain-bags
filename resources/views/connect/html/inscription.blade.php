@@ -8,8 +8,8 @@ rel="stylesheet"
 href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')}}"
 >
     
-        <button class="btn1"><i class="fa fa-arrow-left"></i></button>
-   <form action="{{ route('store') }}" method="POST">
+<a href="{{url('login') }}"><button class="btn1"><i class="fa fa-arrow-left"></i></button></a>
+   <form action="{{ route('storeEt') }}" method="POST">
     @csrf
     <div class="container">
         <div class="text">creation un compte</div>
@@ -17,7 +17,12 @@ href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
             <div class="row">
                 <div class="col-sm" class="in">
                    
-                    <input type="text" class="form-control input"  @error('email') is-invalid @enderror placeholder="exemple@domaine.com" name="email"/>
+                    <input type="text" class="form-control input @error('email') is-invalid @enderror" placeholder="exemple@domaine.com" name="email"/>
+                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                 </div>
                 <div class="col-sm" class="in">
                     <input type="text" class="form-control input" placeholder="Nom et prenom" name="name"/>
@@ -25,14 +30,19 @@ href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
                 <div class="col-sm" class="in">
 
                     <select clas aria-label=".form-select-lg example" class="form-control input" name="role" >
-                        <option value="admin">admin</option>
+                        
                         <option value="Etudiant">Etudiant</option>
-                        <option value="enseignant">enseignant</option>
+                       
                         
                     </select>
                 </div>
                 <div class="col-sm" class="in" class="option">
-                    <input type="text" class="form-control input" placeholder="ville" name="ville_E" />
+                    <input type="text" class="form-control input @error('ville_E') is-invalid @enderror" placeholder="ville" name="ville_E" />
+                    @error('ville_E')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
                 </div>
             </div>
         </div>
@@ -63,10 +73,15 @@ href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
         <div class="blockinp3">
             <div class="row">
                 <div class="col-sm" class="in">
-                    <input type="password" class="form-control input" placeholder="mot de passe" name="password">
+                    <input type="password" class="form-control input  @error('password') is-invalid @enderror" placeholder="mot de passe" name="password">
+                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                 </div>
                 <div class="col-sm" class="in">
-                    <input type="text" class="form-control input" placeholder="Confirmer le mot de passe" name="password">
+                    <input type="text" class="form-control input" placeholder="Confirmer le mot de passe" name="password_confirmation">
                 </div>
 
             </div>

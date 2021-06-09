@@ -52,10 +52,22 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'checkifetudiant'=>\App\Http\Middleware\checkifetudiant::class,
+<<<<<<< HEAD
+=======
+        'checkEtudiant'=>\App\Http\Middleware\checkifetudiant::class,
+
+>>>>>>> 1298f03a74091ad8fd94e1f47230069552f049df
 
         'checkEntreprise' => \App\Http\Middleware\checkEntreprise::class,
         'admin' => \App\Http\Middleware\CheckIfAdmin::class,
 
+<<<<<<< HEAD
+=======
+
+        'checkEntreprise' => \App\Http\Middleware\checkEntreprise::class,
+        'admin' => \App\Http\Middleware\CheckIfAdmin::class,
+        'checkAdmin'=> \App\Http\Middleware\CheckIfAdmin::class,
+>>>>>>> 1298f03a74091ad8fd94e1f47230069552f049df
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,

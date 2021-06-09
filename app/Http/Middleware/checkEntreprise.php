@@ -17,9 +17,9 @@ class checkEntreprise
 
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->role!='entreprise'){
+        if (Auth::user()->role!="entreprise"){
             
-            return redirect('/');
+            return redirect('/home');
         }
         return $next($request);
     }

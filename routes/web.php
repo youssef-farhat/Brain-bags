@@ -22,12 +22,16 @@ Route::get('/ins', function () {
 Route::get('/con', function () {
     return view('connect.html.auth');
 });
+
+Route::get('/en', function () {
+    return view('profil.index');
+});
+
 Route::middleware('auth' )->group(function () {
 
-Route::get('/profil',function(){return view('profil.profil');})->middleware('auth');
+Route::get('/profilEn/{user}',"EntrepriseController@show")->middleware('auth','checkEntreprise');
 //----------------------Demandes----------------------------
-Route::get('/dem', 'DemandeController@index')->middleware('auth')->name('index');
-    return view('connect.html.authetude');
+Route::get('/dem', 'DemandeController@index')->name('index');
 });
 
 Route::get('/profil',function(){
@@ -76,11 +80,15 @@ Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('sho
 Route::post('/inscriE','EntrepriseController@store')->name('storeEn');
 Route::post('/updateE','EntrepriseController@edit')->name('update');
 
+Route::get('/formm/{idDemande}','DemandeController@test')->name('formm');
+Route::post('/formm/{idDemande}', 'DemandeController@store')->name('store');
 
 Route::get('/form', function(){
     return view('connect.html.demandeForm');})->name('formDemande')->middleware('auth');
 Route::get('/liste-demandes','DemandeController@getDemandes')->name('demandesList');
 Route::delete('/liste-demandes/{id}', 'DemandeController@destroy')->name('delete');
+Route::resource('demande', 'DemandeController' );
+
 //----------------------Demandes----------------------------
 
 Auth::routes();
@@ -89,4 +97,26 @@ Route::get('/admin-dashboard', function () {
 })->middleware('auth','checkAdmin');
 Route::get('/home', 'HomeController@index')->name('home');
 
+//test
+Route::get('/live_search', 'LiveSearch@index');
+Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
 
+Route::get('/etudiants', function(){
+    return view('etudiant.index');
+})->middleware( 'auth' , 'admin');
+
+Route::get('/entreprise', 'HomeController@entreprise')->middleware('admin');
+
+
+
+Route::get('/accueil', function(){
+    return view('admin.accueil');
+})->name('accueil')->middleware('admin');
+Route::get('/home', function () {return view('home.index');})->name('home');
+
+
+Route::resource('admins', 'Admin\AdminController' );
+Route::resource('etudiants', 'Admin\EtudiantController' );
+Route::resource('entreprises', 'Admin\EntrepriseController' );
+Route::resource('enseignants', 'Admin\EnseignantController' );
+Route::resource('entreprise', 'EntrepriseController' );

@@ -15,13 +15,12 @@ class CreateEntreprisesTable extends Migration
     {
         Schema::create('entreprises', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email');
-            $table->string('mdp');
-            $table->string('nom_entreprise');
             $table->enum('categorie', ['Informatique', 'Economie_gestion', 'Genie_proceder', 'mechanique', 'electrique']);
             $table->string('ville');
             $table->string('logo');
             $table->string('description');
+            $table->string('email');
+            $table->foreign('email')->references('email')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

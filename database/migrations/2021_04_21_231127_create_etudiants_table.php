@@ -15,17 +15,12 @@ class CreateEtudiantsTable extends Migration
     {
         Schema::create('etudiants', function (Blueprint $table) {
             $table->Increments('id');
-            $table-> string('E_mail',70);
-            $table->string('nom',70);
-            $table->string('prenom',70);
-            $table->string('img');
+            $table-> string('email',50)->unique();
             $table->string('ville_E');
-            
-            $table->enum('departement', ['Technologie de linformation', 'Mecanique', 'électrique','Commerce']);
-  
-            $table->string('motp_E');
+            $table->enum('depe_E', ['informatique', 'Economie_gestion', 'Genie_proceder','mechanique',"electrique"]);
             $table->string('class_E',70);
             $table->string('description');
+            $table->foreign('email')->references('email')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
             $table->engine = "InnoDB";
         });
