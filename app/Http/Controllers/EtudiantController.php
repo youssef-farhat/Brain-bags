@@ -81,6 +81,9 @@ class EtudiantController extends Controller
          $User->save();
 
          $etudiant->save();
+         if ($etudiant->save() == 1) {
+            return redirect('/login');
+         }
         
             redirect('/profileetud');
         

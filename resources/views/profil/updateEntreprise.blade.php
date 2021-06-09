@@ -21,19 +21,19 @@
     @include('layouts.sidebarEn')
     @section('content')
     <div class="home_content">
-
+    
         <div class="container">
             <div class="text">mise à jour de votre compte</div>
-            <form method="POST" action="{{route('update')}}">
-              
+            <form method="POST" action="{{route('updateEn',auth::user())}}">
                 @csrf
+                @method('put')
                 <div class="blockinp">
                     <div class="row">
                         <div class="col-sm" class="in">
                             <input type="text" class="form-control input" placeholder="exemple@domaine.com" name="email" value="{{Auth::user()->email}}" />
                         </div>
                         <div class="col-sm" class="in">
-                            <input type="text" class="form-control input" placeholder="Nom d'entreprise" name="nom_entreprise" value="{{Auth::user()->name}}" />
+                            <input type="text" class="form-control input" placeholder="Nom d'entreprise" name="name" value="{{Auth::user()->name}}" />
                         </div>
                         <div class="col-sm" class="in" class="option">
                             <select clas aria-label=".form-select-lg example" class="form-control input" name="categorie">
@@ -48,10 +48,11 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="blockinp">
                     <div class="row">
                         <div class="col-sm" class="in">
-                            <input type="text" placeholder="Ville" class="form-control input" placeholder="password" name="ville" value="{{Auth::user()->email}}">
+                            <input type="text" placeholder="Ville" class="form-control input" placeholder="ville" name="ville" value="">
                         </div>
                         <div class="col-sm" class="in">
                             <input type="file" class="form-control" id="fileim">
@@ -65,7 +66,7 @@
                 <div class="blockinp">
                     <div class="row">
                         <div class="col-sm" class="in">
-                            <input type="text" class="form-control input" placeholder="password" name="mdp" />
+                            <input type="text" class="form-control input" placeholder="password" name="password" />
                         </div>
                         <div class="col-sm" class="in">
                             <input type="text" class="form-control input" placeholder="confirm password" name="CPassword" />
@@ -77,15 +78,10 @@
                 </div>
 
 
-                <div class="mb-3">
-                    <textarea class="form-control textera" id="exampleFormControlTextarea1" rows="3" placeholder="Description" name="description"></textarea>
-                </div>
-                <div>
 
-
-                </div>
                 <span style="float: right;">
-                    <input type="submit" value="Update" class="btn btn-primary">
+                    
+                    <a href="/entreprise/{{ Auth::user()->email }}/edit"><input type="submit" value="Update" class="btn btn-primary"></a>
                     <input type="reset" value="Annuler" class="btn btn-outline-primary">
                 </span>
             </form>
