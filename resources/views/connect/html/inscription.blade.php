@@ -8,7 +8,7 @@ rel="stylesheet"
 href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')}}"
 >
     
-        <button class="btn1"><i class="fa fa-arrow-left"></i></button>
+<a href="{{url('login') }}"><button class="btn1"><i class="fa fa-arrow-left"></i></button></a>
    <form action="{{ route('storeEt') }}" method="POST">
     @csrf
     <div class="container">
@@ -30,9 +30,9 @@ href="  {{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
                 <div class="col-sm" class="in">
 
                     <select clas aria-label=".form-select-lg example" class="form-control input" name="role" >
-                        <option value="admin">admin</option>
+                        
                         <option value="Etudiant">Etudiant</option>
-                        <option value="enseignant">enseignant</option>
+                       
                         
                     </select>
                 </div>

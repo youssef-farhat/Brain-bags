@@ -45,8 +45,8 @@
   <br>
   <center>
     <div class="btn">
-      <input type="button" value="Entreprise" class="btn btn-primary">
-      <input type="button" value="  Etudiant  " class="btn btn-outline-primary">
+      <a href="{{url('inscriE')}}"><input type="button" value="Entreprise" class="btn btn-primary"></a>
+      <a href="{{url('ins')}}"><input type="button" value="  Etudiant  " class="btn btn-outline-primary"></a>
     </div>
   </center>
 

@@ -52,7 +52,7 @@
                             <p>{{ $demande->departement }}</p>
                             <p class="desc">Description:</p>
                             <p>{{ $demande->description }}</p>
-                            <p> nom entreprise :{{ $demande->nom_entreprise }}</p>
+                            {{-- <p> nom entreprise :{{ $demande->nom_entreprise }}</p> --}}
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a class="btn btn-outline-info"
                                     href="{{route('formm',['idDemande'=>$demande->id])}}"><strong> Plus de Detail ici </strong></a>
