@@ -28,13 +28,6 @@
 
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">nom d'entreprise</label>
-        <input type="text" class="form-control input @error('nom_entreprise') is-invalid @enderror" placeholder="nom_entreprise" name="nom_entreprise"
-        value="{{old('nom_entreprise')  ?? $entreprises[0]->nom_entreprise  }}" />
-        @error('nom_entreprise')
-            <div class="text-danger is-invalid">{{$message}}</div>
-        @enderror
-</div>    <div class="form-group col-md-6">
   <label for="inputPassword4">Username</label>
   <input type="text" class="form-control input @error('nom_entreprise') is-invalid @enderror" placeholder="username" name="name"
   value="{{old('nom')  ?? $entreprises[0]->name  }}" />

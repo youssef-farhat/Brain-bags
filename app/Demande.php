@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Demande extends Model
 {
     //
-    public function etudiant()
+    public function user()
     {
-        return $this->belongsTo('App\Etudiant');
+        return $this->belongsTo('App\User');
     }
 }

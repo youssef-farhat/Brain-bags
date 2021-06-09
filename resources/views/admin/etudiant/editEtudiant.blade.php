@@ -21,7 +21,8 @@
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
         <input type="text" class="form-control input @error('E_mail') is-invalid @enderror" placeholder="Email " name="email"
-        value="{{old('email') ?? $etudiants[0]->email }}" />
+        value="{{old('email') ?? $etudiants[0]->email }}" /> <input type="text" class="form-control input @error('E_mail') is-invalid @enderror" placeholder="Email " name="oldEmail"
+        value="{{old('email') ?? $etudiants[0]->email }}" hidden />
         @error('email')
             <div class="text-danger is-invalid">{{$message}}</div>
         @enderror
@@ -58,7 +59,7 @@
         <label for="inputState">departement</label>
         <select id="inputState" class="form-control  @error('departement') is-invalid @enderror" name="depe_E">
           <option selected>{{old('depe_E') ?? $etudiants[0]->depe_E  }}</option>
-          <option value="Technologie de linformation">Technologie de linformation</option>
+          <option value="informatique">Technologie de linformation</option>
           <option value="Mecanique">Mecanique</option>
           <option value="électrique">électrique</option>
           <option value="Commerce">Commerce</option>

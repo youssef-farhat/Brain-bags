@@ -116,17 +116,14 @@ class EntrepriseController extends Controller
         DB::update('update users set name = ? , email  = ? ,password = ? where email = ?',[$validatedData['name'],$validatedData['email'],$validatedData['password'],$entreprise->email]);
 
         $validatedData2 = $request->validate([
-            'nom_entreprise'=> 'required',
             'categorie'=>'required',
             'ville' => 'required',
             'logo'=> 'required',
-            'description'=>'min:2',
-            
-
-        ]);
+            'description'=>'min:2'
+            ]);
         //dd($validatedData2);
         // $user->update($validatedData2);
-        DB::update('update entreprises set nom_entreprise = ? , categorie = ? , ville = ? , logo = ? ,description = ? where email = ?',[$validatedData2['nom_entreprise'],$validatedData2['categorie'],$validatedData2['ville'],$validatedData2['logo'],$validatedData2['description'],$validatedData['email']]);
+        DB::update('update entreprises set categorie = ? , ville = ? , logo = ? ,description = ? where email = ?',[$validatedData2['categorie'],$validatedData2['ville'],$validatedData2['logo'],$validatedData2['description'],$validatedData['email']]);
         
         return redirect()->back()->with('success','entreprises updated successfully');  
     }

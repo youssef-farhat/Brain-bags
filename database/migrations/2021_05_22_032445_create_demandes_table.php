@@ -20,8 +20,8 @@ class CreateDemandesTable extends Migration
             $table->integer('entreprise_id')->unsigned();
             $table->timestamps();
             $table->foreign('stage_id')->references('id')->on('stages');
-            $table->foreign('etudiant_id')->references('id')->on('etudiants')->onDelete('cascade');
-            $table->foreign('entreprise_id')->references('id')->on('entreprises')->onDelete('cascade');
+            $table->foreign('etudiant_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('entreprise_id')->references('id')->on('entreprises')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
