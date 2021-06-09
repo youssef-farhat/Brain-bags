@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Demande;
+use App\Entreprise;
 use App\Etudiant;
 use App\Stage;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -37,14 +39,26 @@ class DemandeController extends Controller
                                     ->join('entreprises','entreprises.id','id_entreprise')
                                     ->where('stages.id','=',$idDemande)
                                     ->get() ;
-        return view('connect.html.demandeForm',['demandes'=>$demandes,'idDemande'=>$idDemande]);
+         $entreprise=DB::table('users')->join('entreprises','entreprises.email','users.email')
+                       ->join('stages','entreprises.id','stages.id')->where('users.role','=','entreprise')
+                       ->where('entreprises.id','=',$demandes[0]->id)
+                       ->get();
+                       //dd($entreprise);
+        return view('connect.html.demandeForm',['demandes'=>$demandes,'idDemande'=>$idDemande,'entreprise'=>$entreprise]);
     }
     public function index()
 
     {
         $demandes=DB::table('stages')->join('entreprises','entreprises.id','id_entreprise')->paginate(5);
-        // $demandes = Stage::paginate(5);
-        return view('connect.html.demande',['demandes'=>$demandes]);
+        $entreprise=DB::table('users')->join('entreprises','entreprises.email','users.email')
+                                      ->join('stages','entreprises.id','stages.id')->where('users.role','=','entreprise')->get();
+        //$d=$entreprise['name'];
+        //dd($entreprise);
+         //$demandes = Stage::paginate(5);
+        
+
+
+        return view('connect.html.demande',['demandes'=>$demandes,'entreprises'=>$entreprise]);
     }
 
     /**
@@ -67,17 +81,22 @@ class DemandeController extends Controller
     {
         $find=Demande::where('etudiant_id','=',$request->etudiant_id)
                        ->where('stage_id','=',$request->stage_id)->get()->count();
-      
-       
+                      
+                       
+      // dd($entreprise);
         if($find<1){
              $demande = new Demande;
         $demande->stage_id =$request->stage_id;
-        $demande->etudiant_id =$request->etudiant_id;
+        $demande->etudiant_id =Auth::user()->id;
         $demande->entreprise_id  =$request->id_entreprise;
 
 
         echo $demande->save();
+<<<<<<< HEAD
         return redirect('/dem')->with('success',' demande  ajouté avec succée');
+=======
+        return redirect('/dem')->with('sent',' demande envoyée avec succée');
+>>>>>>> 305304922d64d7fb87f2f171e4fbfe306d481ee2
         }
         else return redirect('/dem')->with('msg','cette demande est deja existe');
 
