@@ -19,15 +19,16 @@
   @foreach ($demandes as $d)
   <div class="card text-center">
    <div class="card-header">
-     <strong>Nom d'entreprise</strong> : {{$d->nom_entreprise}}
+     <strong>Nom d'entreprise</strong> : {{$entreprise[0]->name}}
    </div>
    <div class="card-body  ">
        <div class="card-title form-row d-flex justify-content-center">
      <h5 class="card-title ">Type de stage : <u>{{$d->type}}</u></h5>
     </div>
    
-     <p class="card-text">Departement :  <strong> {{$d->departement}}</strong></p>
-     <p class="card-text">Localisation :  <strong> {{$d->ville}} , {{$d->localisation}} </strong></p>
+    <p class="card-text">Departement :  <strong> {{$d->departement}}</strong></p>
+    <p class="card-text">Email :  <strong> {{$entreprise[0]->email}}</strong></p>
+    <p class="card-text">Localisation :  <strong> {{$d->ville}} , {{$d->localisation}} </strong></p>
      <p class="card-text">Localisation :  <strong> {{$d->description}}</strong></p>
    </div>
      <a class="btn btn-outline-secondary" href="{{ route('store',['idDemande'=>$d->id]) }}" onclick="event.preventDefault();
@@ -53,7 +54,7 @@
       </div>
       <div class="form-group col-md-2">
         <label for="inputPassword4">Nom d'entreprise</label>
-        <input type="text" class="form-control" id="inputPassword4" placeholder="Nom" name="nom" value="{{$d->nom_entreprise}}">
+        <input type="text" class="form-control" id="inputPassword4" placeholder="Nom" name="nom" value="{{$entreprise[0]->name}}">
       </div>
       <div class="form-group col-md-2">
         <img class="rounded float-end" id=""src={{$d->image}} width='150px'height='150px'>
