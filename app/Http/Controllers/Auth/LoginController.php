@@ -28,6 +28,12 @@ class LoginController extends Controller
      *
      * @var string
      */
+<<<<<<< HEAD
+   /* protected $redirectTo = RouteServiceProvider::HOME;*/
+     public  function redirectTo(){
+         $role=Auth::user()->role;
+         switch($role){
+=======
     // protected $redirectTo = RouteServiceProvider::HOME;
     public function redirectTo(){
         
@@ -42,6 +48,7 @@ class LoginController extends Controller
         }
         return '/';
     }
+>>>>>>> 1298f03a74091ad8fd94e1f47230069552f049df
 
           
         
