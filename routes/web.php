@@ -69,7 +69,7 @@ Route::get('/modifprofiletude', function(){
 })->name('modifprofE');
 
 
-Route::post('/ins','EtudiantController@store')->name('store');
+Route::post('/ins','EtudiantController@store')->name('storeEt');
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 Route::resource('Etudian','EtudiantController');

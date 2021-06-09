@@ -17,15 +17,9 @@
                     </button>
                   </div>
                   @endif
-<<<<<<< HEAD
-                  @if (\Session::has('success'))
-                  <div class="alert alert-success alert-dismissible fade show col-md-4" role="alert">
-                      {!! \Session::get('success') !!}
-=======
                   @if (\Session::has('sent'))
                   <div class="alert alert-success alert-dismissible fade show col-md-4" role="alert">
                       {!! \Session::get('sent') !!}
->>>>>>> 305304922d64d7fb87f2f171e4fbfe306d481ee2
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>

@@ -25,14 +25,11 @@ class RedirectIfAuthenticated
             
                 return redirect('/dem');
             } 
-<<<<<<< HEAD
-=======
             //return redirect(RouteServiceProvider::HOME);
             if (Auth::user()->role =='entreprise'){
                  return '/profil' ;
             }
             return('/admin-dashboard');
->>>>>>> 1298f03a74091ad8fd94e1f47230069552f049df
         }
 
         return $next($request);

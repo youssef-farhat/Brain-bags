@@ -92,11 +92,7 @@ class DemandeController extends Controller
 
 
         echo $demande->save();
-<<<<<<< HEAD
-        return redirect('/dem')->with('success',' demande  ajouté avec succée');
-=======
         return redirect('/dem')->with('sent',' demande envoyée avec succée');
->>>>>>> 305304922d64d7fb87f2f171e4fbfe306d481ee2
         }
         else return redirect('/dem')->with('msg','cette demande est deja existe');
 
