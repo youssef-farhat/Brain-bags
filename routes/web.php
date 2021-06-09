@@ -29,7 +29,7 @@ Route::get('/en', function () {
 
 Route::middleware('auth' )->group(function () {
 
-Route::get('/profilEn/{user}',"EntrepriseController@show")->middleware('auth','checkEntreprise')->name('profil');;
+Route::get('/profilEn/{user}',"EntrepriseController@show")->middleware('auth','checkEntreprise');
 //----------------------Demandes----------------------------
 Route::get('/dem', 'DemandeController@index')->name('index');
 });
@@ -37,9 +37,11 @@ Route::get('/dem', 'DemandeController@index')->name('index');
 Route::get('/inscriE',function(){
     return view('inscriEntreprise.inscription');
 });
-Route::get('/updateE/{user}',function(){
-    return view('updateEntreprise.updateEntreprise');
-})->middleware('auth','checkEntreprise');
+Route::get('/updateEn/{user}',function(){
+    return view('profil.updateEntreprise');
+})->middleware('auth','checkEntreprise')->name('misajourE');;
+Route::put('/updateEn/{user}', 'EntrepriseController@update')->middleware('auth','checkEntreprise')->name('updateEn');
+
 Route::get('/index',function(){
     return view('home.index');
 });
@@ -61,7 +63,7 @@ Route::resource('Etudiant','EtudiantController');
 Route::get('/dem/show', 'DemandeController@show')->middleware('auth')->name('show');
 
 Route::post('/inscriE','EntrepriseController@store')->name('storeEn');
-Route::post('/updateE','EntrepriseController@edit')->name('update');
+// Route::post('/updateEn','EntrepriseController@edit')->name('updaten');
 
 Route::get('/formm/{idDemande}','DemandeController@test')->name('formm');
 Route::post('/formm/{idDemande}', 'DemandeController@store')->name('store');
@@ -102,4 +104,4 @@ Route::resource('admins', 'Admin\AdminController' );
 Route::resource('etudiants', 'Admin\EtudiantController' );
 Route::resource('entreprises', 'Admin\EntrepriseController' );
 Route::resource('enseignants', 'Admin\EnseignantController' );
-Route::resource('entreprises', 'EntrepriseController' );
+Route::resource('entreprise', 'EntrepriseController' );

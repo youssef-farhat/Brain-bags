@@ -19,18 +19,19 @@
   @foreach ($demandes as $d)
   <div class="card text-center">
    <div class="card-header">
-     <strong>Nom d'entreprise</strong> : {{$d->nom_entreprise}}
+     {{-- <strong>Nom d'entreprise</strong> : {{$entreprise[0]->name}} --}}
    </div>
    <div class="card-body  ">
        <div class="card-title form-row d-flex justify-content-center">
      <h5 class="card-title ">Type de stage : <u>{{$d->type}}</u></h5>
     </div>
    
-     <p class="card-text">Departement :  <strong> {{$d->departement}}</strong></p>
-     <p class="card-text">Localisation :  <strong> {{$d->ville}} , {{$d->localisation}} </strong></p>
+    <p class="card-text">Departement :  <strong> {{$d->departement}}</strong></p>
+    {{-- <p class="card-text">Email :  <strong> {{$entreprise[0]->email}}</strong></p> --}}
+    <p class="card-text">Localisation :  <strong> {{$d->ville}} , {{$d->localisation}} </strong></p>
      <p class="card-text">Localisation :  <strong> {{$d->description}}</strong></p>
    </div>
-     <a class="btn btn-outline-secondary" href="{{ route('submit',['idDemande'=>$d->id]) }}" onclick="event.preventDefault();
+     <a class="btn btn-outline-secondary" href="{{ route('store',['idDemande'=>$d->id]) }}" onclick="event.preventDefault();
      document.getElementById('submit-form').submit();">
   <strong> Envoyer votre demande</strong>
  </a>
@@ -39,7 +40,7 @@
     {{$d->created_at }} 
    </div>
  </div>
-<form method="POST" action="{{route('submit',['idDemande'=>$d->id])}}" id="submit-form" style="display:none">
+<form method="POST" action="{{route('store',['idDemande'=>$d->id])}}" id="submit-form" style="display:none">
   @csrf
   @php
   // var_dump($idDemande);
@@ -53,15 +54,13 @@
       </div>
       <div class="form-group col-md-2">
         <label for="inputPassword4">Nom d'entreprise</label>
-        <input type="text" class="form-control" id="inputPassword4" placeholder="Nom" name="nom" value="{{$d->nom_entreprise}}">
+        {{-- <input type="text" class="form-control" id="inputPassword4" placeholder="Nom" name="nom" value="{{$entreprise[0]->name}}"> --}}
       </div>
-      <div class="form-group col-md-2">
-        <img class="rounded float-end" id=""src={{$d->image}} width='150px'height='150px'>
-      </div>
+      
     </div>
     <div class="form-group">
       <label for="inputAddress">Localisation de stage</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="id_entreprise" value="{{$d->id_entreprise}} " >
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="id_entreprise" value="{{$d->entreprise_id}} " >
     </div>
     <div class="form-group">
       <label for="inputAddress2">Departement</label>

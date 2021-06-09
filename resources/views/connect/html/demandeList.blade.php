@@ -14,7 +14,7 @@
         <div class="card-deck ">
             @foreach ($demandes as $demande)
                 <div class="card m-2">
-                    <img src="{{ $demande->image }}" class="card-img-top" alt="...">
+                    {{-- <img src="{{ $demande->image }}" class="card-img-top" alt="..."> --}}
                     <div class="card-body">
                         <h5 class="card-title">Stage :{{ $demande->type }} Departement {{ $demande->departement }}</h5>
                         <p class="card-text">{{ $demande->description }} </p>
