@@ -68,7 +68,7 @@ class EntrepriseController extends Controller
         $Entreprise->save();
         
         if ($User->save() == 1) {
-           return redirect('/con');
+           return redirect('/login');
         }
     }
 

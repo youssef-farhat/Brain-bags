@@ -21,7 +21,6 @@ class CreateEtudiantsTable extends Migration
             $table->string('class_E',70);
             $table->string('description');
             $table->foreign('email')->references('email')->on('users')->onDelete('cascade')->onUpdate('cascade');
-
             $table->timestamps();
             $table->engine = "InnoDB";
         });
