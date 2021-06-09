@@ -21,7 +21,7 @@ class CreateEntreprisesTable extends Migration
             $table->string('logo');
             $table->string('description');
             $table->string('email');
-            $table->foreign('email')->references('email')->on('users')->onDelete('cascade');
+            $table->foreign('email')->references('email')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

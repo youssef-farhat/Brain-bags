@@ -14,7 +14,7 @@
         <div class="blockinp">
             <div class="row">
                 <div class="col-sm" class="in">
-                    <input type="text" class="form-control input @error('email') is-invalid @enderror" placeholder="exemple@domaine.com " name="email" />
+                    <input type="text" class="form-control input " placeholder="exemple@domaine.com " name="email" />
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -22,7 +22,7 @@
                     @enderror
                 </div>
                 <div class="col-sm" class="in">
-                    <input type="text" class="form-control input input @error('name') is-invalid @enderror" placeholder="Nom d'entreprise" name="nom_entreprise" />
+                    <input type="text" class="form-control input " placeholder="Nom d'entreprise" name="nom_entreprise" />
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -45,7 +45,7 @@
         <div class="blockinp">
             <div class="row">
                 <div class="col-sm" class="in">
-                    <input type="text" placeholder="Ville" class="form-control input input @error('ville') is-invalid @enderror" placeholder="password" name="ville">
+                    <input type="text" placeholder="Ville" class="form-control input " placeholder="password" name="ville">
                     @error('ville')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -64,7 +64,7 @@
         <div class="blockinp">
             <div class="row">
                 <div class="col-sm" class="in">
-                    <input type="text" class="form-control input input @error('password') is-invalid @enderror" placeholder="password" name="mdp" />
+                    <input type="text" class="form-control input " placeholder="password" name="password" />
                 
                 </div>
                 <div class="col-sm" class="in">

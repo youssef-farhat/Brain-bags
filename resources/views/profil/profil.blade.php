@@ -50,7 +50,7 @@
               </div>
               <div class="col">
                 <div class="btne">
-                  <a href="{{url('updateE',Auth::user()->email)}}"> <input type="submit" value="Modifier" class="btn btn-primary"></a>
+                  <a href="{{url('updateEn',Auth::user()->email)}}"> <input type="submit" value="Modifier" class="btn btn-primary"></a>
 
                 </div>
               </div>
