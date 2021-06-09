@@ -43,6 +43,17 @@
                                 <i class='bx bxs-user-plus bx-sm' ></i> Ajouter un administeur 
                             </a>
                         </div>
+                        {{-- <div class="form-group">
+                            <form action="/search" method="get">
+                              <div class="input-group">
+                                <input type="search" name="search" class="form-control" id="search">
+                                <span class="input-group-prepend">
+                                  <button type="submit" class="btn-btn-secondary"><i class="fas fa-search"></i></button>
+                                </span>
+                            
+                              </div>
+                            </form>
+                          </div> --}}
                         <table class="table table-bordered" id="dataTable">
                             <thead>
                                 <tr>

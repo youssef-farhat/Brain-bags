@@ -93,10 +93,13 @@ Route::get('/etudiants', function(){
 Route::get('/entreprise', 'HomeController@entreprise')->middleware('admin');
 
 
+// -------------------------------------RCHERCHE AVEC REQUETE-----------------------------
+//Route::get('/search', 'Admin\AdminController@search');
+// -------------------------------------RCHERCHE AVEC REQUETE-----------------------------
 
-Route::get('/accueil', function(){
-    return view('admin.accueil');
-})->name('accueil')->middleware('admin');
+Route::get('/profile', function(){
+    return view('admin.admin.profile');
+})->name('profileAdmin')->middleware('admin');
 Route::get('/home', function () {return view('home.index');})->name('home');
 
 
